@@ -31,6 +31,10 @@ ExpressibleByArrayLiteral {
     public init<C>(branches bs:C) where C:Collection, C.Element == ArrayBranch<Element> {
         branches = Array(bs)
     }
+    public subscript(_ i:SubSequence.Index, in p:Path) -> Element {
+        get { return branches[i, in: p].value }
+        set(x) { branches[i, in: p].value = x }
+    }
 }
 public struct ArrayBranch<Element>: Branch, MutableBranch, RangeReplaceableBranch {
     public var value: Element

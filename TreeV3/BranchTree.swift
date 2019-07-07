@@ -15,12 +15,13 @@ import Foundation
 public protocol BranchTree: Tree where
 Element == Branches.Element.Value,
 SubSequence == BranchTreeSlice<Branches.Element>,
-Path: TreeV3.Path {
+Path: TreeV3.Path,
+Path.Element == SubSequence.Index {
     var branches: Branches { get }
     associatedtype Branches: RandomAccessCollection where
-        Branches.Index == Path.Element,
+        Branches.Index == SubSequence.Index,
         Branches.Element: Branch,
-        Branches.Element.Branches.Index == Path.Element,
+//        Branches.Element.Branches.Index == SubSequence.Index,
         Branches.Element.Branches.SubSequence == Branches.SubSequence
 }
 public protocol MutableBranchTree:
