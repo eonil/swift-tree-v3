@@ -23,6 +23,9 @@
 		45E9A62E22D1FFB600FE2AA5 /* Tree.map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62D22D1FFB600FE2AA5 /* Tree.map.swift */; };
 		45E9A63022D2068300FE2AA5 /* Tree.lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62F22D2068300FE2AA5 /* Tree.lazy.swift */; };
 		45E9A63222D20F2600FE2AA5 /* Tree.filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A63122D20F2600FE2AA5 /* Tree.filter.swift */; };
+		45E9A63422D21CEF00FE2AA5 /* Tree.sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A63322D21CEF00FE2AA5 /* Tree.sort.swift */; };
+		45F7252C22D222430056187D /* Tree.branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7252B22D222430056187D /* Tree.branch.swift */; };
+		45F7252E22D22C9A0056187D /* Tree.convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7252D22D22C9A0056187D /* Tree.convert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		45E9A62D22D1FFB600FE2AA5 /* Tree.map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.map.swift; sourceTree = "<group>"; };
 		45E9A62F22D2068300FE2AA5 /* Tree.lazy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.lazy.swift; sourceTree = "<group>"; };
 		45E9A63122D20F2600FE2AA5 /* Tree.filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.filter.swift; sourceTree = "<group>"; };
+		45E9A63322D21CEF00FE2AA5 /* Tree.sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.sort.swift; sourceTree = "<group>"; };
+		45F7252B22D222430056187D /* Tree.branch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.branch.swift; sourceTree = "<group>"; };
+		45F7252D22D22C9A0056187D /* Tree.convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.convert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +109,13 @@
 				45E9A62622D1DDBE00FE2AA5 /* Branch.dfs.swift */,
 				450FABB422D1C0580026CF7A /* Tree.swift */,
 				450FABB922D1C0580026CF7A /* Tree.default.swift */,
+				45F7252B22D222430056187D /* Tree.branch.swift */,
 				45E9A62422D1DCA200FE2AA5 /* Tree.paths.swift */,
 				45E9A62D22D1FFB600FE2AA5 /* Tree.map.swift */,
 				45E9A63122D20F2600FE2AA5 /* Tree.filter.swift */,
+				45E9A63322D21CEF00FE2AA5 /* Tree.sort.swift */,
 				45E9A62F22D2068300FE2AA5 /* Tree.lazy.swift */,
+				45F7252D22D22C9A0056187D /* Tree.convert.swift */,
 				45E9A62822D1E3BD00FE2AA5 /* Path.swift */,
 				450FABB722D1C0580026CF7A /* BranchTree.swift */,
 				450FABB822D1C0580026CF7A /* BranchTree.default.swift */,
@@ -232,17 +241,20 @@
 			files = (
 				450FABC022D1C0590026CF7A /* Tree.default.swift in Sources */,
 				45E9A62E22D1FFB600FE2AA5 /* Tree.map.swift in Sources */,
+				45E9A63422D21CEF00FE2AA5 /* Tree.sort.swift in Sources */,
 				45E9A62922D1E3BD00FE2AA5 /* Path.swift in Sources */,
 				45E9A62522D1DCA200FE2AA5 /* Tree.paths.swift in Sources */,
 				450FABBB22D1C0590026CF7A /* Tree.swift in Sources */,
 				450FABBE22D1C0590026CF7A /* BranchTree.swift in Sources */,
 				450FABBD22D1C0590026CF7A /* ArrayBranchTree.swift in Sources */,
+				45F7252C22D222430056187D /* Tree.branch.swift in Sources */,
 				45E9A61422D1CB8E00FE2AA5 /* BranchTreeSlice.swift in Sources */,
 				45E9A62722D1DDBE00FE2AA5 /* Branch.dfs.swift in Sources */,
 				45E9A63022D2068300FE2AA5 /* Tree.lazy.swift in Sources */,
 				450FABBF22D1C0590026CF7A /* BranchTree.default.swift in Sources */,
 				450FABBC22D1C0590026CF7A /* Branch.swift in Sources */,
 				45E9A63222D20F2600FE2AA5 /* Tree.filter.swift in Sources */,
+				45F7252E22D22C9A0056187D /* Tree.convert.swift in Sources */,
 				450FABBA22D1C0590026CF7A /* Branch.default.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -218,4 +218,112 @@ class TreeV3Test: XCTestCase {
             [],                             // children of [0,0]
             ])
     }
+    func testSort() {
+        var a = ArrayBranchTree<Int>()
+        a.append(111, in: [])
+        a.insert(333, at: 1, in: [])
+        a.insert(222, at: 1, in: [])
+        a.append(222_111, in: [1])
+        a.append(contentsOf: [222_222, 222_333], in: [1])
+        a.append(999, in: [])
+        a.append(999_999, in: [3])
+        a.append(999_999_999, in: [3,0])
+        a.append(999_999_999_999, in: [3,0,0])
+        let b = a.sorted(by: { a,b in a > b })
+        XCTAssertEqual(Array(b.paths.dfs), [
+            [],
+            [0],
+            [0,0],
+            [0,0,0],
+            [0,0,0,0],
+            [1],
+            [2],
+            [2,0],
+            [2,1],
+            [2,2],
+            [3],
+            ])
+        func findSequence(at p:IndexPath) -> [Int] {
+            let s = b.sequence(in: p)
+            return Array(s)
+        }
+        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
+            [999, 333, 222, 111],           // children of []
+            [999_999],                      // children of [0] (999)
+            [999_999_999],                  // children of [0,0]
+            [999_999_999_999],              // children of [0,0,0]
+            [],                             // children of [0,0,0,0]
+            [],                             // children of [1]
+            [222_333, 222_222, 222_111],    // children of [2]
+            [],                             // children of [2,0]
+            [],                             // children of [2,1]
+            [],                             // children of [2,2]
+            [],                             // children of [3] (111)
+            ])
+        func findElement(at p:IndexPath) -> Int {
+            precondition(!p.isEmpty)
+            let e = b[p.last!, in: p.dropLast()]
+            return e
+        }
+        XCTAssertEqual(Array(Array(b.paths.dfs.dropFirst()).map(findElement(at:))), [
+            999,
+            999_999,
+            999_999_999,
+            999_999_999_999,
+            333,
+            222,
+            222_333,
+            222_222,
+            222_111,
+            111,
+            ])
+    }
+    func testConverting() {
+        var a = ArrayBranchTree<Int>()
+        a.append(111, in: [])
+        a.insert(333, at: 1, in: [])
+        a.insert(222, at: 1, in: [])
+        a.append(222_111, in: [1])
+        a.append(contentsOf: [222_222, 222_333], in: [1])
+        a.append(999, in: [])
+        a.append(999_999, in: [3])
+        a.append(999_999_999, in: [3,0])
+        a.append(999_999_999_999, in: [3,0,0])
+        let b = ArrayBranchTree(converting: a)
+        func findSequence(at p:IndexPath) -> [Int] {
+            let s = b.sequence(in: p)
+            return Array(s)
+        }
+        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
+            [111, 222, 333, 999],           // children of []
+            [],                             // children of [0]
+            [222_111, 222_222, 222_333],    // children of [1]
+            [],                             // children of [1,0]
+            [],                             // children of [1,1]
+            [],                             // children of [1,2]
+            [],                             // children of [2] (333)
+            [999_999],                      // children of [3] (999)
+            [999_999_999],                  // children of [3,0]
+            [999_999_999_999],              // children of [3,0,0]
+            []                              // children of [3,0,0,0]
+
+            ])
+        func findElement(at p:IndexPath) -> Int {
+            precondition(!p.isEmpty)
+            let e = b[p.last!, in: p.dropLast()]
+            return e
+        }
+        XCTAssertEqual(Array(Array(b.paths.dfs.dropFirst()).map(findElement(at:))), [
+            111,
+            222,
+            222_111,
+            222_222,
+            222_333,
+            333,
+            999,
+            999_999,
+            999_999_999,
+            999_999_999_999,
+            ])
+    }
 }

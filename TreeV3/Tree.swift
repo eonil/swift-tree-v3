@@ -66,6 +66,7 @@ public protocol MutableTree: Tree {
 //    subscript(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence { get set }
 }
 public protocol RangeReplaceableTree: Tree {
+    init()
     mutating func replaceSubrange<C>(_ r:Range<SubSequence.Index>, with es:C, in p:Path) where
     C:Collection,
     C.Element == SubSequence.Element
