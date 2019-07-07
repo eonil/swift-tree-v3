@@ -48,6 +48,7 @@
 		45E9A62422D1DCA200FE2AA5 /* Tree.paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.paths.swift; sourceTree = "<group>"; };
 		45E9A62622D1DDBE00FE2AA5 /* Branch.dfs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.dfs.swift; sourceTree = "<group>"; };
 		45E9A62822D1E3BD00FE2AA5 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		45E9A62C22D1FD1800FE2AA5 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +73,7 @@
 		450FAB9E22D1C02D0026CF7A = {
 			isa = PBXGroup;
 			children = (
+				45E9A62C22D1FD1800FE2AA5 /* Package.swift */,
 				450FABA922D1C02D0026CF7A /* TreeV3 */,
 				45E9A61A22D1D8DD00FE2AA5 /* TreeV3Test */,
 				450FABA822D1C02D0026CF7A /* Products */,

@@ -23,15 +23,12 @@ public extension BranchTree {
     func distance(from a:SubSequence.Index, to b:SubSequence.Index, in p:Path) -> Int {
         return branches.distance(from: a, to: b, in: p)
     }
-//    subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element {
-//        get { return branches[i, in: p].value }
-//    }
-//    subscript(_ r:Range<SubSequence.Index>, in p:Path) -> ArraySlice<Self> {
-//        get { return branches[r, in: p] }
-//    }
-//    func subsequence(_ r: Range<SubSequence.Index>, in p: Path) -> SubSequence {
-//        return
-//    }
+    // These lines causes compiler crash.
+    // Therefore disabled.
+    subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element {
+        get { return branches[i, in: p].value }
+    }
+    
     var path: Path { return [] }
     func path(at i:SubSequence.Index, in p:Path) -> Path {
         return p.appending(i)
@@ -54,7 +51,7 @@ public extension BranchTree where Self: MutableBranchTree & RangeReplaceableBran
 //    }
     mutating func replaceSubrange<C>(_ r:Range<SubSequence.Index>, with es: C, in p:Path) where
     C:Collection,
-    C.Element == Element {
+    C.Element == SubSequence.Element {
         let x = Branches.Element.Branches()
         branches.replaceSubrange(r, with: es.map({ Branches.Element(value: $0, branches: x) }), in: p)
     }

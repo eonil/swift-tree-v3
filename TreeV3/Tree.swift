@@ -21,8 +21,10 @@
 ///     want to vut down tree navigational look-up cost.
 ///
 public protocol Tree {
-    typealias Element = SubSequence.Element
-    associatedtype SubSequence: Collection
+    /// This type definition is only necessary to prevent compiler crash.
+    /// Remove this if compiler gets stabilized.
+    associatedtype Element
+    associatedtype SubSequence: Collection where SubSequence.Element == Element
     associatedtype Path
 
     func startIndex(in p:Path) -> SubSequence.Index
@@ -31,7 +33,7 @@ public protocol Tree {
     func index(before i:SubSequence.Index, in p:Path) -> SubSequence.Index
     func index(_ i:SubSequence.Index, offsetBy d:Int, in p:Path) -> SubSequence.Index
     func distance(from a:SubSequence.Index, to b:SubSequence.Index, in p:Path) -> Int
-    subscript(_ i:SubSequence.Index, in p:Path) -> Element { get }
+    subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element { get }
 
     /// Gets root path.
     var path: Path { get }
@@ -45,11 +47,11 @@ public protocol Tree {
     func subsequence(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence
 }
 public protocol MutableTree: Tree {
-    subscript(_ i:SubSequence.Index, in p:Path) -> Element { get set }
+    subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element { get set }
 //    subscript(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence { get set }
 }
 public protocol RangeReplaceableTree: Tree {
     mutating func replaceSubrange<C>(_ r:Range<SubSequence.Index>, with es:C, in p:Path) where
     C:Collection,
-    C.Element == Element
+    C.Element == SubSequence.Element
 }
