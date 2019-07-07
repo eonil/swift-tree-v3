@@ -20,6 +20,8 @@
 		45E9A62522D1DCA200FE2AA5 /* Tree.paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62422D1DCA200FE2AA5 /* Tree.paths.swift */; };
 		45E9A62722D1DDBE00FE2AA5 /* Branch.dfs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62622D1DDBE00FE2AA5 /* Branch.dfs.swift */; };
 		45E9A62922D1E3BD00FE2AA5 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62822D1E3BD00FE2AA5 /* Path.swift */; };
+		45E9A62E22D1FFB600FE2AA5 /* Tree.map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62D22D1FFB600FE2AA5 /* Tree.map.swift */; };
+		45E9A63022D2068300FE2AA5 /* Tree.lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62F22D2068300FE2AA5 /* Tree.lazy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		45E9A62622D1DDBE00FE2AA5 /* Branch.dfs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.dfs.swift; sourceTree = "<group>"; };
 		45E9A62822D1E3BD00FE2AA5 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		45E9A62C22D1FD1800FE2AA5 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		45E9A62D22D1FFB600FE2AA5 /* Tree.map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.map.swift; sourceTree = "<group>"; };
+		45E9A62F22D2068300FE2AA5 /* Tree.lazy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.lazy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				450FABB422D1C0580026CF7A /* Tree.swift */,
 				450FABB922D1C0580026CF7A /* Tree.default.swift */,
 				45E9A62422D1DCA200FE2AA5 /* Tree.paths.swift */,
+				45E9A62D22D1FFB600FE2AA5 /* Tree.map.swift */,
+				45E9A62F22D2068300FE2AA5 /* Tree.lazy.swift */,
 				45E9A62822D1E3BD00FE2AA5 /* Path.swift */,
 				450FABB722D1C0580026CF7A /* BranchTree.swift */,
 				450FABB822D1C0580026CF7A /* BranchTree.default.swift */,
@@ -222,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				450FABC022D1C0590026CF7A /* Tree.default.swift in Sources */,
+				45E9A62E22D1FFB600FE2AA5 /* Tree.map.swift in Sources */,
 				45E9A62922D1E3BD00FE2AA5 /* Path.swift in Sources */,
 				45E9A62522D1DCA200FE2AA5 /* Tree.paths.swift in Sources */,
 				450FABBB22D1C0590026CF7A /* Tree.swift in Sources */,
@@ -229,6 +236,7 @@
 				450FABBD22D1C0590026CF7A /* ArrayBranchTree.swift in Sources */,
 				45E9A61422D1CB8E00FE2AA5 /* BranchTreeSlice.swift in Sources */,
 				45E9A62722D1DDBE00FE2AA5 /* Branch.dfs.swift in Sources */,
+				45E9A63022D2068300FE2AA5 /* Tree.lazy.swift in Sources */,
 				450FABBF22D1C0590026CF7A /* BranchTree.default.swift in Sources */,
 				450FABBC22D1C0590026CF7A /* Branch.swift in Sources */,
 				450FABBA22D1C0590026CF7A /* Branch.default.swift in Sources */,

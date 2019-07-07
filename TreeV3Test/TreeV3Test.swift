@@ -57,6 +57,7 @@ class TreeV3Test: XCTestCase {
         a.append(999_999_999, in: [3,0])
         a.append(999_999_999_999, in: [3,0,0])
         XCTAssertEqual(Array(a.paths.dfs), [
+            [],
             [0],
             [1],
             [1,0],
@@ -68,10 +69,30 @@ class TreeV3Test: XCTestCase {
             [3,0,0],
             [3,0,0,0],
             ])
-        func find(_ p:IndexPath) -> Int {
-            return a[p.last!, in: p.dropLast()]
+        func findSequence(at p:IndexPath) -> [Int] {
+            let s = a.sequence(in: p)
+            return Array(s)
         }
-        XCTAssertEqual(Array(Array(a.paths.dfs).map(find)), [
+        XCTAssertEqual(Array(Array(a.paths.dfs).map(findSequence(at:))), [
+            [111, 222, 333, 999],           // children of []
+            [],                             // children of [0]
+            [222_111, 222_222, 222_333],    // children of [1]
+            [],                             // children of [1,0]
+            [],                             // children of [1,1]
+            [],                             // children of [1,2]
+            [],                             // children of [2] (333)
+            [999_999],                      // children of [3] (999)
+            [999_999_999],                  // children of [3,0]
+            [999_999_999_999],              // children of [3,0,0]
+            []                              // children of [3,0,0,0]
+
+            ])
+        func findElement(at p:IndexPath) -> Int {
+            precondition(!p.isEmpty)
+            let e = a[p.last!, in: p.dropLast()]
+            return e
+        }
+        XCTAssertEqual(Array(Array(a.paths.dfs.dropFirst()).map(findElement(at:))), [
             111,
             222,
             222_111,
@@ -82,6 +103,49 @@ class TreeV3Test: XCTestCase {
             999_999,
             999_999_999,
             999_999_999_999,
+            ])
+    }
+    func testMap() {
+        var a = ArrayBranchTree<Int>()
+        a.append(111, in: [])
+        a.insert(333, at: 1, in: [])
+        a.insert(222, at: 1, in: [])
+        a.append(222_111, in: [1])
+        a.append(contentsOf: [222_222, 222_333], in: [1])
+        a.append(999, in: [])
+        a.append(999_999, in: [3])
+        a.append(999_999_999, in: [3,0])
+        a.append(999_999_999_999, in: [3,0,0])
+        let b = a.map({"\($0)"})
+        XCTAssertEqual(Array(b.paths.dfs), [
+            [],
+            [0],
+            [1],
+            [1,0],
+            [1,1],
+            [1,2],
+            [2],
+            [3],
+            [3,0],
+            [3,0,0],
+            [3,0,0,0],
+            ])
+        func findSequence(at p:IndexPath) -> [String] {
+            let s = b.sequence(in: p)
+            return Array(s)
+        }
+        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
+            ["111", "222", "333", "999"],   // children of []
+            [],                             // children of [0]
+            ["222111", "222222", "222333"], // children of [1]
+            [],                             // children of [1,0]
+            [],                             // children of [1,1]
+            [],                             // children of [1,2]
+            [],                             // children of [2] (333)
+            ["999999"],                    // children of [3] (999)
+            ["999999999"],                // children of [3,0]
+            ["999999999999"],            // children of [3,0,0]
+            []                              // children of [3,0,0,0]
             ])
     }
 }

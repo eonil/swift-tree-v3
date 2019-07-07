@@ -20,6 +20,17 @@
 ///     path look-up as key look-up in table that can be used if you
 ///     want to vut down tree navigational look-up cost.
 ///
+/// Conform to `Tree` Protocol
+/// --------------------------
+/// The simplest way to conform `Tree` protocol is
+/// implementing these members.
+/// - `path`
+/// - `path(at:)`
+/// - `sequence(at:)`
+/// There're default implementations based on these members,
+/// and you don't need to override them unless you need some
+/// optimization.
+///
 public protocol Tree {
 //    /// This type definition is only necessary to prevent compiler crash.
 //    /// Remove this if compiler gets stabilized.

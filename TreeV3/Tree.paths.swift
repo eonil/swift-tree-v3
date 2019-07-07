@@ -9,6 +9,25 @@
 import Foundation
 
 public extension Tree {
+    /// Iterates paths to all nodes in tree.
+    ///
+    /// Sequence Iteration
+    /// ------------------
+    /// **PATHS DO NOT POINT ELEMENTS**.
+    ///
+    /// Please note that "node" means collection as this tree
+    /// is tree of collections. Therefore, it starts with `[]` that
+    /// means root collection which contains some children.
+    ///
+    /// Element Iteration
+    /// -----------------
+    /// You can get elements at paths easily like this.
+    ///
+    ///     let e = a[p.last!, in: p.dropLast()]
+    ///
+    /// Don't forget dropping first element in iteration which is `[]`,
+    /// that has no element.
+    ///
     var paths: TreePaths<Self> {
         return TreePaths<Self>(base: self)
     }
@@ -30,7 +49,7 @@ public struct TreePathDFSSequence<Base>: Sequence where Base: Tree {
             base: base,
             location: base.path,
             sequence: s)
-        return TreePathDFSIterator<Base>(base: base, reversedStack: Array(n.lazy.reversed()))
+        return TreePathDFSIterator<Base>(base: base, reversedStack: [n])
     }
 }
 
