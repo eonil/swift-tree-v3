@@ -31,21 +31,24 @@
 /// and you don't need to override them unless you need some
 /// optimization.
 ///
+/// If you want to make trees modiftable, conform `MutableTree`
+/// and `RangeReplaceableTree` too.
+///
 public protocol Tree {
 //    /// This type definition is only necessary to prevent compiler crash.
 //    /// Remove this if compiler gets stabilized.
 //    associatedtype Element
 //    associatedtype SubSequence: Collection where SubSequence.Element == Element
-    associatedtype SubSequence: Collection
+    associatedtype SubSequence: RandomAccessCollection
     associatedtype Path
 
-    func startIndex(in p:Path) -> SubSequence.Index
-    func endIndex(in p:Path) -> SubSequence.Index
-    func index(after i:SubSequence.Index, in p:Path) -> SubSequence.Index
-    func index(before i:SubSequence.Index, in p:Path) -> SubSequence.Index
-    func index(_ i:SubSequence.Index, offsetBy d:Int, in p:Path) -> SubSequence.Index
-    func distance(from a:SubSequence.Index, to b:SubSequence.Index, in p:Path) -> Int
-    subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element { get }
+//    func startIndex(in p:Path) -> SubSequence.Index
+//    func endIndex(in p:Path) -> SubSequence.Index
+//    func index(after i:SubSequence.Index, in p:Path) -> SubSequence.Index
+//    func index(before i:SubSequence.Index, in p:Path) -> SubSequence.Index
+//    func index(_ i:SubSequence.Index, offsetBy d:Int, in p:Path) -> SubSequence.Index
+//    func distance(from a:SubSequence.Index, to b:SubSequence.Index, in p:Path) -> Int
+//    subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element { get }
 
     /// Gets root path.
     var path: Path { get }
@@ -56,7 +59,7 @@ public protocol Tree {
     /// This was designed to be a `subscript`, but having `subscript` form
     /// makes compiler goes crazy. Swift compiler fails on every features that are not
     /// on Rust.
-    func subsequence(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence
+    func subsequence(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence.SubSequence
 }
 public protocol MutableTree: Tree {
     subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element { get set }

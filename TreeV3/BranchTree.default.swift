@@ -9,20 +9,21 @@
 import Foundation
 
 public extension BranchTree {
-    func startIndex(in p:Path) -> SubSequence.Index { return branches.startIndex(in: p) }
-    func endIndex(in p:Path) -> SubSequence.Index { return branches.endIndex(in: p) }
-    func index(after i:SubSequence.Index, in p:Path) -> SubSequence.Index {
-        return branches.index(after: i, in: p)
-    }
-    func index(before i:SubSequence.Index, in p:Path) -> SubSequence.Index {
-        return branches.index(before: i, in: p)
-    }
-    func index(_ i:SubSequence.Index, offsetBy d:Int, in p:Path) -> SubSequence.Index {
-        return branches.index(i, offsetBy: d, in: p)
-    }
-    func distance(from a:SubSequence.Index, to b:SubSequence.Index, in p:Path) -> Int {
-        return branches.distance(from: a, to: b, in: p)
-    }
+//    func startIndex(in p:Path) -> SubSequence.Index { return branches.startIndex(in: p) }
+//    func endIndex(in p:Path) -> SubSequence.Index { return branches.endIndex(in: p) }
+//    func index(after i:SubSequence.Index, in p:Path) -> SubSequence.Index {
+//        return branches.index(after: i, in: p)
+//    }
+//    func index(before i:SubSequence.Index, in p:Path) -> SubSequence.Index {
+//        return branches.index(before: i, in: p)
+//    }
+//    func index(_ i:SubSequence.Index, offsetBy d:Int, in p:Path) -> SubSequence.Index {
+//        return branches.index(i, offsetBy: d, in: p)
+//    }
+//    func distance(from a:SubSequence.Index, to b:SubSequence.Index, in p:Path) -> Int {
+//        return branches.distance(from: a, to: b, in: p)
+//    }
+
 //    // These lines causes compiler crash.
 //    // Therefore disabled.
 //    subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element {

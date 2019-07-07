@@ -18,6 +18,30 @@ public extension Tree {
     func count(in p:Path) -> Int {
         return distance(from: startIndex(in: p), to: endIndex(in: p), in: p)
     }
+    func startIndex(in p:Path) -> SubSequence.Index {
+        return sequence(in: p).startIndex
+    }
+    func endIndex(in p:Path) -> SubSequence.Index {
+        return sequence(in: p).endIndex
+    }
+    func index(after i:SubSequence.Index, in p:Path) -> SubSequence.Index {
+        return sequence(in: p).index(after: i)
+    }
+    func index(before i:SubSequence.Index, in p:Path) -> SubSequence.Index {
+        return sequence(in: p).index(before: i)
+    }
+    func index(_ i:SubSequence.Index, offsetBy d:Int, in p:Path) -> SubSequence.Index {
+        return sequence(in: p).index(i, offsetBy: d)
+    }
+    func distance(from a:SubSequence.Index, to b:SubSequence.Index, in p:Path) -> Int {
+        return sequence(in: p).distance(from: a, to: b)
+    }
+    subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element {
+        return sequence(in: p)[i]
+    }
+    func subsequence(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence.SubSequence {
+        return sequence(in: p)[r]
+    }
 }
 public extension RangeReplaceableTree {
     mutating func insert<C>(contentsOf es:C, at i:SubSequence.Index, in p:Path) where C:Collection, C.Element == SubSequence.Element {
