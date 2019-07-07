@@ -13,18 +13,19 @@ public extension Tree {
         return LazyTree<Self>(base: self)
     }
 }
-
-public struct LazyTree<Base> {
+public struct LazyTree<Base> where Base: Tree {
     let base: Base
-    public func map<X>(_ mfx: @escaping (Base.SubSequence.Element) -> X) -> LazyMapTree<Base,X> {
-        return LazyMapTree<Base,X>(base: base, map: mfx)
-    }
 }
 
-public struct LazyMapTree<Base,X>: Tree where
-Base: Tree {
+// MARK: Map
+public extension LazyTree {
+    func map<X>(_ transform: @escaping (Base.SubSequence.Element) -> X) -> LazyMapTree<Base,X> {
+        return LazyMapTree<Base,X>(base: base, transform: transform)
+    }
+}
+public struct LazyMapTree<Base,X>: Tree where Base: Tree {
     let base: Base
-    let map: (Base.SubSequence.Element) -> X
+    let transform: (Base.SubSequence.Element) -> X
     public var path: Base.Path {
         return base.path
     }
@@ -32,6 +33,26 @@ Base: Tree {
         return base.path(at: i, in: p)
     }
     public func sequence(in p:Base.Path) -> LazyMapCollection<Base.SubSequence,X> {
-        return base.sequence(in: p).lazy.map(map)
+        return base.sequence(in: p).lazy.map(transform)
     }
 }
+
+//// MARK: Filter
+//public extension LazyTree {
+//    func filter(_ isIncluded: @escaping (Base.SubSequence.Element) -> Bool) -> LazyFilterTree<Base> {
+//        return LazyFilterTree<Base>(base: base, isIncluded: isIncluded)
+//    }
+//}
+//public struct LazyFilterTree<Base>: Tree where Base: Tree {
+//    let base: Base
+//    let isIncluded: (Base.SubSequence.Element) -> Bool
+//    public var path: Base.Path {
+//        return base.path
+//    }
+//    public func path(at i:Base.SubSequence.Index, in p:Base.Path) -> Base.Path {
+//        return base.path(at: i, in: p)
+//    }
+//    public func sequence(in p:Base.Path) -> LazyFilterCollection<Base.SubSequence> {
+//        return base.sequence(in: p).lazy.filter(isIncluded)
+//    }
+//}
