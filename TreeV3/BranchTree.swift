@@ -17,7 +17,8 @@ public protocol BranchTree: Tree where Element == Branches.Element.Value {
     associatedtype Branches: RandomAccessCollection where
         Branches.Index == Path.Element,
         Branches.Element: Branch,
-        Branches.Element.Branches.Index == Path.Element
+        Branches.Element.Branches.Index == Path.Element,
+        Branches.Element.Branches.SubSequence == Branches.SubSequence
 }
 public protocol MutableBranchTree:
 BranchTree,

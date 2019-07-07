@@ -14,6 +14,7 @@
 		450FABBE22D1C0590026CF7A /* BranchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB722D1C0580026CF7A /* BranchTree.swift */; };
 		450FABBF22D1C0590026CF7A /* BranchTree.default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB822D1C0580026CF7A /* BranchTree.default.swift */; };
 		450FABC022D1C0590026CF7A /* Tree.default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB922D1C0580026CF7A /* Tree.default.swift */; };
+		45E9A61422D1CB8E00FE2AA5 /* BranchTreeSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A61322D1CB8E00FE2AA5 /* BranchTreeSlice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		450FABB722D1C0580026CF7A /* BranchTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchTree.swift; sourceTree = "<group>"; };
 		450FABB822D1C0580026CF7A /* BranchTree.default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchTree.default.swift; sourceTree = "<group>"; };
 		450FABB922D1C0580026CF7A /* Tree.default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.default.swift; sourceTree = "<group>"; };
+		45E9A61322D1CB8E00FE2AA5 /* BranchTreeSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchTreeSlice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				450FABB922D1C0580026CF7A /* Tree.default.swift */,
 				450FABB722D1C0580026CF7A /* BranchTree.swift */,
 				450FABB822D1C0580026CF7A /* BranchTree.default.swift */,
+				45E9A61322D1CB8E00FE2AA5 /* BranchTreeSlice.swift */,
 				450FABB622D1C0580026CF7A /* ArrayBranchTree.swift */,
 			);
 			path = TreeV3;
@@ -144,6 +147,7 @@
 				450FABBB22D1C0590026CF7A /* Tree.swift in Sources */,
 				450FABBE22D1C0590026CF7A /* BranchTree.swift in Sources */,
 				450FABBD22D1C0590026CF7A /* ArrayBranchTree.swift in Sources */,
+				45E9A61422D1CB8E00FE2AA5 /* BranchTreeSlice.swift in Sources */,
 				450FABBF22D1C0590026CF7A /* BranchTree.default.swift in Sources */,
 				450FABBC22D1C0590026CF7A /* Branch.swift in Sources */,
 				450FABBA22D1C0590026CF7A /* Branch.default.swift in Sources */,
