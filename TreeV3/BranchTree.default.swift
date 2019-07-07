@@ -23,11 +23,11 @@ public extension BranchTree {
     func distance(from a:SubSequence.Index, to b:SubSequence.Index, in p:Path) -> Int {
         return branches.distance(from: a, to: b, in: p)
     }
-    // These lines causes compiler crash.
-    // Therefore disabled.
-    subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element {
-        get { return branches[i, in: p].value }
-    }
+//    // These lines causes compiler crash.
+//    // Therefore disabled.
+//    subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element {
+//        get { return branches[i, in: p].value }
+//    }
     
     var path: Path { return [] }
     func path(at i:SubSequence.Index, in p:Path) -> Path {
@@ -41,7 +41,7 @@ public extension BranchTree {
     }
 }
 public extension BranchTree where Self: MutableBranchTree & RangeReplaceableBranchTree {
-//    subscript(_ i:SubSequence.Index, in p:Path) -> Element {
+//    subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element {
 //        get { return branches[i, in: p].value }
 //        set(x) { branches[i, in: p].value = x }
 //    }

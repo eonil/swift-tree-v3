@@ -21,10 +21,11 @@
 ///     want to vut down tree navigational look-up cost.
 ///
 public protocol Tree {
-    /// This type definition is only necessary to prevent compiler crash.
-    /// Remove this if compiler gets stabilized.
-    associatedtype Element
-    associatedtype SubSequence: Collection where SubSequence.Element == Element
+//    /// This type definition is only necessary to prevent compiler crash.
+//    /// Remove this if compiler gets stabilized.
+//    associatedtype Element
+//    associatedtype SubSequence: Collection where SubSequence.Element == Element
+    associatedtype SubSequence: Collection
     associatedtype Path
 
     func startIndex(in p:Path) -> SubSequence.Index
