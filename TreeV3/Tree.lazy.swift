@@ -39,7 +39,8 @@ public struct LazyMapTree<Base,X>: Tree where Base: Tree {
 
 //// MARK: Filter
 //public extension LazyTree {
-//    func filter(_ isIncluded: @escaping (Base.SubSequence.Element) -> Bool) -> LazyFilterTree<Base> {
+//    /// This is lazy per-node filtering keeping topology.
+//    func topologyKeepingPerNodeFilter(_ isIncluded: @escaping (Base.SubSequence.Element) -> Bool) -> LazyFilterTree<Base> {
 //        return LazyFilterTree<Base>(base: base, isIncluded: isIncluded)
 //    }
 //}

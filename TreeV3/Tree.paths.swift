@@ -35,11 +35,15 @@ public extension Tree {
 
 public struct TreePaths<Base> where Base: Tree {
     let base: Base
-    public var dfs: TreePathDFSSequence<Base> {
+}
+
+
+// MARK: DFS
+public extension TreePaths {
+    var dfs: TreePathDFSSequence<Base> {
         return TreePathDFSSequence<Base>(base: base)
     }
 }
-
 public struct TreePathDFSSequence<Base>: Sequence where Base: Tree {
     let base: Base
     public func makeIterator() -> TreePathDFSIterator<Base> {

@@ -191,4 +191,31 @@ class TreeV3Test: XCTestCase {
             []                              // children of [3,0,0,0]
             ])
     }
+    func testFilter() {
+        var a = ArrayBranchTree<Int>()
+        a.append(111, in: [])
+        a.insert(333, at: 1, in: [])
+        a.insert(222, at: 1, in: [])
+        a.append(222_111, in: [1])
+        a.append(contentsOf: [222_222, 222_333], in: [1])
+        a.append(999, in: [])
+        a.append(999_999, in: [3])
+        a.append(999_999_999, in: [3,0])
+        a.append(999_999_999_999, in: [3,0,0])
+        let b = a.filter({ $0 % 2 == 0 })
+        XCTAssertEqual(Array(b.paths.dfs), [
+            [],
+            [0],
+            [0,0],
+            ])
+        func findSequence(at p:IndexPath) -> [Int] {
+            let s = b.sequence(in: p)
+            return Array(s)
+        }
+        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
+            [222],                          // children of []
+            [222_222],                      // children of [0]
+            [],                             // children of [0,0]
+            ])
+    }
 }

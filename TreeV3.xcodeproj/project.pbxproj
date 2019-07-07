@@ -22,6 +22,7 @@
 		45E9A62922D1E3BD00FE2AA5 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62822D1E3BD00FE2AA5 /* Path.swift */; };
 		45E9A62E22D1FFB600FE2AA5 /* Tree.map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62D22D1FFB600FE2AA5 /* Tree.map.swift */; };
 		45E9A63022D2068300FE2AA5 /* Tree.lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62F22D2068300FE2AA5 /* Tree.lazy.swift */; };
+		45E9A63222D20F2600FE2AA5 /* Tree.filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A63122D20F2600FE2AA5 /* Tree.filter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		45E9A62C22D1FD1800FE2AA5 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		45E9A62D22D1FFB600FE2AA5 /* Tree.map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.map.swift; sourceTree = "<group>"; };
 		45E9A62F22D2068300FE2AA5 /* Tree.lazy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.lazy.swift; sourceTree = "<group>"; };
+		45E9A63122D20F2600FE2AA5 /* Tree.filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.filter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				450FABB922D1C0580026CF7A /* Tree.default.swift */,
 				45E9A62422D1DCA200FE2AA5 /* Tree.paths.swift */,
 				45E9A62D22D1FFB600FE2AA5 /* Tree.map.swift */,
+				45E9A63122D20F2600FE2AA5 /* Tree.filter.swift */,
 				45E9A62F22D2068300FE2AA5 /* Tree.lazy.swift */,
 				45E9A62822D1E3BD00FE2AA5 /* Path.swift */,
 				450FABB722D1C0580026CF7A /* BranchTree.swift */,
@@ -239,6 +242,7 @@
 				45E9A63022D2068300FE2AA5 /* Tree.lazy.swift in Sources */,
 				450FABBF22D1C0590026CF7A /* BranchTree.default.swift in Sources */,
 				450FABBC22D1C0590026CF7A /* Branch.swift in Sources */,
+				45E9A63222D20F2600FE2AA5 /* Tree.filter.swift in Sources */,
 				450FABBA22D1C0590026CF7A /* Branch.default.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
