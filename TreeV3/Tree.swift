@@ -39,7 +39,7 @@ public protocol Tree {
 //    /// Remove this if compiler gets stabilized.
 //    associatedtype Element
 //    associatedtype SubSequence: Collection where SubSequence.Element == Element
-    associatedtype SubSequence: RandomAccessCollection
+    associatedtype SubSequence: Collection
     associatedtype Path
 
 //    func startIndex(in p:Path) -> SubSequence.Index
