@@ -9,11 +9,10 @@
 import Foundation
 
 public struct BranchTreeSlice<Base>: RandomAccessCollection where
-Base: RandomAccessCollection,
-Base.Element: Branch {
-    let base: Base
-    public typealias Index = Base.Index
-    public typealias Element = Base.Element.Value
+Base: Branch {
+    let base: Base.Branches.SubSequence
+    public typealias Index = Base.Branches.SubSequence.Index
+    public typealias Element = Base.Branches.SubSequence.Element.Value
     public var startIndex: Index { return base.startIndex }
     public var endIndex: Index { return base.endIndex }
     public func index(after i: Index) -> Index { return base.index(after: i) }

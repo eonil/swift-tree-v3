@@ -29,6 +29,9 @@ public extension BranchTree {
 //    func subsequence(_ r: Range<Path.Element>, in p: Path) -> SubSequence {
 //        return
 //    }
+    func subsequence(_ r:Range<Path.Element>, in p:Path) -> BranchTreeSlice<Branches.Element> {
+        return BranchTreeSlice<Branches.Element>(base: branches[r, in: p])
+    }
 }
 public extension BranchTree where Self: MutableBranchTree & RangeReplaceableBranchTree {
     subscript(_ i:Path.Element, in p:Path) -> Element {

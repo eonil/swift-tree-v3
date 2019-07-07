@@ -31,10 +31,6 @@ ExpressibleByArrayLiteral {
     public init<C>(branches bs:C) where C:Collection, C.Element == ArrayBranch<Element> {
         branches = Array(bs)
     }
-//    public func subsequence(_ r: Range<Int>, in p: IndexPath) -> BranchTreeSlice<ArrayBranchTree<Element>> {
-//        let x = branches[r, in: p]
-//        return BranchTreeSlice(sequence: x)
-//    }
 }
 public struct ArrayBranch<Element>: Branch, MutableBranch, RangeReplaceableBranch {
     public var value: Element

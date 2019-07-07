@@ -12,7 +12,9 @@ import Foundation
 ///
 /// `BranchTree` is random-accessible by default.
 ///
-public protocol BranchTree: Tree where Element == Branches.Element.Value {
+public protocol BranchTree: Tree where
+Element == Branches.Element.Value,
+SubSequence == BranchTreeSlice<Branches.Element> {
     var branches: Branches { get }
     associatedtype Branches: RandomAccessCollection where
         Branches.Index == Path.Element,
