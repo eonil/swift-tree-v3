@@ -26,6 +26,10 @@
 		45E9A63422D21CEF00FE2AA5 /* Tree.sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A63322D21CEF00FE2AA5 /* Tree.sort.swift */; };
 		45F7252C22D222430056187D /* Tree.branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7252B22D222430056187D /* Tree.branch.swift */; };
 		45F7252E22D22C9A0056187D /* Tree.convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7252D22D22C9A0056187D /* Tree.convert.swift */; };
+		45F7253022D22FBF0056187D /* AnyTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7252F22D22FBF0056187D /* AnyTree.swift */; };
+		45F7253222D2407F0056187D /* ArrayBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7253122D2407F0056187D /* ArrayBranch.swift */; };
+		45F7253422D242360056187D /* Tree.dfs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7253322D242360056187D /* Tree.dfs.swift */; };
+		45F7253822D244520056187D /* Subtree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7253722D244520056187D /* Subtree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		45E9A63322D21CEF00FE2AA5 /* Tree.sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.sort.swift; sourceTree = "<group>"; };
 		45F7252B22D222430056187D /* Tree.branch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.branch.swift; sourceTree = "<group>"; };
 		45F7252D22D22C9A0056187D /* Tree.convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.convert.swift; sourceTree = "<group>"; };
+		45F7252F22D22FBF0056187D /* AnyTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTree.swift; sourceTree = "<group>"; };
+		45F7253122D2407F0056187D /* ArrayBranch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayBranch.swift; sourceTree = "<group>"; };
+		45F7253322D242360056187D /* Tree.dfs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.dfs.swift; sourceTree = "<group>"; };
+		45F7253722D244520056187D /* Subtree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,17 +118,21 @@
 				450FABB422D1C0580026CF7A /* Tree.swift */,
 				450FABB922D1C0580026CF7A /* Tree.default.swift */,
 				45F7252B22D222430056187D /* Tree.branch.swift */,
+				45F7253322D242360056187D /* Tree.dfs.swift */,
 				45E9A62422D1DCA200FE2AA5 /* Tree.paths.swift */,
 				45E9A62D22D1FFB600FE2AA5 /* Tree.map.swift */,
 				45E9A63122D20F2600FE2AA5 /* Tree.filter.swift */,
 				45E9A63322D21CEF00FE2AA5 /* Tree.sort.swift */,
 				45E9A62F22D2068300FE2AA5 /* Tree.lazy.swift */,
 				45F7252D22D22C9A0056187D /* Tree.convert.swift */,
+				45F7253722D244520056187D /* Subtree.swift */,
 				45E9A62822D1E3BD00FE2AA5 /* Path.swift */,
 				450FABB722D1C0580026CF7A /* BranchTree.swift */,
 				450FABB822D1C0580026CF7A /* BranchTree.default.swift */,
 				45E9A61322D1CB8E00FE2AA5 /* BranchTreeSlice.swift */,
 				450FABB622D1C0580026CF7A /* ArrayBranchTree.swift */,
+				45F7253122D2407F0056187D /* ArrayBranch.swift */,
+				45F7252F22D22FBF0056187D /* AnyTree.swift */,
 			);
 			path = TreeV3;
 			sourceTree = "<group>";
@@ -239,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F7253422D242360056187D /* Tree.dfs.swift in Sources */,
 				450FABC022D1C0590026CF7A /* Tree.default.swift in Sources */,
 				45E9A62E22D1FFB600FE2AA5 /* Tree.map.swift in Sources */,
 				45E9A63422D21CEF00FE2AA5 /* Tree.sort.swift in Sources */,
@@ -251,11 +264,14 @@
 				45E9A61422D1CB8E00FE2AA5 /* BranchTreeSlice.swift in Sources */,
 				45E9A62722D1DDBE00FE2AA5 /* Branch.dfs.swift in Sources */,
 				45E9A63022D2068300FE2AA5 /* Tree.lazy.swift in Sources */,
+				45F7253022D22FBF0056187D /* AnyTree.swift in Sources */,
 				450FABBF22D1C0590026CF7A /* BranchTree.default.swift in Sources */,
 				450FABBC22D1C0590026CF7A /* Branch.swift in Sources */,
 				45E9A63222D20F2600FE2AA5 /* Tree.filter.swift in Sources */,
 				45F7252E22D22C9A0056187D /* Tree.convert.swift in Sources */,
 				450FABBA22D1C0590026CF7A /* Branch.default.swift in Sources */,
+				45F7253822D244520056187D /* Subtree.swift in Sources */,
+				45F7253222D2407F0056187D /* ArrayBranch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

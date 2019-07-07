@@ -36,11 +36,3 @@ ExpressibleByArrayLiteral {
         set(x) { branches[i, in: p].value = x }
     }
 }
-public struct ArrayBranch<Element>: Branch, MutableBranch, RangeReplaceableBranch {
-    public var value: Element
-    public var branches: [ArrayBranch]
-    public init(value v:Element, branches bs:[ArrayBranch] = []) {
-        value = v
-        branches = bs
-    }
-}

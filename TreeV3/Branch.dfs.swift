@@ -9,6 +9,7 @@
 import Foundation
 
 public extension Branch {
+    /// Iterates all branches in DFS order.
     var dfs: BranchDFSSequence<Self> {
         return BranchDFSSequence<Self>(base: self)
     }

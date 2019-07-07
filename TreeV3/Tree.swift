@@ -35,10 +35,6 @@
 /// and `RangeReplaceableTree` too.
 ///
 public protocol Tree {
-//    /// This type definition is only necessary to prevent compiler crash.
-//    /// Remove this if compiler gets stabilized.
-//    associatedtype Element
-//    associatedtype SubSequence: Collection where SubSequence.Element == Element
     associatedtype SubSequence: Collection
     associatedtype Path
 
