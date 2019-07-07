@@ -13,45 +13,57 @@ Element: Branch,
 Element.Branches.Index == Index,
 Element.Branches.SubSequence == SubSequence {
     func startIndex<P>(in p:P) -> Index where P:Collection, P.Element == Index {
-        switch p.count {
-        case 0:     return startIndex
-        default:    return self[p.first!].branches.startIndex(in: p.dropFirst())
+        switch p.isEmpty {
+        case true:  return startIndex
+        case false: return self[p.first!].branches.startIndex(in: p.dropFirst())
         }
     }
     func endIndex<P>(in p:P) -> Index where P:Collection, P.Element == Index {
-        switch p.count {
-        case 0:     return startIndex
-        default:    return self[p.first!].branches.endIndex(in: p.dropFirst())
+        switch p.isEmpty {
+        case true:  return endIndex
+        case false: return self[p.first!].branches.endIndex(in: p.dropFirst())
         }
     }
     func index<P>(after i:Index, in p:P) -> Index where P:Collection, P.Element == Index {
-        switch p.count {
-        case 0:     return index(after: i)
-        default:    return self[p.first!].branches.index(after: i)
+        switch p.isEmpty {
+        case true:  return index(after: i)
+        case false: return self[p.first!].branches.index(after: i)
         }
     }
     func index<P>(before i:Index, in p:P) -> Index where P:Collection, P.Element == Index {
-        switch p.count {
-        case 0:     return index(before: i)
-        default:    return self[p.first!].branches.index(before: i)
+        switch p.isEmpty {
+        case true:  return index(before: i)
+        case false: return self[p.first!].branches.index(before: i)
         }
     }
     func index<P>(_ i:Index, offsetBy d:Int, in p:P) -> Index where P:Collection, P.Element == Index {
-        switch p.count {
-        case 0:     return index(i, offsetBy: d)
-        default:    return self[p.first!].branches.index(i, offsetBy: d, in: p.dropFirst())
+        switch p.isEmpty {
+        case true:  return index(i, offsetBy: d)
+        case false: return self[p.first!].branches.index(i, offsetBy: d, in: p.dropFirst())
+        }
+    }
+    func distance<P>(from a: Index, to b: Index, in p:P) -> Int where P:Collection, P.Element == Index {
+        switch p.isEmpty {
+        case true:  return distance(from: a, to: b)
+        case false: return self[p.first!].branches.distance(from: a, to: b, in: p.dropFirst())
         }
     }
     subscript<P>(_ i:Index, in p:P) -> Element where P:Collection, P.Element == Index {
-        switch p.count {
-        case 0:     return self[i]
-        default:    return self[p.first!].branches[i, in: p.dropFirst()]
+        switch p.isEmpty {
+        case true:  return self[i]
+        case false: return self[p.first!].branches[i, in: p.dropFirst()]
         }
     }
     subscript<P>(_ r:Range<Index>, in p:P) -> SubSequence where P:Collection, P.Element == Index {
-        switch p.count {
-        case 0:     return self[r]
-        default:    return self[p.first!].branches[r, in: p.dropFirst()]
+        switch p.isEmpty {
+        case true:  return self[r]
+        case false: return self[p.first!].branches[r, in: p.dropFirst()]
+        }
+    }
+    func sequence<P>(in p:P) -> SubSequence where P:Collection, P.Element == Index {
+        switch p.isEmpty {
+        case true:  return self[startIndex...]
+        case false: return self[p.first!].branches.sequence(in: p.dropFirst())
         }
     }
 }

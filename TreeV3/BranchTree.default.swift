@@ -17,8 +17,11 @@ public extension BranchTree {
     func index(before i:Path.Element, in p:Path) -> Path.Element {
         return branches.index(before: i, in: p)
     }
-    func index(_ i: Path.Element, offsetBy d: Int, in p: Path) -> Path.Element {
+    func index(_ i:Path.Element, offsetBy d:Int, in p:Path) -> Path.Element {
         return branches.index(i, offsetBy: d, in: p)
+    }
+    func distance(from a:Path.Element, to b:Path.Element, in p:Path) -> Int {
+        return branches.distance(from: a, to: b, in: p)
     }
     subscript(_ i:Path.Element, in p:Path) -> Element {
         get { return branches[i, in: p].value }
@@ -29,6 +32,9 @@ public extension BranchTree {
 //    func subsequence(_ r: Range<Path.Element>, in p: Path) -> SubSequence {
 //        return
 //    }
+    func sequence(in p:Path) -> BranchTreeSlice<Branches.Element> {
+        return BranchTreeSlice(base: branches.sequence(in: p))
+    }
     func subsequence(_ r:Range<Path.Element>, in p:Path) -> BranchTreeSlice<Branches.Element> {
         return BranchTreeSlice<Branches.Element>(base: branches[r, in: p])
     }

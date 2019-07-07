@@ -8,6 +8,17 @@
 
 import Foundation
 
+public extension Tree {
+    func isEmpty(in p:Path) -> Bool {
+        let a = startIndex(in: p)
+        let b = endIndex(in: p)
+        assert(a <= b)
+        return a == b
+    }
+    func count(in p:Path) -> Int {
+        return distance(from: startIndex(in: p), to: endIndex(in: p), in: p)
+    }
+}
 public extension RangeReplaceableTree {
     mutating func insert<C>(contentsOf es:C, at i:Path.Element, in p:Path) where C:Collection, C.Element == Element {
         replaceSubrange(i..<i, with: es, in: p)
@@ -35,7 +46,6 @@ public extension RangeReplaceableTree {
         replaceSubrange(r, with: EmptyCollection(), in: p)
     }
 }
-
 
 
 
