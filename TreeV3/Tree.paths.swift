@@ -25,17 +25,17 @@ public struct TreePathDFSSequence<Base>: Sequence where Base: Tree {
     let base: Base
     public func makeIterator() -> TreePathDFSIterator<Base> {
         /// Root is a collection. Therefore, no value at root.
+        let s = base.sequence(in: base.path)
         let n = TreeNode<Base>(
             base: base,
-            location: [],
-            startIndex: base.startIndex(in: []),
-            endIndex: base.endIndex(in: []))
+            location: base.path,
+            sequence: s)
         return TreePathDFSIterator<Base>(base: base, reversedStack: Array(n.lazy.reversed()))
     }
 }
 
 public struct TreePathDFSIterator<Base>: IteratorProtocol where Base: Tree {
-    typealias Index = Base.Path.Element
+    typealias Index = Base.SubSequence.Index
     typealias Path = Base.Path
     let base: Base
     fileprivate private(set) var reversedStack = [TreeNode<Base>]()
@@ -50,18 +50,19 @@ public struct TreePathDFSIterator<Base>: IteratorProtocol where Base: Tree {
 private struct TreeNode<Base>: Collection where Base: Tree {
     let base: Base
     let location: Base.Path
-    let startIndex: Base.Path.Element
-    let endIndex: Base.Path.Element
-    func index(after i: Base.Path.Element) -> Base.Path.Element {
+    let sequence: Base.SubSequence
+    var startIndex: Base.SubSequence.Index { return sequence.startIndex }
+    var endIndex: Base.SubSequence.Index { return sequence.endIndex }
+    func index(after i: Base.SubSequence.Index) -> Base.SubSequence.Index {
         return base.index(after: i, in: location)
     }
-    subscript(_ i:Base.Path.Element) -> TreeNode {
-        let p = location.appending(i)
+    subscript(_ i:Base.SubSequence.Index) -> TreeNode {
+        let p = base.path(at: i, in: location)
+        let s = base.sequence(in: p)
         let n = TreeNode(
             base: base,
             location: p,
-            startIndex: base.startIndex(in: p),
-            endIndex: base.endIndex(in: p))
+            sequence: s)
         return n
     }
 }

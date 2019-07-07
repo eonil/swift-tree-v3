@@ -20,10 +20,10 @@ public extension Tree {
     }
 }
 public extension RangeReplaceableTree {
-    mutating func insert<C>(contentsOf es:C, at i:Path.Element, in p:Path) where C:Collection, C.Element == Element {
+    mutating func insert<C>(contentsOf es:C, at i:SubSequence.Index, in p:Path) where C:Collection, C.Element == Element {
         replaceSubrange(i..<i, with: es, in: p)
     }
-    mutating func insert(_ e:Element, at i:Path.Element, in p:Path) {
+    mutating func insert(_ e:Element, at i:SubSequence.Index, in p:Path) {
         replaceSubrange(i..<i, with: CollectionOfOne(e), in: p)
     }
     mutating func append<C>(contentsOf es:C, in p:Path) where C:Collection, C.Element == Element {
@@ -34,10 +34,10 @@ public extension RangeReplaceableTree {
         let i = endIndex(in: p)
         replaceSubrange(i..<i, with: CollectionOfOne(e), in: p)
     }
-    mutating func removeSubrange(_ r:Range<Path.Element>, in p:Path) {
+    mutating func removeSubrange(_ r:Range<SubSequence.Index>, in p:Path) {
         replaceSubrange(r, with: EmptyCollection(), in: p)
     }
-    mutating func remove(at i:Path.Element, in p:Path) {
+    mutating func remove(at i:SubSequence.Index, in p:Path) {
         let i1 = index(after: i, in: p)
         replaceSubrange(i..<i1, with: EmptyCollection(), in: p)
     }

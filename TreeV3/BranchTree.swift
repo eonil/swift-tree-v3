@@ -14,7 +14,8 @@ import Foundation
 ///
 public protocol BranchTree: Tree where
 Element == Branches.Element.Value,
-SubSequence == BranchTreeSlice<Branches.Element> {
+SubSequence == BranchTreeSlice<Branches.Element>,
+Path: TreeV3.Path {
     var branches: Branches { get }
     associatedtype Branches: RandomAccessCollection where
         Branches.Index == Path.Element,
