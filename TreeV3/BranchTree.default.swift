@@ -23,9 +23,9 @@ public extension BranchTree {
     func distance(from a:SubSequence.Index, to b:SubSequence.Index, in p:Path) -> Int {
         return branches.distance(from: a, to: b, in: p)
     }
-    subscript(_ i:SubSequence.Index, in p:Path) -> Element {
-        get { return branches[i, in: p].value }
-    }
+//    subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element {
+//        get { return branches[i, in: p].value }
+//    }
 //    subscript(_ r:Range<SubSequence.Index>, in p:Path) -> ArraySlice<Self> {
 //        get { return branches[r, in: p] }
 //    }

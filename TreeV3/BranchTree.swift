@@ -13,7 +13,7 @@ import Foundation
 /// `BranchTree` is random-accessible by default.
 ///
 public protocol BranchTree: Tree where
-Element == Branches.Element.Value,
+SubSequence.Element == Branches.Element.Value,
 SubSequence == BranchTreeSlice<Branches.Element>,
 Path: TreeV3.Path,
 Path.Element == SubSequence.Index {

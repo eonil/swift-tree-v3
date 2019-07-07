@@ -21,8 +21,8 @@
 ///     want to vut down tree navigational look-up cost.
 ///
 public protocol Tree {
-    associatedtype Element
-    associatedtype SubSequence: Collection where SubSequence.Element == Element
+    typealias Element = SubSequence.Element
+    associatedtype SubSequence: Collection
     associatedtype Path
 
     func startIndex(in p:Path) -> SubSequence.Index
