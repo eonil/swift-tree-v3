@@ -9,7 +9,7 @@ let package = Package(
     ],
     products: [
         /// Xcode 11 Beta has troubles with multiple product package...
-        .library(name: "TreeV3", type: .static, targets: ["TreeV3Core", "TreeV3Util", "PDTreeV3"]),
+        .library(name: "TreeV3", type: .static, targets: ["TreeV3"]),
 //        .library(name: "TreeV3", type: .static, targets: ["TreeV3Core", "TreeV3Util"]),
 //        .library(name: "PDTreeV3", type: .static, targets: ["TreeV3Core", "TreeV3Util", "PDTreeV3"]),
     ],
@@ -17,6 +17,10 @@ let package = Package(
         .package(url: "https://github.com/eonil/BTree", .branch("master")),
     ],
     targets: [
+        .target(
+            name: "TreeV3",
+            dependencies: [],
+            path: "TreeV3"),
         .target(
             name: "TreeV3Core",
             dependencies: [],
