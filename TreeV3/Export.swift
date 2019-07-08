@@ -25,5 +25,7 @@ public typealias MutableBranchTree              =   TreeV3Util.MutableBranchTree
 public typealias RangeReplaceableBranchTree     =   TreeV3Util.RangeReplaceableBranchTree
 
 public typealias ArrayBranchTree<Element>       =   TreeV3Util.ArrayBranchTree<Element>
+public typealias ArrayBranch<Element>           =   TreeV3Util.ArrayBranch<Element>
+
 public typealias AnyTree<Element>               =   TreeV3Util.AnyTree<Element>
 public typealias AnyRandomAccessTree<Element>   =   TreeV3Util.AnyRandomAccessTree<Element>
