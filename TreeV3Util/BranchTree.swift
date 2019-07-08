@@ -29,7 +29,8 @@ Path.Element == SubSequence.Index {
         Branches.Element.Branches.SubSequence == Branches.SubSequence
 }
 public protocol RandomAccessBranchTree:
-BranchTree where
+BranchTree,
+RandomAccessTree where
 Branches: RandomAccessCollection,
 Branches.Element: RandomAccessBranch {
 }
