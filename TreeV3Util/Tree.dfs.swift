@@ -25,8 +25,3 @@ public extension Tree where SubSequence: RandomAccessCollection {
     }
 }
 
-public struct TreeDFSSequence<Base> where Base: Tree {
-
-//    func indices:
-}
-

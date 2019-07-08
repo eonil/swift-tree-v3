@@ -34,7 +34,7 @@ public extension Tree {
     /// in DFS order. Also don't forget dropping first element
     /// in iteration which is `[]`, that doesn't have element.
     ///
-    var sequences: TreePaths<Self> {
+    var paths: TreePaths<Self> {
         return TreePaths<Self>(base: self)
     }
 }
@@ -44,9 +44,10 @@ public struct TreePaths<Base> where Base: Tree {
 }
 
 
+
 // MARK: DFS
 public extension TreePaths {
-    var paths: AnySequence<Base.Path> {
+    var dfs: AnySequence<Base.Path> {
         let s = TreePathDFSSequence(base: base)
         return AnySequence(s)
     }

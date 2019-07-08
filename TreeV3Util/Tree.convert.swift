@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Tree where Self: MutableTree & RangeReplaceableTree {
+public extension Tree where Self: MutableTree & RangeReplaceableTree {
     init<X>(converting x:X) where
     X:Tree,
     X.SubSequence.Element == SubSequence.Element {

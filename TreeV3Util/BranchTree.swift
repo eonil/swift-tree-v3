@@ -19,7 +19,7 @@ import Foundation
 public protocol BranchTree: Tree where
 //SubSequence.Element == Branches.Element.Value,
 SubSequence == BranchTreeSlice<Branches.Element>,
-Path: TreeV3.Path,
+Path: TreeV3Util.BranchPath,
 Path.Element == SubSequence.Index {
     var branches: Branches { get }
     associatedtype Branches: Collection where

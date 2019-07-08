@@ -15,8 +15,16 @@ let package = Package(
     targets: [
         .target(
             name: "TreeV3",
-            dependencies: [],
+            dependencies: ["TreeV3Core", "TreeV3Util"],
             path: "TreeV3"),
+        .target(
+            name: "TreeV3Core",
+            dependencies: [],
+            path: "TreeV3Core"),
+        .target(
+            name: "TreeV3Util",
+            dependencies: ["TreeV3Core"],
+            path: "TreeV3Util"),
         .testTarget(
             name: "TreeV3Test",
             dependencies: ["TreeV3"],

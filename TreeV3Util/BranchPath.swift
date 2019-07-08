@@ -8,15 +8,15 @@
 
 import Foundation
 
-public protocol Path: BidirectionalCollection, ExpressibleByArrayLiteral where
+public protocol BranchPath: BidirectionalCollection, ExpressibleByArrayLiteral where
 Index == Int,
 Element: Comparable,
 SubSequence == Self {
     func appending(_ e:Element) -> Self
 }
 
-extension IndexPath: Path {}
-extension ArraySlice: Path where Element: Comparable {
+extension IndexPath: BranchPath {}
+extension ArraySlice: BranchPath where Element: Comparable {
     public func appending(_ e: Element) -> ArraySlice<Element> {
         var a = self
         a.append(e)

@@ -9,9 +9,11 @@
 import Foundation
 
 public extension Tree {
-    /// A default read-only view of tree in more object-oriented way.
-    ///
-    /// This effectively makes `Tree` to be compatible with `BranchTree`.
+    /// Gets arbitrary branch in this tree.
+    func branch(at i:SubSequence.Index, in p:Path) -> Subtree<Self> {
+        return Subtree(base: self, location: p, index: i)
+    }
+    /// Gets top-level branches of ths tree.
     var branches: Subtree<Self>.Branches {
         let p = path
         let s = sequence(in: p)
@@ -21,6 +23,8 @@ public extension Tree {
 
 /// A default implementation of element in `Tree.branches`.
 /// This let you navigate `Tree` in more object-oriented interface.
+/// - Note:
+///     Consider renaming to `Node`.
 public struct Subtree<Base>: Branch where Base: Tree {
     let base: Base
     let location: Base.Path

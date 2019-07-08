@@ -12,7 +12,7 @@ public extension Tree {
     func map<X>(_ mfx: (SubSequence.Element) -> X) -> ArrayBranchTree<X> where
     Path == ArrayBranchTree<X>.Path {
         var a = ArrayBranchTree<X>()
-        for p in sequences.paths {
+        for p in paths.dfs {
             let s = sequence(in: p).lazy.map(mfx)
             a.append(contentsOf: s, in: p)
         }
