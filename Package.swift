@@ -26,8 +26,8 @@ let package = Package(
             dependencies: ["TreeV3Core"],
             path: "TreeV3Util"),
         .testTarget(
-            name: "TreeV3Test",
-            dependencies: ["TreeV3"],
-            path: "TreeV3Test"),
+            name: "TreeV3UtilTest",
+            dependencies: ["TreeV3Util"],
+            path: "TreeV3UtilTest"),
     ]
 )

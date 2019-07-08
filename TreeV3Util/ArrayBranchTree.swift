@@ -9,6 +9,7 @@
 import Foundation
 
 public struct ArrayBranchTree<Element>:
+Sequence,
 BranchTree,
 RandomAccessBranchTree,
 MutableBranchTree,
@@ -41,5 +42,8 @@ ExpressibleByArrayLiteral {
     public subscript(_ i:Int, in p:IndexPath) -> Element {
         get { return branches[i, in: p].value }
         set(x) { branches[i, in: p].value = x }
+    }
+    public func makeIterator() -> AnyIterator<Element> {
+        return dfs.makeIterator()
     }
 }

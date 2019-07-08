@@ -34,6 +34,9 @@
 		45F725C022D2FA330056187D /* ArrayBranchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB622D1C0580026CF7A /* ArrayBranchTree.swift */; };
 		45F725C122D2FA330056187D /* ArrayBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7253122D2407F0056187D /* ArrayBranch.swift */; };
 		45F725C222D2FA330056187D /* AnyTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7252F22D22FBF0056187D /* AnyTree.swift */; };
+		45F725E722D323E80056187D /* TreeV3UtilTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F725E622D323E80056187D /* TreeV3UtilTest.swift */; };
+		45F725F322D323FC0056187D /* libTreeV3Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F7254E22D2F5A10056187D /* libTreeV3Core.a */; };
+		45F725F422D323FC0056187D /* libTreeV3Util.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F7258F22D2F98C0056187D /* libTreeV3Util.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,20 @@
 			remoteGlobalIDString = 45F7258E22D2F98C0056187D;
 			remoteInfo = TreeV3Util;
 		};
+		45F725EF22D323F00056187D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45F7254D22D2F5A10056187D;
+			remoteInfo = TreeV3Core;
+		};
+		45F725F122D323F00056187D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45F7258E22D2F98C0056187D;
+			remoteInfo = TreeV3Util;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +130,9 @@
 		45F7258922D2F8CA0056187D /* Export.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Export.swift; sourceTree = "<group>"; };
 		45F7258F22D2F98C0056187D /* libTreeV3Util.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTreeV3Util.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F725C522D2FBAA0056187D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		45F725E422D323E80056187D /* TreeV3UtilTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreeV3UtilTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45F725E622D323E80056187D /* TreeV3UtilTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeV3UtilTest.swift; sourceTree = "<group>"; };
+		45F725E822D323E80056187D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +167,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45F725E122D323E80056187D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45F725F322D323FC0056187D /* libTreeV3Core.a in Frameworks */,
+				45F725F422D323FC0056187D /* libTreeV3Util.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -159,6 +188,7 @@
 				45E9A61A22D1D8DD00FE2AA5 /* TreeV3Test */,
 				45F7254F22D2F5A10056187D /* TreeV3Core */,
 				45F7259022D2F98C0056187D /* TreeV3Util */,
+				45F725E522D323E80056187D /* TreeV3UtilTest */,
 				450FABA822D1C02D0026CF7A /* Products */,
 				45F7256422D2F5B40056187D /* Frameworks */,
 			);
@@ -171,6 +201,7 @@
 				45E9A61922D1D8DD00FE2AA5 /* TreeV3Test.xctest */,
 				45F7254E22D2F5A10056187D /* libTreeV3Core.a */,
 				45F7258F22D2F98C0056187D /* libTreeV3Util.a */,
+				45F725E422D323E80056187D /* TreeV3UtilTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +264,15 @@
 				45F7252F22D22FBF0056187D /* AnyTree.swift */,
 			);
 			path = TreeV3Util;
+			sourceTree = "<group>";
+		};
+		45F725E522D323E80056187D /* TreeV3UtilTest */ = {
+			isa = PBXGroup;
+			children = (
+				45F725E622D323E80056187D /* TreeV3UtilTest.swift */,
+				45F725E822D323E80056187D /* Info.plist */,
+			);
+			path = TreeV3UtilTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +378,25 @@
 			productReference = 45F7258F22D2F98C0056187D /* libTreeV3Util.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		45F725E322D323E80056187D /* TreeV3UtilTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45F725EE22D323E80056187D /* Build configuration list for PBXNativeTarget "TreeV3UtilTest" */;
+			buildPhases = (
+				45F725E022D323E80056187D /* Sources */,
+				45F725E122D323E80056187D /* Frameworks */,
+				45F725E222D323E80056187D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45F725F022D323F00056187D /* PBXTargetDependency */,
+				45F725F222D323F00056187D /* PBXTargetDependency */,
+			);
+			name = TreeV3UtilTest;
+			productName = TreeV3UtilTest;
+			productReference = 45F725E422D323E80056187D /* TreeV3UtilTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -361,6 +420,9 @@
 					45F7258E22D2F98C0056187D = {
 						CreatedOnToolsVersion = 11.0;
 					};
+					45F725E322D323E80056187D = {
+						CreatedOnToolsVersion = 11.0;
+					};
 				};
 			};
 			buildConfigurationList = 450FABA222D1C02D0026CF7A /* Build configuration list for PBXProject "TreeV3" */;
@@ -382,12 +444,20 @@
 				45E9A61822D1D8DD00FE2AA5 /* TreeV3Test */,
 				45F7254D22D2F5A10056187D /* TreeV3Core */,
 				45F7258E22D2F98C0056187D /* TreeV3Util */,
+				45F725E322D323E80056187D /* TreeV3UtilTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		45E9A61722D1D8DD00FE2AA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45F725E222D323E80056187D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -449,6 +519,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45F725E022D323E80056187D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45F725E722D323E80056187D /* TreeV3UtilTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -481,6 +559,16 @@
 			isa = PBXTargetDependency;
 			target = 45F7258E22D2F98C0056187D /* TreeV3Util */;
 			targetProxy = 45F725DE22D31EB00056187D /* PBXContainerItemProxy */;
+		};
+		45F725F022D323F00056187D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45F7254D22D2F5A10056187D /* TreeV3Core */;
+			targetProxy = 45F725EF22D323F00056187D /* PBXContainerItemProxy */;
+		};
+		45F725F222D323F00056187D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45F7258E22D2F98C0056187D /* TreeV3Util */;
+			targetProxy = 45F725F122D323F00056187D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -707,6 +795,44 @@
 			};
 			name = Release;
 		};
+		45F725EC22D323E80056187D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TreeV3UtilTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Eonil.TreeV3UtilTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		45F725ED22D323E80056187D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TreeV3UtilTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Eonil.TreeV3UtilTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -751,6 +877,15 @@
 			buildConfigurations = (
 				45F7259622D2F98C0056187D /* Debug */,
 				45F7259722D2F98C0056187D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45F725EE22D323E80056187D /* Build configuration list for PBXNativeTarget "TreeV3UtilTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45F725EC22D323E80056187D /* Debug */,
+				45F725ED22D323E80056187D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
