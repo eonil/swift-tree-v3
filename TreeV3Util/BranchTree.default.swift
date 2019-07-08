@@ -35,3 +35,18 @@ public extension BranchTree where Self: MutableBranchTree & RangeReplaceableBran
         branches.replaceSubrange(r, with: es.map({ Branches.Element(value: $0, branches: x) }), in: p)
     }
 }
+
+
+/// If a tree is built with pointer-based composition of `Branch`es (e.g. `ArrayBranchTree`),
+/// it'a natural to have `Path`s consist of `SubSequence.Index`.
+/// If the tree conforms `Collection`, it's also natural to use the `Path` as its `Index`.
+/// In that case, more default implementations can be provided.
+extension BranchTree where
+Self: Collection,
+Path.Element == SubSequence.Index,
+Index == Path,
+Element == SubSequence.Element {
+//    public subscript(_ i:Path) -> Element {
+//        <#code#>
+//    }
+}

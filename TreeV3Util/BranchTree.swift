@@ -16,6 +16,10 @@ import Foundation
 /// concrete type named `-BranchTree`, it implies
 /// providing direct mutable access to its branches.
 ///
+/// - Note:
+///     As `Tree` provides default `branches` implementation,
+///     just denoting `: BranchTree` makes any `Tree`
+///     to conform `BranchTree` automatically.
 public protocol BranchTree: Tree where
 //SubSequence.Element == Branches.Element.Value,
 SubSequence == BranchTreeSlice<Branches.Element>,
@@ -47,4 +51,3 @@ Branches: RangeReplaceableCollection,
 Branches.Element: RangeReplaceableBranch {
     var branches: Branches { get set }
 }
-
