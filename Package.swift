@@ -8,19 +8,13 @@ let package = Package(
         .macOS(.v10_11),
     ],
     products: [
-        .library(name: "TreeV3", type: .static, targets: ["TreeV3"]),
-        .library(name: "PDTreeV3", type: .static, targets: ["PDTreeV3"]),
+        .library(name: "TreeV3", type: .static, targets: ["TreeV3Core", "TreeV3Util"]),
+        .library(name: "PDTreeV3", type: .static, targets: ["TreeV3Core", "TreeV3Util", "PDTreeV3"]),
     ],
     dependencies: [
         .package(url: "https://github.com/eonil/BTree", .branch("master")),
-
     ],
     targets: [
-        .target(
-            name: "TreeV3",
-            dependencies: ["TreeV3Core", "TreeV3Util"],
-            path: "TreeV3"),
-
         .target(
             name: "TreeV3Core",
             dependencies: [],
@@ -36,7 +30,11 @@ let package = Package(
 
         .target(
             name: "PDTreeV3",
-            dependencies: ["TreeV3Core","TreeV3Util","BTree"],
+            dependencies: [
+                "TreeV3Core",
+                "TreeV3Util",
+                .product(name: "BTree"),
+            ],
             path: "PDTreeV3"),
         .testTarget(
             name: "PDTreeV3Test",
