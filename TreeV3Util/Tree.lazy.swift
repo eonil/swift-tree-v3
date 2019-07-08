@@ -39,6 +39,7 @@ public struct LazyMapTree<Base,X>: Tree where Base: Tree {
         return base.contents(in: p)[r].lazy.map(transform)
     }
 }
+extension LazyMapTree: RandomAccessTree where Base: RandomAccessTree {}
 
 //// MARK: Filter
 //public extension LazyTree {
