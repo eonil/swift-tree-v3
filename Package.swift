@@ -8,8 +8,10 @@ let package = Package(
         .macOS(.v10_11),
     ],
     products: [
-        .library(name: "TreeV3", type: .static, targets: ["TreeV3Core", "TreeV3Util"]),
-        .library(name: "PDTreeV3", type: .static, targets: ["TreeV3Core", "TreeV3Util", "PDTreeV3"]),
+        /// Xcode 11 Beta has troubles with multiple product package...
+        .library(name: "TreeV3", type: .static, targets: ["TreeV3Core", "TreeV3Util", "PDTreeV3"]),
+//        .library(name: "TreeV3", type: .static, targets: ["TreeV3Core", "TreeV3Util"]),
+//        .library(name: "PDTreeV3", type: .static, targets: ["TreeV3Core", "TreeV3Util", "PDTreeV3"]),
     ],
     dependencies: [
         .package(url: "https://github.com/eonil/BTree", .branch("master")),
