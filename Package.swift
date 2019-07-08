@@ -9,14 +9,18 @@ let package = Package(
     ],
     products: [
         .library(name: "TreeV3", type: .static, targets: ["TreeV3"]),
+        .library(name: "PDTreeV3", type: .static, targets: ["PDTreeV3"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/eonil/BTree", .branch("master")),
+
     ],
     targets: [
         .target(
             name: "TreeV3",
             dependencies: ["TreeV3Core", "TreeV3Util"],
             path: "TreeV3"),
+
         .target(
             name: "TreeV3Core",
             dependencies: [],
@@ -29,5 +33,15 @@ let package = Package(
             name: "TreeV3UtilTest",
             dependencies: ["TreeV3Util"],
             path: "TreeV3UtilTest"),
+
+        .target(
+            name: "PDTreeV3",
+            dependencies: ["TreeV3Core","TreeV3Util","BTree"],
+            path: "PDTreeV3"),
+        .testTarget(
+            name: "PDTreeV3Test",
+            dependencies: ["PDTreeV3"],
+            path: "PDTreeV3Test"),
+
     ]
 )

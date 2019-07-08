@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,6 +37,14 @@
 		45F725E722D323E80056187D /* TreeV3UtilTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F725E622D323E80056187D /* TreeV3UtilTest.swift */; };
 		45F725F322D323FC0056187D /* libTreeV3Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F7254E22D2F5A10056187D /* libTreeV3Core.a */; };
 		45F725F422D323FC0056187D /* libTreeV3Util.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F7258F22D2F98C0056187D /* libTreeV3Util.a */; };
+		45F725FD22D328680056187D /* BTree in Frameworks */ = {isa = PBXBuildFile; productRef = 45F725FC22D328680056187D /* BTree */; };
+		45F7262B22D3295E0056187D /* PDTreeV3Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7262A22D3295E0056187D /* PDTreeV3Test.swift */; };
+		45F7262D22D3295E0056187D /* libTreeV3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 450FABA722D1C02D0026CF7A /* libTreeV3.a */; };
+		45F7263822D329870056187D /* BTree in Frameworks */ = {isa = PBXBuildFile; productRef = 45F7263722D329870056187D /* BTree */; };
+		45F7263922D329870056187D /* libPDTreeV3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F7261522D329240056187D /* libPDTreeV3.a */; };
+		45F7263B22D329A10056187D /* PDListBranchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7263A22D329A10056187D /* PDListBranchTree.swift */; };
+		45F7263D22D329CC0056187D /* PDListBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7263C22D329CC0056187D /* PDListBranch.swift */; };
+		45F7263F22D32AB00056187D /* PDList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7263E22D32AB00056187D /* PDList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +104,34 @@
 			remoteGlobalIDString = 45F7258E22D2F98C0056187D;
 			remoteInfo = TreeV3Util;
 		};
+		45F7261E22D3292B0056187D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45F7254D22D2F5A10056187D;
+			remoteInfo = TreeV3Core;
+		};
+		45F7262022D3292B0056187D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45F7258E22D2F98C0056187D;
+			remoteInfo = TreeV3Util;
+		};
+		45F7262E22D3295E0056187D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 450FABA622D1C02D0026CF7A;
+			remoteInfo = TreeV3;
+		};
+		45F7263322D329820056187D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45F7261422D329240056187D;
+			remoteInfo = PDTreeV3;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +170,13 @@
 		45F725E622D323E80056187D /* TreeV3UtilTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeV3UtilTest.swift; sourceTree = "<group>"; };
 		45F725E822D323E80056187D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45F725F522D325DA0056187D /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		45F7261522D329240056187D /* libPDTreeV3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPDTreeV3.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		45F7262822D3295E0056187D /* PDTreeV3Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDTreeV3Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45F7262A22D3295E0056187D /* PDTreeV3Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDTreeV3Test.swift; sourceTree = "<group>"; };
+		45F7262C22D3295E0056187D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45F7263A22D329A10056187D /* PDListBranchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDListBranchTree.swift; sourceTree = "<group>"; };
+		45F7263C22D329CC0056187D /* PDListBranch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDListBranch.swift; sourceTree = "<group>"; };
+		45F7263E22D32AB00056187D /* PDList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F725FD22D328680056187D /* BTree in Frameworks */,
 				45F725AE22D2FA0A0056187D /* libTreeV3Util.a in Frameworks */,
 				45F7256522D2F5B40056187D /* libTreeV3Core.a in Frameworks */,
 			);
@@ -177,6 +221,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45F7261322D329240056187D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45F7262522D3295E0056187D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45F7263922D329870056187D /* libPDTreeV3.a in Frameworks */,
+				45F7262D22D3295E0056187D /* libTreeV3.a in Frameworks */,
+				45F7263822D329870056187D /* BTree in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -191,6 +252,8 @@
 				45F7254F22D2F5A10056187D /* TreeV3Core */,
 				45F7259022D2F98C0056187D /* TreeV3Util */,
 				45F725E522D323E80056187D /* TreeV3UtilTest */,
+				45F7261622D329240056187D /* PDTreeV3 */,
+				45F7262922D3295E0056187D /* PDTreeV3Test */,
 				450FABA822D1C02D0026CF7A /* Products */,
 				45F7256422D2F5B40056187D /* Frameworks */,
 			);
@@ -204,6 +267,8 @@
 				45F7254E22D2F5A10056187D /* libTreeV3Core.a */,
 				45F7258F22D2F98C0056187D /* libTreeV3Util.a */,
 				45F725E422D323E80056187D /* TreeV3UtilTest.xctest */,
+				45F7261522D329240056187D /* libPDTreeV3.a */,
+				45F7262822D3295E0056187D /* PDTreeV3Test.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -277,6 +342,25 @@
 			path = TreeV3UtilTest;
 			sourceTree = "<group>";
 		};
+		45F7261622D329240056187D /* PDTreeV3 */ = {
+			isa = PBXGroup;
+			children = (
+				45F7263A22D329A10056187D /* PDListBranchTree.swift */,
+				45F7263C22D329CC0056187D /* PDListBranch.swift */,
+				45F7263E22D32AB00056187D /* PDList.swift */,
+			);
+			path = PDTreeV3;
+			sourceTree = "<group>";
+		};
+		45F7262922D3295E0056187D /* PDTreeV3Test */ = {
+			isa = PBXGroup;
+			children = (
+				45F7262A22D3295E0056187D /* PDTreeV3Test.swift */,
+				45F7262C22D3295E0056187D /* Info.plist */,
+			);
+			path = PDTreeV3Test;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -295,6 +379,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		45F7258B22D2F98C0056187D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45F7261122D329240056187D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,6 +411,7 @@
 			);
 			name = TreeV3;
 			packageProductDependencies = (
+				45F725FC22D328680056187D /* BTree */,
 			);
 			productName = TreeV3;
 			productReference = 450FABA722D1C02D0026CF7A /* libTreeV3.a */;
@@ -399,6 +491,49 @@
 			productReference = 45F725E422D323E80056187D /* TreeV3UtilTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		45F7261422D329240056187D /* PDTreeV3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45F7261B22D329240056187D /* Build configuration list for PBXNativeTarget "PDTreeV3" */;
+			buildPhases = (
+				45F7261122D329240056187D /* Headers */,
+				45F7261222D329240056187D /* Sources */,
+				45F7261322D329240056187D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45F7261F22D3292B0056187D /* PBXTargetDependency */,
+				45F7262122D3292B0056187D /* PBXTargetDependency */,
+				45F7262322D3292B0056187D /* PBXTargetDependency */,
+			);
+			name = PDTreeV3;
+			productName = PDTreeV3;
+			productReference = 45F7261522D329240056187D /* libPDTreeV3.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		45F7262722D3295E0056187D /* PDTreeV3Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45F7263022D3295E0056187D /* Build configuration list for PBXNativeTarget "PDTreeV3Test" */;
+			buildPhases = (
+				45F7262422D3295E0056187D /* Sources */,
+				45F7262522D3295E0056187D /* Frameworks */,
+				45F7262622D3295E0056187D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45F7263422D329820056187D /* PBXTargetDependency */,
+				45F7263622D329820056187D /* PBXTargetDependency */,
+				45F7262F22D3295E0056187D /* PBXTargetDependency */,
+			);
+			name = PDTreeV3Test;
+			packageProductDependencies = (
+				45F7263722D329870056187D /* BTree */,
+			);
+			productName = PDTreeV3Test;
+			productReference = 45F7262822D3295E0056187D /* PDTreeV3Test.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -425,6 +560,13 @@
 					45F725E322D323E80056187D = {
 						CreatedOnToolsVersion = 11.0;
 					};
+					45F7261422D329240056187D = {
+						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
+					};
+					45F7262722D3295E0056187D = {
+						CreatedOnToolsVersion = 11.0;
+					};
 				};
 			};
 			buildConfigurationList = 450FABA222D1C02D0026CF7A /* Build configuration list for PBXProject "TreeV3" */;
@@ -437,6 +579,7 @@
 			);
 			mainGroup = 450FAB9E22D1C02D0026CF7A;
 			packageReferences = (
+				45F725FB22D328680056187D /* XCRemoteSwiftPackageReference "BTree" */,
 			);
 			productRefGroup = 450FABA822D1C02D0026CF7A /* Products */;
 			projectDirPath = "";
@@ -447,6 +590,8 @@
 				45F7254D22D2F5A10056187D /* TreeV3Core */,
 				45F7258E22D2F98C0056187D /* TreeV3Util */,
 				45F725E322D323E80056187D /* TreeV3UtilTest */,
+				45F7261422D329240056187D /* PDTreeV3 */,
+				45F7262722D3295E0056187D /* PDTreeV3Test */,
 			);
 		};
 /* End PBXProject section */
@@ -460,6 +605,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		45F725E222D323E80056187D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45F7262622D3295E0056187D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -529,6 +681,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45F7261222D329240056187D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45F7263B22D329A10056187D /* PDListBranchTree.swift in Sources */,
+				45F7263F22D32AB00056187D /* PDList.swift in Sources */,
+				45F7263D22D329CC0056187D /* PDListBranch.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45F7262422D3295E0056187D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45F7262B22D3295E0056187D /* PDTreeV3Test.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -571,6 +741,34 @@
 			isa = PBXTargetDependency;
 			target = 45F7258E22D2F98C0056187D /* TreeV3Util */;
 			targetProxy = 45F725F122D323F00056187D /* PBXContainerItemProxy */;
+		};
+		45F7261F22D3292B0056187D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45F7254D22D2F5A10056187D /* TreeV3Core */;
+			targetProxy = 45F7261E22D3292B0056187D /* PBXContainerItemProxy */;
+		};
+		45F7262122D3292B0056187D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45F7258E22D2F98C0056187D /* TreeV3Util */;
+			targetProxy = 45F7262022D3292B0056187D /* PBXContainerItemProxy */;
+		};
+		45F7262322D3292B0056187D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 45F7262222D3292B0056187D /* BTree */;
+		};
+		45F7262F22D3295E0056187D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 450FABA622D1C02D0026CF7A /* TreeV3 */;
+			targetProxy = 45F7262E22D3295E0056187D /* PBXContainerItemProxy */;
+		};
+		45F7263422D329820056187D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45F7261422D329240056187D /* PDTreeV3 */;
+			targetProxy = 45F7263322D329820056187D /* PBXContainerItemProxy */;
+		};
+		45F7263622D329820056187D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 45F7263522D329820056187D /* BTree */;
 		};
 /* End PBXTargetDependency section */
 
@@ -835,6 +1033,81 @@
 			};
 			name = Release;
 		};
+		45F7261C22D329240056187D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		45F7261D22D329240056187D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		45F7263122D3295E0056187D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PDTreeV3Test/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Eonil.PDTreeV3Test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		45F7263222D3295E0056187D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PDTreeV3Test/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Eonil.PDTreeV3Test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -892,7 +1165,59 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		45F7261B22D329240056187D /* Build configuration list for PBXNativeTarget "PDTreeV3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45F7261C22D329240056187D /* Debug */,
+				45F7261D22D329240056187D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45F7263022D3295E0056187D /* Build configuration list for PBXNativeTarget "PDTreeV3Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45F7263122D3295E0056187D /* Debug */,
+				45F7263222D3295E0056187D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		45F725FB22D328680056187D /* XCRemoteSwiftPackageReference "BTree" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/eonil/BTree";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		45F725FC22D328680056187D /* BTree */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45F725FB22D328680056187D /* XCRemoteSwiftPackageReference "BTree" */;
+			productName = BTree;
+		};
+		45F7262222D3292B0056187D /* BTree */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45F725FB22D328680056187D /* XCRemoteSwiftPackageReference "BTree" */;
+			productName = BTree;
+		};
+		45F7263522D329820056187D /* BTree */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45F725FB22D328680056187D /* XCRemoteSwiftPackageReference "BTree" */;
+			productName = BTree;
+		};
+		45F7263722D329870056187D /* BTree */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45F725FB22D328680056187D /* XCRemoteSwiftPackageReference "BTree" */;
+			productName = BTree;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 450FAB9F22D1C02D0026CF7A /* Project object */;
 }
