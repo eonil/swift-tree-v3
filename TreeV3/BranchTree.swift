@@ -8,9 +8,13 @@
 
 import Foundation
 
-/// A `Tree` of `Branch`es.
+/// A `Tree` with `Branch` access.
 ///
-/// `BranchTree` is random-accessible by default.
+/// Despite `Tree` is already providing default read-only
+/// `branches` property, this protocol has been designed to provide
+/// common and mutable interfaces. When you see a
+/// concrete type named `-BranchTree`, it implies
+/// providing direct mutable access to its branches.
 ///
 public protocol BranchTree: Tree where
 //SubSequence.Element == Branches.Element.Value,
@@ -18,11 +22,16 @@ SubSequence == BranchTreeSlice<Branches.Element>,
 Path: TreeV3.Path,
 Path.Element == SubSequence.Index {
     var branches: Branches { get }
-    associatedtype Branches: RandomAccessCollection where
+    associatedtype Branches: Collection where
         Branches.Index == SubSequence.Index,
         Branches.Element: Branch,
 //        Branches.Element.Branches.Index == SubSequence.Index,
         Branches.Element.Branches.SubSequence == Branches.SubSequence
+}
+public protocol RandomAccessBranchTree:
+BranchTree where
+Branches: RandomAccessCollection,
+Branches.Element: RandomAccessBranch {
 }
 public protocol MutableBranchTree:
 BranchTree,

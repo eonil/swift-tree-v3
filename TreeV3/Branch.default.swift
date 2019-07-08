@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension RandomAccessCollection where
+public extension Collection where
 Element: Branch,
 Element.Branches.Index == Index,
 Element.Branches.SubSequence == SubSequence {
@@ -28,24 +28,6 @@ Element.Branches.SubSequence == SubSequence {
         switch p.isEmpty {
         case true:  return index(after: i)
         case false: return self[p.first!].branches.index(after: i)
-        }
-    }
-    func index<P>(before i:Index, in p:P) -> Index where P:Collection, P.Element == Index {
-        switch p.isEmpty {
-        case true:  return index(before: i)
-        case false: return self[p.first!].branches.index(before: i)
-        }
-    }
-    func index<P>(_ i:Index, offsetBy d:Int, in p:P) -> Index where P:Collection, P.Element == Index {
-        switch p.isEmpty {
-        case true:  return index(i, offsetBy: d)
-        case false: return self[p.first!].branches.index(i, offsetBy: d, in: p.dropFirst())
-        }
-    }
-    func distance<P>(from a: Index, to b: Index, in p:P) -> Int where P:Collection, P.Element == Index {
-        switch p.isEmpty {
-        case true:  return distance(from: a, to: b)
-        case false: return self[p.first!].branches.distance(from: a, to: b, in: p.dropFirst())
         }
     }
     subscript<P>(_ i:Index, in p:P) -> Element where P:Collection, P.Element == Index {
@@ -68,7 +50,32 @@ Element.Branches.SubSequence == SubSequence {
     }
 }
 
-public extension RandomAccessCollection where
+public extension Collection where
+Self: RandomAccessCollection,
+Element: RandomAccessBranch,
+Element.Branches.Index == Index,
+Element.Branches.SubSequence == SubSequence {
+    func index<P>(before i:Index, in p:P) -> Index where P:Collection, P.Element == Index {
+        switch p.isEmpty {
+        case true:  return index(before: i)
+        case false: return self[p.first!].branches.index(before: i)
+        }
+    }
+    func index<P>(_ i:Index, offsetBy d:Int, in p:P) -> Index where P:Collection, P.Element == Index {
+        switch p.isEmpty {
+        case true:  return index(i, offsetBy: d)
+        case false: return self[p.first!].branches.index(i, offsetBy: d, in: p.dropFirst())
+        }
+    }
+    func distance<P>(from a: Index, to b: Index, in p:P) -> Int where P:Collection, P.Element == Index {
+        switch p.isEmpty {
+        case true:  return distance(from: a, to: b)
+        case false: return self[p.first!].branches.distance(from: a, to: b, in: p.dropFirst())
+        }
+    }
+}
+
+public extension Collection where
 Self: MutableCollection & RangeReplaceableCollection,
 Element: MutableBranch & RangeReplaceableBranch,
 Element.Branches.Index == Index,

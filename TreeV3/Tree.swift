@@ -57,6 +57,8 @@ public protocol Tree {
     /// on Rust.
     func subsequence(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence.SubSequence
 }
+public protocol RandomAccessTree: Tree where SubSequence: RandomAccessCollection {
+}
 public protocol MutableTree: Tree {
     subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element { get set }
 //    subscript(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence { get set }

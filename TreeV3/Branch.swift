@@ -17,8 +17,11 @@ public protocol Branch {
     associatedtype Value
     
     var branches: Branches { get }
-    associatedtype Branches: RandomAccessCollection where
+    associatedtype Branches: Collection where
         Branches.Element == Self
+}
+public protocol RandomAccessBranch: Branch where
+Branches: RandomAccessCollection {
 }
 public protocol MutableBranch: Branch where
 Branches: MutableCollection {

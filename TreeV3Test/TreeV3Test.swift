@@ -56,7 +56,7 @@ class TreeV3Test: XCTestCase {
         a.append(999_999, in: [3])
         a.append(999_999_999, in: [3,0])
         a.append(999_999_999_999, in: [3,0,0])
-        XCTAssertEqual(Array(a.paths.dfs), [
+        XCTAssertEqual(Array(a.sequences.paths), [
             [],
             [0],
             [1],
@@ -73,7 +73,7 @@ class TreeV3Test: XCTestCase {
             let s = a.sequence(in: p)
             return Array(s)
         }
-        XCTAssertEqual(Array(Array(a.paths.dfs).map(findSequence(at:))), [
+        XCTAssertEqual(Array(Array(a.sequences.paths).map(findSequence(at:))), [
             [111, 222, 333, 999],           // children of []
             [],                             // children of [0]
             [222_111, 222_222, 222_333],    // children of [1]
@@ -92,7 +92,7 @@ class TreeV3Test: XCTestCase {
             let e = a[p.last!, in: p.dropLast()]
             return e
         }
-        XCTAssertEqual(Array(Array(a.paths.dfs.dropFirst()).map(findElement(at:))), [
+        XCTAssertEqual(Array(Array(a.sequences.paths.dropFirst()).map(findElement(at:))), [
             111,
             222,
             222_111,
@@ -117,7 +117,7 @@ class TreeV3Test: XCTestCase {
         a.append(999_999_999, in: [3,0])
         a.append(999_999_999_999, in: [3,0,0])
         let b = a.map({"\($0)"})
-        XCTAssertEqual(Array(b.paths.dfs), [
+        XCTAssertEqual(Array(b.sequences.paths), [
             [],
             [0],
             [1],
@@ -134,7 +134,7 @@ class TreeV3Test: XCTestCase {
             let s = b.sequence(in: p)
             return Array(s)
         }
-        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
+        XCTAssertEqual(Array(Array(b.sequences.paths).map(findSequence(at:))), [
             ["111", "222", "333", "999"],   // children of []
             [],                             // children of [0]
             ["222111", "222222", "222333"], // children of [1]
@@ -160,7 +160,7 @@ class TreeV3Test: XCTestCase {
         a.append(999_999_999, in: [3,0])
         a.append(999_999_999_999, in: [3,0,0])
         let b = a.lazy.map({"\($0)"})
-        XCTAssertEqual(Array(b.paths.dfs), [
+        XCTAssertEqual(Array(b.sequences.paths), [
             [],
             [0],
             [1],
@@ -177,7 +177,7 @@ class TreeV3Test: XCTestCase {
             let s = b.sequence(in: p)
             return Array(s)
         }
-        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
+        XCTAssertEqual(Array(Array(b.sequences.paths).map(findSequence(at:))), [
             ["111", "222", "333", "999"],   // children of []
             [],                             // children of [0]
             ["222111", "222222", "222333"], // children of [1]
@@ -203,7 +203,7 @@ class TreeV3Test: XCTestCase {
         a.append(999_999_999, in: [3,0])
         a.append(999_999_999_999, in: [3,0,0])
         let b = a.filter({ $0 % 2 == 0 })
-        XCTAssertEqual(Array(b.paths.dfs), [
+        XCTAssertEqual(Array(b.sequences.paths), [
             [],
             [0],
             [0,0],
@@ -212,7 +212,7 @@ class TreeV3Test: XCTestCase {
             let s = b.sequence(in: p)
             return Array(s)
         }
-        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
+        XCTAssertEqual(Array(Array(b.sequences.paths).map(findSequence(at:))), [
             [222],                          // children of []
             [222_222],                      // children of [0]
             [],                             // children of [0,0]
@@ -230,7 +230,7 @@ class TreeV3Test: XCTestCase {
         a.append(999_999_999, in: [3,0])
         a.append(999_999_999_999, in: [3,0,0])
         let b = a.sorted(by: { a,b in a > b })
-        XCTAssertEqual(Array(b.paths.dfs), [
+        XCTAssertEqual(Array(b.sequences.paths), [
             [],
             [0],
             [0,0],
@@ -247,7 +247,7 @@ class TreeV3Test: XCTestCase {
             let s = b.sequence(in: p)
             return Array(s)
         }
-        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
+        XCTAssertEqual(Array(Array(b.sequences.paths).map(findSequence(at:))), [
             [999, 333, 222, 111],           // children of []
             [999_999],                      // children of [0] (999)
             [999_999_999],                  // children of [0,0]
@@ -265,7 +265,7 @@ class TreeV3Test: XCTestCase {
             let e = b[p.last!, in: p.dropLast()]
             return e
         }
-        XCTAssertEqual(Array(Array(b.paths.dfs.dropFirst()).map(findElement(at:))), [
+        XCTAssertEqual(Array(Array(b.sequences.paths.dropFirst()).map(findElement(at:))), [
             999,
             999_999,
             999_999_999,
@@ -294,7 +294,7 @@ class TreeV3Test: XCTestCase {
             let s = b.sequence(in: p)
             return Array(s)
         }
-        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
+        XCTAssertEqual(Array(Array(b.sequences.paths).map(findSequence(at:))), [
             [111, 222, 333, 999],           // children of []
             [],                             // children of [0]
             [222_111, 222_222, 222_333],    // children of [1]
@@ -308,12 +308,13 @@ class TreeV3Test: XCTestCase {
             []                              // children of [3,0,0,0]
 
             ])
+        print(Array(b.sequences.paths))
         func findElement(at p:IndexPath) -> Int {
             precondition(!p.isEmpty)
             let e = b[p.last!, in: p.dropLast()]
             return e
         }
-        XCTAssertEqual(Array(Array(b.paths.dfs.dropFirst()).map(findElement(at:))), [
+        XCTAssertEqual(Array(Array(b.sequences.paths.dropFirst()).map(findElement(at:))), [
             111,
             222,
             222_111,
@@ -342,7 +343,7 @@ class TreeV3Test: XCTestCase {
             let s = b.sequence(in: p)
             return Array(s)
         }
-        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
+        XCTAssertEqual(Array(Array(b.sequences.paths).map(findSequence(at:))), [
             [111, 222, 333, 999],           // children of []
             [],                             // children of [0]
             [222_111, 222_222, 222_333],    // children of [1]
@@ -354,7 +355,6 @@ class TreeV3Test: XCTestCase {
             [999_999_999],                  // children of [3,0]
             [999_999_999_999],              // children of [3,0,0]
             []                              // children of [3,0,0,0]
-
             ])
 //        func findElement(at p:AnyTree<Int>.Path) -> Int {
 //            b.sequence(in: <#T##Any#>)

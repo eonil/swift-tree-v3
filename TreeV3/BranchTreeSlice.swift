@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct BranchTreeSlice<Base>: RandomAccessCollection where
+public struct BranchTreeSlice<Base>: Collection where
 Base: Branch,
 Base.Branches.SubSequence.Element.Value == Base.Value {
     let base: Base.Branches.SubSequence
@@ -19,8 +19,17 @@ Base.Branches.SubSequence.Element.Value == Base.Value {
     public var startIndex: Index { return base.startIndex }
     public var endIndex: Index { return base.endIndex }
     public func index(after i: Index) -> Index { return base.index(after: i) }
-    public func index(before i: Index) -> Index { return base.index(before: i) }
-    public func index(_ i:Index, offsetBy d:Int) -> Index { return base.index(i, offsetBy: d) }
+
     public subscript(_ i:Index) -> Element { return base[i].value }
     public subscript(_ r:Range<Index>) -> BranchTreeSlice<Base> { return BranchTreeSlice(base: base[r]) }
+}
+public extension BranchTreeSlice where Base.Branches: RandomAccessCollection {
+    func index(before i: Index) -> Index { return base.index(before: i) }
+    func index(_ i:Index, offsetBy d:Int) -> Index { return base.index(i, offsetBy: d) }
+}
+extension BranchTreeSlice: BidirectionalCollection where
+Base: RandomAccessBranch {
+}
+extension BranchTreeSlice: RandomAccessCollection where
+Base: RandomAccessBranch {
 }

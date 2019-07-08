@@ -10,10 +10,14 @@ import Foundation
 
 public struct ArrayBranchTree<Element>:
 BranchTree,
+RandomAccessBranchTree,
 MutableBranchTree,
 RangeReplaceableBranchTree,
 ExpressibleByArrayLiteral {
     public typealias Path = IndexPath
+    /// Branches of this tree.
+    ///
+    /// This effectively overrides default `branches` property.
     public var branches = [ArrayBranch<Element>]()
     public init() {}
     public init<C>(_ es:C) where C:Collection, C.Element == Element {
@@ -30,6 +34,9 @@ ExpressibleByArrayLiteral {
     }
     public init<C>(branches bs:C) where C:Collection, C.Element == ArrayBranch<Element> {
         branches = Array(bs)
+    }
+    public init<C>(converting bs:C) where C:Collection, C.Element: Branch, C.Element.Value == Element {
+        branches = bs.map(ArrayBranch.init(converting:))
     }
     public subscript(_ i:Int, in p:IndexPath) -> Element {
         get { return branches[i, in: p].value }
