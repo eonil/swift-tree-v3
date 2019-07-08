@@ -19,7 +19,7 @@ let package = Package(
         /// A target is required to build a **module**.
         .target(
             name: "TreeV3",
-            dependencies: [],
+            dependencies: ["TreeV3Core", "TreeV3Util"],
             path: "TreeV3"),
         .target(
             name: "TreeV3Core",
