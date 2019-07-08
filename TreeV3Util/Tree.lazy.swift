@@ -35,6 +35,9 @@ public struct LazyMapTree<Base,X>: Tree where Base: Tree {
     public func contents(in p:Base.Path) -> LazyMapCollection<Base.SubSequence,X> {
         return base.contents(in: p).lazy.map(transform)
     }
+    public subscript(_ r:Range<Base.SubSequence.Index>, in p:Base.Path) -> LazyMapSequence<Base.SubSequence.SubSequence,X> {
+        return base.contents(in: p)[r].lazy.map(transform)
+    }
 }
 
 //// MARK: Filter

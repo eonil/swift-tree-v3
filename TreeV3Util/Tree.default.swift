@@ -28,9 +28,6 @@ public extension Tree {
     subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element {
         return contents(in: p)[i]
     }
-    func subsequence(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence.SubSequence {
-        return contents(in: p)[r]
-    }
 }
 public extension Tree where SubSequence: BidirectionalCollection {
     func index(before i:SubSequence.Index, in p:Path) -> SubSequence.Index {
@@ -46,6 +43,16 @@ public extension Tree where SubSequence: RandomAccessCollection {
     }
     func distance(from a:SubSequence.Index, to b:SubSequence.Index, in p:Path) -> Int {
         return contents(in: p).distance(from: a, to: b)
+    }
+}
+public extension MutableTree where Self: RangeReplaceableTree {
+    subscript(i: SubSequence.Index, in p: Path) -> SubSequence.Element {
+        get { return contents(in: p)[i] }
+        set(x) { replaceSubrange(i..<index(after: i, in: p), with: CollectionOfOne(x), in: p) }
+    }
+    subscript(r: Range<SubSequence.Index>, in p: Path) -> SubSequence.SubSequence {
+        get { return contents(in: p)[r] }
+        set(x) { replaceSubrange(r, with: x, in: p) }
     }
 }
 public extension RangeReplaceableTree {

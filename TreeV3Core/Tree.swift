@@ -20,6 +20,13 @@
 ///     path look-up as key look-up in table that can be used if you
 ///     want to vut down tree navigational look-up cost.
 ///
+/// No Subtree Level Operation
+/// --------------------------
+/// In `Tree`s, every operations must be done at element level.
+/// There's no way to insert/remove "subtree" at once.
+/// Anyway, implementations are free to provide "extra" ways to deal
+/// with such situations.
+///
 /// Conform to `Tree` Protocol
 /// --------------------------
 /// The simplest way to conform `Tree` protocol is
@@ -52,6 +59,7 @@ public protocol Tree {
     func path(at i:SubSequence.Index, in p:Path) -> Path
     /// Gets all elements at location.
     func contents(in p:Path) -> SubSequence
+//    subscript(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence.SubSequence { get }
 }
 public protocol RandomAccessTree: Tree where SubSequence: RandomAccessCollection {
 }

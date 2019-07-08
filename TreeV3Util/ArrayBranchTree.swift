@@ -43,6 +43,9 @@ ExpressibleByArrayLiteral {
         get { return branches[i, in: p].value }
         set(x) { branches[i, in: p].value = x }
     }
+    public subscript(_ r:Range<Int>, in p:Path) -> BranchTreeSlice<ArrayBranch<Element>> {
+        return contents(in: p)[r]
+    }
     public func makeIterator() -> AnyIterator<Element> {
         return dfs.makeIterator()
     }
