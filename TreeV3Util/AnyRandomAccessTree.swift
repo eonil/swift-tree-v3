@@ -8,6 +8,10 @@
 
 import Foundation
 
+/// - Note:
+///     I can't use `Swift.AnyRandomAccessCollection`
+///     because I need path resolution using index, and there's
+///     no way to get original index value from `Swift.AnyIndex`.
 public struct AnyRandomAccessTree<T>: RandomAccessTree {
     private let implPath: Path
     private let implPathAtIn: (Index,Path) -> Path
