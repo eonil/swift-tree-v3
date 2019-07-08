@@ -127,3 +127,14 @@ Element.Branches.SubSequence == SubSequence {
         }
     }
 }
+
+// MARK: DFS
+public extension Collection where
+Element: Branch,
+Element.Branches.Index == Index,
+Element.Branches.SubSequence == SubSequence {
+    /// Iterates all branches in DFS order.
+    var dfs: AnySequence<Element> {
+        return AnySequence(lazy.map({ $0.dfs }).joined())
+    }
+}

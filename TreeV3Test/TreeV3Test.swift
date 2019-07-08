@@ -73,7 +73,7 @@ class TreeV3Test: XCTestCase {
             let s = a.contents(in: p)
             return Array(s)
         }
-        XCTAssertEqual(Array(Array(a.paths.dfs).map(findSequence(at:))), [
+        XCTAssertEqual(Array(a.paths.dfs).map(findSequence(at:)), [
             [111, 222, 333, 999],           // children of []
             [],                             // children of [0]
             [222_111, 222_222, 222_333],    // children of [1]
@@ -92,7 +92,7 @@ class TreeV3Test: XCTestCase {
             let e = a[p.last!, in: p.dropLast()]
             return e
         }
-        XCTAssertEqual(Array(Array(a.paths.dfs.dropFirst()).map(findElement(at:))), [
+        XCTAssertEqual(Array(a.paths.dfs.dropFirst()).map(findElement(at:)), [
             111,
             222,
             222_111,
@@ -104,6 +104,19 @@ class TreeV3Test: XCTestCase {
             999_999_999,
             999_999_999_999,
             ])
+        XCTAssertEqual(Array(a.dfs), [
+            111,
+            222,
+            222_111,
+            222_222,
+            222_333,
+            333,
+            999,
+            999_999,
+            999_999_999,
+            999_999_999_999,
+            ])
+        XCTAssertEqual(Array(a.paths.dfs.dropFirst()).map(findElement(at:)), Array(a.dfs))
     }
     func testMap() {
         var a = ArrayBranchTree<Int>()
@@ -294,7 +307,7 @@ class TreeV3Test: XCTestCase {
             let s = b.contents(in: p)
             return Array(s)
         }
-        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
+        XCTAssertEqual(Array(b.paths.dfs).map(findSequence(at:)), [
             [111, 222, 333, 999],           // children of []
             [],                             // children of [0]
             [222_111, 222_222, 222_333],    // children of [1]
@@ -314,7 +327,7 @@ class TreeV3Test: XCTestCase {
             let e = b[p.last!, in: p.dropLast()]
             return e
         }
-        XCTAssertEqual(Array(Array(b.paths.dfs.dropFirst()).map(findElement(at:))), [
+        XCTAssertEqual(Array(b.paths.dfs.dropFirst()).map(findElement(at:)), [
             111,
             222,
             222_111,

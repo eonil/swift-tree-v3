@@ -33,6 +33,9 @@ public struct Subtree<Base>: Branch where Base: Tree {
     public var value: Base.SubSequence.Element {
         return base[index, in: location]
     }
+    public var path: Base.Path {
+        return base.path(at: index, in: location)
+    }
     public var branches: Branches {
         let p = base.path(at: index, in: location)
         let s = base.contents(in: p)

@@ -79,18 +79,17 @@ therefore can also be considered as locations to elements except first
 path that points top-level collection (or root) with no stored value.
 Use these sequences to get all paths in target container.
 - `Tree.paths.dfs`.
-- `Tree.paths(at:,in:).dfs`.
+- `Tree.paths.dfs(at:,in:)`.
 
 * Branches don't have concept of paths by default, 
   therefore do not provide paths iteration.
 
-
 All branches iteration in DFS order.
 - `Tree.branches.dfs`.
 - `Branch.dfs`.
+- `Branch.branches.dfs`.
 
-If you need special iteration like "branch-first and element-in-branch-second",
-you can do it by compositing existing iterators. 
+If you need special iterations you can do it by compositing existing iterators. 
 In this given example, `a` is a DFS ordered sequence to branches. 
 `b` is a sequence of element groups of each branches.
 `c` is flatten sequence of `b` to iterate all elements in its order.

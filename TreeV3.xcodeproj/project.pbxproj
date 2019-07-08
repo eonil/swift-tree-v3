@@ -65,6 +65,20 @@
 			remoteGlobalIDString = 45F7254D22D2F5A10056187D;
 			remoteInfo = TreeV3Core;
 		};
+		45F725DC22D31EB00056187D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45F7254D22D2F5A10056187D;
+			remoteInfo = TreeV3Core;
+		};
+		45F725DE22D31EB00056187D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45F7258E22D2F98C0056187D;
+			remoteInfo = TreeV3Util;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -280,6 +294,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				45F725DD22D31EB00056187D /* PBXTargetDependency */,
+				45F725DF22D31EB00056187D /* PBXTargetDependency */,
 				45E9A62022D1D8DD00FE2AA5 /* PBXTargetDependency */,
 			);
 			name = TreeV3Test;
@@ -455,6 +471,16 @@
 			isa = PBXTargetDependency;
 			target = 45F7254D22D2F5A10056187D /* TreeV3Core */;
 			targetProxy = 45F725C322D2FA530056187D /* PBXContainerItemProxy */;
+		};
+		45F725DD22D31EB00056187D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45F7254D22D2F5A10056187D /* TreeV3Core */;
+			targetProxy = 45F725DC22D31EB00056187D /* PBXContainerItemProxy */;
+		};
+		45F725DF22D31EB00056187D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45F7258E22D2F98C0056187D /* TreeV3Util */;
+			targetProxy = 45F725DE22D31EB00056187D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
