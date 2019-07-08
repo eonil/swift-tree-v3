@@ -109,3 +109,8 @@ as I couldn't find a nice way to make it lazily in lower cost.
 
 
 
+
+License & Credits
+---------------------
+This library is licensed under "MIT License".
+Copyright (C) 2019 Eonil, Hoon H.. All rights reserved.

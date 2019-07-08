@@ -133,6 +133,7 @@
 		45F725E422D323E80056187D /* TreeV3UtilTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreeV3UtilTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F725E622D323E80056187D /* TreeV3UtilTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeV3UtilTest.swift; sourceTree = "<group>"; };
 		45F725E822D323E80056187D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45F725F522D325DA0056187D /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +185,7 @@
 			children = (
 				45E9A62C22D1FD1800FE2AA5 /* Package.swift */,
 				45F725C522D2FBAA0056187D /* README.md */,
+				45F725F522D325DA0056187D /* LICENSE.md */,
 				45F7258022D2F5F90056187D /* TreeV3 */,
 				45E9A61A22D1D8DD00FE2AA5 /* TreeV3Test */,
 				45F7254F22D2F5A10056187D /* TreeV3Core */,
