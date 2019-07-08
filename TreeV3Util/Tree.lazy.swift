@@ -32,8 +32,8 @@ public struct LazyMapTree<Base,X>: Tree where Base: Tree {
     public func path(at i:Base.SubSequence.Index, in p:Base.Path) -> Base.Path {
         return base.path(at: i, in: p)
     }
-    public func sequence(in p:Base.Path) -> LazyMapCollection<Base.SubSequence,X> {
-        return base.sequence(in: p).lazy.map(transform)
+    public func contents(in p:Base.Path) -> LazyMapCollection<Base.SubSequence,X> {
+        return base.contents(in: p).lazy.map(transform)
     }
 }
 

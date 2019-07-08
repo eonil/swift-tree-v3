@@ -19,7 +19,7 @@ private extension ArrayBranchTree {
     X:Tree,
     X.SubSequence.Element == Element {
         let p = x.path
-        let s = x.sequence(in: p)
+        let s = x.contents(in: p)
         for i in s.indices {
             let e = s[i]
             if isIncluded(e) {
@@ -38,7 +38,7 @@ private extension ArrayBranch {
         value = e
         branches = []
         let p1 = x.path(at: i, in: p)
-        let s1 = x.sequence(in: p1)
+        let s1 = x.contents(in: p1)
         for i1 in s1.indices {
             let e1 = s1[i1]
             if isIncluded(e1) {

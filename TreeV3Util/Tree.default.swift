@@ -16,25 +16,25 @@ public extension Tree {
         return a == b
     }
     func startIndex(in p:Path) -> SubSequence.Index {
-        return sequence(in: p).startIndex
+        return contents(in: p).startIndex
     }
     func endIndex(in p:Path) -> SubSequence.Index {
-        return sequence(in: p).endIndex
+        return contents(in: p).endIndex
     }
     func index(after i:SubSequence.Index, in p:Path) -> SubSequence.Index {
-        return sequence(in: p).index(after: i)
+        return contents(in: p).index(after: i)
     }
 
     subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element {
-        return sequence(in: p)[i]
+        return contents(in: p)[i]
     }
     func subsequence(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence.SubSequence {
-        return sequence(in: p)[r]
+        return contents(in: p)[r]
     }
 }
 public extension Tree where SubSequence: BidirectionalCollection {
     func index(before i:SubSequence.Index, in p:Path) -> SubSequence.Index {
-        return sequence(in: p).index(before: i)
+        return contents(in: p).index(before: i)
     }
 }
 public extension Tree where SubSequence: RandomAccessCollection {
@@ -42,10 +42,10 @@ public extension Tree where SubSequence: RandomAccessCollection {
         return distance(from: startIndex(in: p), to: endIndex(in: p), in: p)
     }
     func index(_ i:SubSequence.Index, offsetBy d:Int, in p:Path) -> SubSequence.Index {
-        return sequence(in: p).index(i, offsetBy: d)
+        return contents(in: p).index(i, offsetBy: d)
     }
     func distance(from a:SubSequence.Index, to b:SubSequence.Index, in p:Path) -> Int {
-        return sequence(in: p).distance(from: a, to: b)
+        return contents(in: p).distance(from: a, to: b)
     }
 }
 public extension RangeReplaceableTree {

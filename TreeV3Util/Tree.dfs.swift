@@ -19,7 +19,7 @@ public extension Tree where SubSequence: RandomAccessCollection {
     /// can be different from expected.
     var dfs: AnySequence<SubSequence.Element> {
         let p = path
-        let s = sequence(in: p)
+        let s = contents(in: p)
         let ss = s.indices.lazy.map({ Subtree(base: self, location: p, index: $0).dfs })
         return AnySequence(ss.lazy.joined().map({$0.value}))
     }

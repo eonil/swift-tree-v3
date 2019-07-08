@@ -26,7 +26,7 @@
 /// implementing these members.
 /// - `path`
 /// - `path(at:)`
-/// - `sequence(at:)`
+/// - `contents(at:)`
 /// There're default implementations based on these members,
 /// and you don't need to override them unless you need some
 /// optimization.
@@ -51,11 +51,7 @@ public protocol Tree {
     /// Gets path at location.
     func path(at i:SubSequence.Index, in p:Path) -> Path
     /// Gets all elements at location.
-    func sequence(in p:Path) -> SubSequence
-    /// This was designed to be a `subscript`, but having `subscript` form
-    /// makes compiler goes crazy. Swift compiler fails on every features that are not
-    /// on Rust.
-    func subsequence(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence.SubSequence
+    func contents(in p:Path) -> SubSequence
 }
 public protocol RandomAccessTree: Tree where SubSequence: RandomAccessCollection {
 }

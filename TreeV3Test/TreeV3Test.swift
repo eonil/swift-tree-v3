@@ -41,9 +41,9 @@ class TreeV3Test: XCTestCase {
         XCTAssertEqual(a.count(in: [3]), 1)
         XCTAssertEqual(a.count(in: [3,0]), 1)
         XCTAssertEqual(a.count(in: [3,0,0]), 1)
-        XCTAssertEqual(Array(a.sequence(in: [3])), [999_999])
-        XCTAssertEqual(Array(a.sequence(in: [3,0])), [999_999_999])
-        XCTAssertEqual(Array(a.sequence(in: [3,0,0])), [999_999_999_999])
+        XCTAssertEqual(Array(a.contents(in: [3])), [999_999])
+        XCTAssertEqual(Array(a.contents(in: [3,0])), [999_999_999])
+        XCTAssertEqual(Array(a.contents(in: [3,0,0])), [999_999_999_999])
     }
     func testDFS() {
         var a = ArrayBranchTree<Int>()
@@ -70,7 +70,7 @@ class TreeV3Test: XCTestCase {
             [3,0,0,0],
             ])
         func findSequence(at p:IndexPath) -> [Int] {
-            let s = a.sequence(in: p)
+            let s = a.contents(in: p)
             return Array(s)
         }
         XCTAssertEqual(Array(Array(a.paths.dfs).map(findSequence(at:))), [
@@ -131,7 +131,7 @@ class TreeV3Test: XCTestCase {
             [3,0,0,0],
             ])
         func findSequence(at p:IndexPath) -> [String] {
-            let s = b.sequence(in: p)
+            let s = b.contents(in: p)
             return Array(s)
         }
         XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
@@ -174,7 +174,7 @@ class TreeV3Test: XCTestCase {
             [3,0,0,0],
             ])
         func findSequence(at p:IndexPath) -> [String] {
-            let s = b.sequence(in: p)
+            let s = b.contents(in: p)
             return Array(s)
         }
         XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
@@ -209,7 +209,7 @@ class TreeV3Test: XCTestCase {
             [0,0],
             ])
         func findSequence(at p:IndexPath) -> [Int] {
-            let s = b.sequence(in: p)
+            let s = b.contents(in: p)
             return Array(s)
         }
         XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
@@ -244,7 +244,7 @@ class TreeV3Test: XCTestCase {
             [3],
             ])
         func findSequence(at p:IndexPath) -> [Int] {
-            let s = b.sequence(in: p)
+            let s = b.contents(in: p)
             return Array(s)
         }
         XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
@@ -291,7 +291,7 @@ class TreeV3Test: XCTestCase {
         a.append(999_999_999_999, in: [3,0,0])
         let b = ArrayBranchTree(converting: a)
         func findSequence(at p:IndexPath) -> [Int] {
-            let s = b.sequence(in: p)
+            let s = b.contents(in: p)
             return Array(s)
         }
         XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
@@ -340,7 +340,7 @@ class TreeV3Test: XCTestCase {
         a.append(999_999_999_999, in: [3,0,0])
         let b = AnyTree(a)
         func findSequence(at p:AnyTree<Int>.Path) -> [Int] {
-            let s = b.sequence(in: p)
+            let s = b.contents(in: p)
             return Array(s)
         }
         XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [

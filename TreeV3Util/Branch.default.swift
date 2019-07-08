@@ -42,10 +42,10 @@ Element.Branches.SubSequence == SubSequence {
         case false: return self[p.first!].branches[r, in: p.dropFirst()]
         }
     }
-    func sequence<P>(in p:P) -> SubSequence where P:Collection, P.Element == Index {
+    func contents<P>(in p:P) -> SubSequence where P:Collection, P.Element == Index {
         switch p.isEmpty {
         case true:  return self[startIndex...]
-        case false: return self[p.first!].branches.sequence(in: p.dropFirst())
+        case false: return self[p.first!].branches.contents(in: p.dropFirst())
         }
     }
 }

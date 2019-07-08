@@ -16,7 +16,7 @@ public extension Tree {
     /// Gets top-level branches of ths tree.
     var branches: Subtree<Self>.Branches {
         let p = path
-        let s = sequence(in: p)
+        let s = contents(in: p)
         return Subtree<Self>.Branches(base: self, location: p, sequence: s)
     }
 }
@@ -35,7 +35,7 @@ public struct Subtree<Base>: Branch where Base: Tree {
     }
     public var branches: Branches {
         let p = base.path(at: index, in: location)
-        let s = base.sequence(in: p)
+        let s = base.contents(in: p)
         return Branches(base: base, location: p, sequence: s)
     }
     public struct Branches: Collection {

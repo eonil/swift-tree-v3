@@ -57,7 +57,7 @@ private struct TreePathDFSSequence<Base>: Sequence where Base: Tree {
     let base: Base
     public func makeIterator() -> TreePathDFSIterator<Base> {
         /// Root is a collection. Therefore, no value at root.
-        let s = base.sequence(in: base.path)
+        let s = base.contents(in: base.path)
         let n = TreeNode<Base>(
             base: base,
             location: base.path,
@@ -90,7 +90,7 @@ private struct TreeNode<Base>: Collection where Base: Tree {
     }
     subscript(_ i:Base.SubSequence.Index) -> TreeNode {
         let p = base.path(at: i, in: location)
-        let s = base.sequence(in: p)
+        let s = base.contents(in: p)
         let n = TreeNode(
             base: base,
             location: p,

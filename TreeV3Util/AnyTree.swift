@@ -28,7 +28,7 @@ public struct AnyTree<T>: Tree {
         implPath = x.path
         implPathAtIn = { i,p in return x.path(at: i.impl as! I, in: p as! X.Path) }
         implSequenceIn = { p in
-            let s = x.sequence(in: p as! X.Path)
+            let s = x.contents(in: p as! X.Path)
             func get(_ i:Index) -> T {
                 let i1 = i.impl as! I
                 return s[i1]
@@ -46,7 +46,7 @@ public struct AnyTree<T>: Tree {
     public func path(at i:Index, in p:Path) -> Path {
         return implPathAtIn(i,p)
     }
-    public func sequence(in p:Path) -> AnyTreeSubSequence<T> {
+    public func contents(in p:Path) -> AnyTreeSubSequence<T> {
         return implSequenceIn(p)
     }
     public struct Index: Comparable {

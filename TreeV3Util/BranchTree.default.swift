@@ -34,8 +34,8 @@ public extension BranchTree {
     func path(at i:SubSequence.Index, in p:Path) -> Path {
         return p.appending(i)
     }
-    func sequence(in p:Path) -> BranchTreeSlice<Branches.Element> {
-        return BranchTreeSlice(base: branches.sequence(in: p))
+    func contents(in p:Path) -> BranchTreeSlice<Branches.Element> {
+        return BranchTreeSlice(base: branches.contents(in: p))
     }
     func subsequence(_ r:Range<SubSequence.Index>, in p:Path) -> BranchTreeSlice<Branches.Element> {
         return BranchTreeSlice<Branches.Element>(base: branches[r, in: p])

@@ -13,7 +13,7 @@ public extension Tree {
     Path == ArrayBranchTree<X>.Path {
         var a = ArrayBranchTree<X>()
         for p in paths.dfs {
-            let s = sequence(in: p).lazy.map(mfx)
+            let s = contents(in: p).lazy.map(mfx)
             a.append(contentsOf: s, in: p)
         }
         return a

@@ -20,7 +20,7 @@ private extension ArrayBranchTree {
     mutating func append<X>(contentsOf x:X, in p:X.Path, isSorted: IsSorted<Element>) where
     X:Tree,
     X.SubSequence.Element == Element {
-        let s = x.sequence(in: p)
+        let s = x.contents(in: p)
         let q = s.indices.sorted(by: { a,b in isSorted(s[a],s[b]) })
         for i in q {
             let e = s[i]
@@ -36,7 +36,7 @@ private extension ArrayBranch {
     mutating func append<X>(contentsOf x:X, in p:X.Path, isSorted: IsSorted<Element>) where
     X:Tree,
     X.SubSequence.Element == Element {
-        let s = x.sequence(in: p)
+        let s = x.contents(in: p)
         let q = s.indices.sorted(by: { a,b in isSorted(s[a],s[b]) })
         for i in q {
             let e = s[i]
