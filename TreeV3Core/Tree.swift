@@ -63,13 +63,63 @@ public protocol Tree {
 }
 public protocol RandomAccessTree: Tree where SubSequence: RandomAccessCollection {
 }
+
+/// A `Tree` that can replace their elements without modifying topology.
 public protocol MutableTree: Tree {
     subscript(_ i:SubSequence.Index, in p:Path) -> SubSequence.Element { get set }
 //    subscript(_ r:Range<SubSequence.Index>, in p:Path) -> SubSequence { get set }
 }
+
+/// A `Tree` that can modify collction at a node.
+///
 public protocol RangeReplaceableTree: Tree {
     init()
+    /// Replaces elements in specific range.
+    ///
+    /// This DO NOT remove descendants. If any element in the range has any child,
+    /// call fails and program crashes. You need to ensure no child in all elements
+    /// in supplied range.
+    ///
     mutating func replaceSubrange<C>(_ r:Range<SubSequence.Index>, with es:C, in p:Path) where
     C:Collection,
     C.Element == SubSequence.Element
+
+}
+
+/// A `Tree` that can modify topology.
+///
+public protocol RangeReplaceableTree: RangeReplaceableTree {
+    /// Replace subtrees in range with subtrees in another tree.
+    ///
+    /// This replaces topology. All descendants in the range will be removed
+    /// and new elements will be added with empty children.
+    ///
+    /// Take care that this affects to all descendants.
+    /// If you want to replace only elements without replacing descendants,
+    /// you have to use `subscript[,in:]` instead of.
+    ///
+    /// - Parameter tr: Target range to replace in target tree (self).
+    /// - Parameter sr: Source range in source tree.
+    /// - Parameter s:  Source tree.
+    mutating func replaceSubrange<T>(_ tr:TreeRange<Path,SubSequence.Index>, with sr:TreeRange<Path,SubSequence.Index>, of s:T) where
+    T:Tree,
+    T.SubSequence.Element == SubSequence.Element
+
+    /// Replace subtrees in range with subtrees in another tree.
+    ///
+    /// This replaces topology. All descendants in the range will be removed
+    /// and new elements will be added with empty children.
+    ///
+    /// Take care that this affects to all descendants.
+    /// If you want to replace only elements without replacing descendants,
+    /// you have to use `subscript[,in:]` instead of.
+    ///
+    /// - Parameter tr: Target range to replace.
+    /// - Parameter sr: Source range in source branch in source tree.
+    /// - Parameter sp: Source path to source branch in source tree.
+    /// - Parameter s:  Source tree.
+    /// - Parameter tp: Target path to target range to be replaced.
+    mutating func replaceSubrange<T>(_ tr:Range<SubSequence.Index>, with sr:Range<SubSequence.Index>, in sp:Path, of s:T, in tp:Path) where
+    T:Tree,
+    T.SubSequence.Element == SubSequence.Element
 }
