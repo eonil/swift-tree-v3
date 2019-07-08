@@ -25,8 +25,8 @@
 /// The simplest way to conform `Tree` protocol is
 /// implementing these members.
 /// - `path`
-/// - `path(at:)`
-/// - `contents(at:)`
+/// - `path(at:,in:)`
+/// - `contents(in:)`
 /// There're default implementations based on these members,
 /// and you don't need to override them unless you need some
 /// optimization.
