@@ -63,9 +63,8 @@ A type also can conform both protocols. In that case, it simply become
 `BranchTree`. Default concrete type `ArrayBranchTree` conforms both protocols
 and provides mutations in both models.
 
-`ArrayBranchTree` also conforms `Collection` protocol, so you also can use 
-`ArrayBranchTree` just like other collections. `Tree` protocol does not have collide with
-`Collection` protocol at all.
+`Tree` also serves a container role for central storage design. 
+In that case, `Collection` conformance or extra members can be added to `Tree`.  
 
 
 
