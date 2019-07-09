@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4587925022D3583B00E4B7B7 /* AnyRandomAccessTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4587924F22D3583B00E4B7B7 /* AnyRandomAccessTree.swift */; };
+		45935C5C22D41E42003D7CF8 /* Branch.map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C5B22D41E42003D7CF8 /* Branch.map.swift */; };
+		45935C5E22D41E4A003D7CF8 /* Branch.lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C5D22D41E4A003D7CF8 /* Branch.lazy.swift */; };
+		45935C6022D42016003D7CF8 /* Branch.filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C5F22D42016003D7CF8 /* Branch.filter.swift */; };
+		45935C6222D4201B003D7CF8 /* Branch.sorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C6122D4201B003D7CF8 /* Branch.sorted.swift */; };
 		45DC852722D3F8510073D526 /* TreeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC852522D3F15A0073D526 /* TreeIndex.swift */; };
 		45DC852922D3FFC80073D526 /* BranchTreeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC852822D3FFC80073D526 /* BranchTreeIndex.swift */; };
+		45DC852D22D417C70073D526 /* BranchTreeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC852C22D417C70073D526 /* BranchTreeCollection.swift */; };
 		45E9A61C22D1D8DD00FE2AA5 /* TreeV3Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A61B22D1D8DD00FE2AA5 /* TreeV3Test.swift */; };
 		45E9A61E22D1D8DD00FE2AA5 /* libTreeV3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 450FABA722D1C02D0026CF7A /* libTreeV3.a */; };
 		45F7256522D2F5B40056187D /* libTreeV3Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F7254E22D2F5A10056187D /* libTreeV3Core.a */; };
@@ -147,8 +152,13 @@
 		450FABB822D1C0580026CF7A /* BranchTree.default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchTree.default.swift; sourceTree = "<group>"; };
 		450FABB922D1C0580026CF7A /* Tree.default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.default.swift; sourceTree = "<group>"; };
 		4587924F22D3583B00E4B7B7 /* AnyRandomAccessTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRandomAccessTree.swift; sourceTree = "<group>"; };
+		45935C5B22D41E42003D7CF8 /* Branch.map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.map.swift; sourceTree = "<group>"; };
+		45935C5D22D41E4A003D7CF8 /* Branch.lazy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.lazy.swift; sourceTree = "<group>"; };
+		45935C5F22D42016003D7CF8 /* Branch.filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.filter.swift; sourceTree = "<group>"; };
+		45935C6122D4201B003D7CF8 /* Branch.sorted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.sorted.swift; sourceTree = "<group>"; };
 		45DC852522D3F15A0073D526 /* TreeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeIndex.swift; sourceTree = "<group>"; };
 		45DC852822D3FFC80073D526 /* BranchTreeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchTreeIndex.swift; sourceTree = "<group>"; };
+		45DC852C22D417C70073D526 /* BranchTreeCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchTreeCollection.swift; sourceTree = "<group>"; };
 		45E9A61322D1CB8E00FE2AA5 /* BranchTreeSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchTreeSlice.swift; sourceTree = "<group>"; };
 		45E9A61922D1D8DD00FE2AA5 /* TreeV3Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreeV3Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E9A61B22D1D8DD00FE2AA5 /* TreeV3Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeV3Test.swift; sourceTree = "<group>"; };
@@ -320,6 +330,10 @@
 				450FABB322D1C0580026CF7A /* Branch.default.swift */,
 				45E9A62622D1DDBE00FE2AA5 /* Branch.dfs.swift */,
 				45F7254522D2C2B20056187D /* Branch.treefication.swift */,
+				45935C5B22D41E42003D7CF8 /* Branch.map.swift */,
+				45935C5F22D42016003D7CF8 /* Branch.filter.swift */,
+				45935C6122D4201B003D7CF8 /* Branch.sorted.swift */,
+				45935C5D22D41E4A003D7CF8 /* Branch.lazy.swift */,
 				450FABB922D1C0580026CF7A /* Tree.default.swift */,
 				45F7253322D242360056187D /* Tree.dfs.swift */,
 				45E9A62422D1DCA200FE2AA5 /* Tree.paths.swift */,
@@ -334,6 +348,7 @@
 				450FABB822D1C0580026CF7A /* BranchTree.default.swift */,
 				45DC852822D3FFC80073D526 /* BranchTreeIndex.swift */,
 				45E9A61322D1CB8E00FE2AA5 /* BranchTreeSlice.swift */,
+				45DC852C22D417C70073D526 /* BranchTreeCollection.swift */,
 				450FABB622D1C0580026CF7A /* ArrayBranchTree.swift */,
 				45F7253122D2407F0056187D /* ArrayBranch.swift */,
 				45F7252F22D22FBF0056187D /* AnyTree.swift */,
@@ -663,15 +678,20 @@
 				45DC852922D3FFC80073D526 /* BranchTreeIndex.swift in Sources */,
 				45F725BA22D2FA330056187D /* Tree.lazy.swift in Sources */,
 				45F725B022D2FA330056187D /* Branch.default.swift in Sources */,
+				45DC852D22D417C70073D526 /* BranchTreeCollection.swift in Sources */,
 				45F725B722D2FA330056187D /* Tree.map.swift in Sources */,
 				45F725B922D2FA330056187D /* Tree.sorted.swift in Sources */,
 				45F725BE22D2FA330056187D /* BranchTree.default.swift in Sources */,
 				45F725BD22D2FA330056187D /* BranchTree.swift in Sources */,
+				45935C6022D42016003D7CF8 /* Branch.filter.swift in Sources */,
 				45F725B222D2FA330056187D /* Branch.treefication.swift in Sources */,
 				45F725C022D2FA330056187D /* ArrayBranchTree.swift in Sources */,
 				45F725C222D2FA330056187D /* AnyTree.swift in Sources */,
 				4587925022D3583B00E4B7B7 /* AnyRandomAccessTree.swift in Sources */,
+				45935C6222D4201B003D7CF8 /* Branch.sorted.swift in Sources */,
+				45935C5E22D41E4A003D7CF8 /* Branch.lazy.swift in Sources */,
 				45F725B622D2FA330056187D /* Tree.branches.swift in Sources */,
+				45935C5C22D41E42003D7CF8 /* Branch.map.swift in Sources */,
 				45F725B122D2FA330056187D /* Branch.dfs.swift in Sources */,
 				45F725BB22D2FA330056187D /* Tree.convert.swift in Sources */,
 				45F725BC22D2FA330056187D /* BranchPath.swift in Sources */,

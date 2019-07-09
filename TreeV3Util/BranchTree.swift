@@ -10,16 +10,15 @@ import Foundation
 
 /// A `Tree` with `Branch` access.
 ///
+/// Point of `BranchTree` is homogeneous `Path` and `SubSequence.Index`.
+/// By providing the equality, now we can navigate tree only with paths.
+///
 /// Despite `Tree` is already providing default read-only
 /// `branches` property, this protocol has been designed to provide
 /// common and mutable interfaces. When you see a
 /// concrete type named `-BranchTree`, it implies
 /// providing direct mutable access to its branches.
 ///
-/// - Note:
-///     As `Tree` provides default `branches` implementation,
-///     just denoting `: BranchTree` makes any `Tree`
-///     to conform `BranchTree` automatically.
 public protocol BranchTree: Tree where
 //SubSequence.Element == Branches.Element.Value,
 SubSequence == BranchTreeSlice<Branches.Element>,
@@ -32,6 +31,7 @@ Path.Element == SubSequence.Index {
 //        Branches.Element.Branches.Index == SubSequence.Index,
         Branches.Element.Branches.SubSequence == Branches.SubSequence
 }
+
 public protocol RandomAccessBranchTree:
 BranchTree,
 RandomAccessTree where

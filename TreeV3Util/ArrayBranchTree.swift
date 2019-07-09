@@ -50,3 +50,17 @@ ExpressibleByArrayLiteral {
         return dfs.makeIterator()
     }
 }
+
+/// These are possible because `Path.Element == SubSequence.Index`.
+public extension ArrayBranchTree {
+    subscript(_ p:Path) -> Element {
+        get {
+            precondition(!path.isEmpty)
+            return branches[path.first!][path.dropFirst()].value
+        }
+        set(x) {
+            precondition(!path.isEmpty)
+            branches[path.first!][path.dropFirst()].value = x
+        }
+    }
+}
