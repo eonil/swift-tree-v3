@@ -340,52 +340,52 @@ class TreeV3UtilTest: XCTestCase {
             999_999_999_999,
             ])
     }
-    func testAnyTree() {
-        var a = ArrayTree<Int>()
-        a.append(111, in: [])
-        a.insert(333, at: 1, in: [])
-        a.insert(222, at: 1, in: [])
-        a.append(222_111, in: [1])
-        a.append(contentsOf: [222_222, 222_333], in: [1])
-        a.append(999, in: [])
-        a.append(999_999, in: [3])
-        a.append(999_999_999, in: [3,0])
-        a.append(999_999_999_999, in: [3,0,0])
-        let b = AnyTree(a)
-        func findSequence(at p:AnyTree<Int>.Path) -> [Int] {
-            let s = b.contents(in: p)
-            return Array(s)
-        }
-        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
-            [111, 222, 333, 999],           // children of []
-            [],                             // children of [0]
-            [222_111, 222_222, 222_333],    // children of [1]
-            [],                             // children of [1,0]
-            [],                             // children of [1,1]
-            [],                             // children of [1,2]
-            [],                             // children of [2] (333)
-            [999_999],                      // children of [3] (999)
-            [999_999_999],                  // children of [3,0]
-            [999_999_999_999],              // children of [3,0,0]
-            []                              // children of [3,0,0,0]
-            ])
-//        func findElement(at p:AnyTree<Int>.Path) -> Int {
-//            b.sequence(in: <#T##Any#>)
-//            let e = b[p.last!, in: p.dropLast()]
-//            return e
+//    func testAnyTree() {
+//        var a = ArrayTree<Int>()
+//        a.append(111, in: [])
+//        a.insert(333, at: 1, in: [])
+//        a.insert(222, at: 1, in: [])
+//        a.append(222_111, in: [1])
+//        a.append(contentsOf: [222_222, 222_333], in: [1])
+//        a.append(999, in: [])
+//        a.append(999_999, in: [3])
+//        a.append(999_999_999, in: [3,0])
+//        a.append(999_999_999_999, in: [3,0,0])
+//        let b = AnyTree(a)
+//        func findSequence(at p:AnyTree<Int>.Path) -> [Int] {
+//            let s = b.contents(in: p)
+//            return Array(s)
 //        }
-//        XCTAssertEqual(Array(Array(b.paths.dfs.dropFirst()).map(findElement(at:))), [
-//            111,
-//            222,
-//            222_111,
-//            222_222,
-//            222_333,
-//            333,
-//            999,
-//            999_999,
-//            999_999_999,
-//            999_999_999_999,
+//        XCTAssertEqual(Array(Array(b.paths.dfs).map(findSequence(at:))), [
+//            [111, 222, 333, 999],           // children of []
+//            [],                             // children of [0]
+//            [222_111, 222_222, 222_333],    // children of [1]
+//            [],                             // children of [1,0]
+//            [],                             // children of [1,1]
+//            [],                             // children of [1,2]
+//            [],                             // children of [2] (333)
+//            [999_999],                      // children of [3] (999)
+//            [999_999_999],                  // children of [3,0]
+//            [999_999_999_999],              // children of [3,0,0]
+//            []                              // children of [3,0,0,0]
 //            ])
-    }
+////        func findElement(at p:AnyTree<Int>.Path) -> Int {
+////            b.sequence(in: <#T##Any#>)
+////            let e = b[p.last!, in: p.dropLast()]
+////            return e
+////        }
+////        XCTAssertEqual(Array(Array(b.paths.dfs.dropFirst()).map(findElement(at:))), [
+////            111,
+////            222,
+////            222_111,
+////            222_222,
+////            222_333,
+////            333,
+////            999,
+////            999_999,
+////            999_999_999,
+////            999_999_999_999,
+////            ])
+//    }
 }
 
