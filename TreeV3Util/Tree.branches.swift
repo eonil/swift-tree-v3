@@ -40,7 +40,7 @@ public struct Subtree<Base>: Branch where Base: Tree {
         let s = base.contents(in: p)
         return Branches(base: base, location: p, sequence: s)
     }
-    public struct Branches: Collection {
+    public struct Branches: Collection, BranchCollection {
         let base: Base
         // Names as `location` as this is a pre-composited path.
         let location: Base.Path
