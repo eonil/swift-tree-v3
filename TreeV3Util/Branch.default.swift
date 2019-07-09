@@ -8,6 +8,31 @@
 
 import Foundation
 
+public extension Branch {
+    subscript<P>(_ p:P) -> Self where P:Collection, P.Element == Branches.Index {
+        switch p.isEmpty {
+        case true:  return self
+        case false: return branches[p.first!][p.dropFirst()]
+        }
+    }
+}
+public extension Branch where Self: MutableBranch & RangeReplaceableBranch {
+    subscript<P>(_ p:P) -> Self where P:Collection, P.Element == Branches.Index {
+        get {
+            switch p.isEmpty {
+            case true:  return self
+            case false: return branches[p]
+            }
+        }
+        set(x) {
+            switch p.isEmpty {
+            case true:  self = x
+            case false: branches[p] = x
+            }
+        }
+    }
+}
+
 public extension Collection where
 Element: Branch,
 Element.Branches.Index == Index,
@@ -71,6 +96,30 @@ Element.Branches.SubSequence == SubSequence {
         switch p.isEmpty {
         case true:  return distance(from: a, to: b)
         case false: return self[p.first!].branches.distance(from: a, to: b, in: p.dropFirst())
+        }
+    }
+}
+
+public extension Collection where
+Element: Branch,
+Element.Branches.Index == Index {
+    subscript<P>(_ p:P) -> Element where P:Collection, P.Element == Index {
+        precondition(!p.isEmpty)
+        return self[p.first!].branches[p.dropFirst()]
+    }
+}
+public extension Collection where
+Self: MutableCollection & RangeReplaceableCollection,
+Element: MutableBranch & RangeReplaceableBranch,
+Element.Branches.Index == Index {
+    subscript<P>(_ p:P) -> Element where P:Collection, P.Element == Index {
+        get {
+            precondition(!p.isEmpty)
+            return self[p.first!].branches[p.dropFirst()]
+        }
+        set(x) {
+            precondition(!p.isEmpty)
+            self[p.first!].branches[p.dropFirst()] = x
         }
     }
 }

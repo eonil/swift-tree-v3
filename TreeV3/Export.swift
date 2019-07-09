@@ -20,9 +20,9 @@ public typealias MutableBranch                  =   TreeV3Core.MutableBranch
 public typealias RangeReplaceableBranch         =   TreeV3Core.RangeReplaceableBranch
 
 public typealias ICPathTree                     =   TreeV3Util.ICPathTree
-public typealias RandomAccessICPathTree         =   TreeV3Util.RandomAccessICPathTree
-public typealias MutableICPathTree              =   TreeV3Util.MutableICPathTree
-public typealias RangeReplaceableICPathTree     =   TreeV3Util.RangeReplaceableICPathTree
+//public typealias RandomAccessICPathTree         =   TreeV3Util.RandomAccessICPathTree
+//public typealias MutableICPathTree              =   TreeV3Util.MutableICPathTree
+//public typealias RangeReplaceableICPathTree     =   TreeV3Util.RangeReplaceableICPathTree
 
 public typealias ArrayTree<Element>             =   TreeV3Util.ArrayTree<Element>
 public typealias ArrayBranch<Element>           =   TreeV3Util.ArrayBranch<Element>

@@ -10,12 +10,15 @@ import Foundation
 
 public struct ArrayTree<Element>:
 Sequence,
-ICPathTree,
-RandomAccessICPathTree,
-MutableICPathTree,
-RangeReplaceableICPathTree,
+Tree,
+BranchTree,
+BranchReplaceableTree,
+//ICPathTree,
+//RandomAccessICPathTree,
+//MutableICPathTree,
+//RangeReplaceableICPathTree,
 ExpressibleByArrayLiteral {
-    public typealias Path = IndexPath
+//    public typealias Path = IndexPath
     /// Branches of this tree.
     ///
     /// This effectively overrides default `branches` property.
@@ -39,11 +42,15 @@ ExpressibleByArrayLiteral {
     public init<C>(converting bs:C) where C:Collection, C.Element: Branch, C.Element.Value == Element {
         branches = bs.map(ArrayBranch.init(converting:))
     }
+    public var path: IndexPath { return [] }
+    public func path(at i: Int, in p: IndexPath) -> IndexPath {
+        return p.appending(i)
+    }
     public subscript(_ i:Int, in p:IndexPath) -> Element {
         get { return branches[i, in: p].value }
         set(x) { branches[i, in: p].value = x }
     }
-    public subscript(_ r:Range<Int>, in p:Path) -> ICPathTreeSlice<ArrayBranch<Element>> {
+    public subscript(_ r:Range<Int>, in p:Path) -> BranchSlice<ArrayBranch<Element>> {
         return contents(in: p)[r]
     }
     public func makeIterator() -> AnyIterator<Element> {

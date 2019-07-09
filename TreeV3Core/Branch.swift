@@ -6,12 +6,20 @@
 //  Copyright © 2019 Eonil. All rights reserved.
 //
 
-/// A device to implement pointer-based tree structures quickly.
+/// An tree interface with explicitly recursive form.
+///
+/// This is a device to implement pointer-based tree structures quickly.
 ///
 /// - Note:
 ///     Branches have dedicated collection for children.
 ///     This is intentional as the alternative design (attached value on a collection)
 ///     cannot satisfy `RangeReplaceableCollection`.
+///
+/// - Note:
+///     As being homogeneous recursive tree,
+///     navigating into `Branch` can be done collection of indices.
+///     This is a natively supported path.
+///
 public protocol Branch {
     var value: Value { get }
     associatedtype Value
