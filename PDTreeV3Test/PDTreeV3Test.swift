@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import TreeV3Util
 import PDTreeV3
 
 class PDTreeV3Test: XCTestCase {
@@ -350,5 +351,14 @@ class PDTreeV3Test: XCTestCase {
         let y = a.branches[in: [0]]
         XCTAssertEqual(x[0].value, 111)
         XCTAssertEqual(y[0].value, 222)
+        a.branches[in: [0]].append(PDListBranch(value: 333))
+        XCTAssertEqual(a.branches[0].branches.count, 2)
+        func test<X>(_ x:X) where
+        X:BranchTree & RecursiveBranches,
+        X.Branches: BranchCollection {
+            let z = x.branches[in: []]
+            print(z)
+        }
+        test(a)
     }
 }

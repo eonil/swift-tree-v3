@@ -109,6 +109,26 @@ as I couldn't find a nice way to make it lazily in lower cost.
 
 
 
+Utility Constraint Protocols
+---------------------------------
+When you write a generic constraints, don't forget these two protocols.
+- `BranchCollection`.
+- `RecursiveBranches`.
+
+For example, if you write a function that accepts generic tree and want to
+navigate the tree freely, constrain type like this.
+
+    func fx1<X>(_ someTree:X) where
+    X:BranchTree & RecursiveBranches,
+    X.Branches: BranchCollection {
+        let rootBranches = someTree.branches[in: []]
+        print(rootBranches)
+    }
+
+
+
+
+
 
 License & Credits
 ---------------------

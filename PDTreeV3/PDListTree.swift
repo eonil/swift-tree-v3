@@ -15,6 +15,7 @@ public struct PDListTree<Element>:
 //Sequence,
 BranchTree,
 BranchReplaceableTree,
+RecursiveBranches,
 ExpressibleByArrayLiteral {
 //    public typealias Path = IndexPath
     /// Branches of this tree.

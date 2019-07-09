@@ -24,6 +24,26 @@ Element.Branches == Self {
     }
 }
 
+public extension BranchCollection where
+Element: Branch & MutableBranch & RangeReplaceableBranch,
+Element.Branches == Self {
+    /// Gets branches "branch collection" at path.
+    subscript<P>(in p:P) -> Self where P:Collection, P.Element == Index {
+        get {
+            switch p.isEmpty {
+            case true:  return self
+            case false: return self[p.first!].branches[in: p.dropFirst()]
+            }
+        }
+        set(x) {
+            switch p.isEmpty {
+            case true:  self = x
+            case false: self[p.first!].branches[in: p.dropFirst()] = x
+            }
+        }
+    }
+}
+
 extension Array: BranchCollection {}
 
 /// This is same with above but compiler fails.
