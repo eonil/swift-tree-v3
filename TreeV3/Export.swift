@@ -21,6 +21,7 @@ public typealias RangeReplaceableBranch         =   TreeV3Core.RangeReplaceableB
 
 public typealias BranchTree                     =   TreeV3Util.BranchTree
 public typealias BranchReplaceableTree          =   TreeV3Util.BranchReplaceableTree
+public typealias RecursiveBranches              =   TreeV3Util.RecursiveBranches
 
 public typealias ArrayTree<Element>             =   TreeV3Util.ArrayTree<Element>
 public typealias ArrayBranch<Element>           =   TreeV3Util.ArrayBranch<Element>
