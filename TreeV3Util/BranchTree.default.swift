@@ -9,13 +9,13 @@
 import Foundation
 
 public extension BranchTree where Path: ExpressibleByArrayLiteral {
-    var path: Path { [] }
+    var path: Path { return [] }
 }
 
 public extension BranchTree where
 Path: RangeReplaceableCollection,
 Path.Element == SubSequence.Index {
-    var path: Path { Path() }
+    var path: Path { return Path() }
     func path(at i: SubSequence.Index, in p: Path) -> Path {
         var q = p
         q.append(i)
@@ -25,7 +25,7 @@ Path.Element == SubSequence.Index {
 public extension BranchTree where
 Path == IndexPath,
 SubSequence.Index == Int {
-    var path: Path { Path() }
+    var path: Path { return Path() }
     func path(at i: SubSequence.Index, in p: Path) -> Path { return p.appending(i) }
 }
 
