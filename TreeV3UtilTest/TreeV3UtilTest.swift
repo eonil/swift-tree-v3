@@ -393,7 +393,7 @@ class TreeV3UtilTest: XCTestCase {
         var a = ArrayTree<Int>()
         a.append(111, in: [])
         a.append(222, in: [0])
-        let bs = [true,false].randomElement() ?? false ? a.branches : a.branches[[]].branches
+        let bs = [true,false].randomElement() ?? false ? a.branches : a.branches[[0]].branches
         XCTAssertEqual(a.count(in: []), 1)
         XCTAssertEqual(bs.count, 1)
     }
