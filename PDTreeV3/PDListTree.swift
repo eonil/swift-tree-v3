@@ -12,12 +12,10 @@ import TreeV3Util
 
 /// A tree built with `PDList` (`BTree.List`).
 public struct PDListTree<Element>:
-//Sequence,
 BranchTree,
 BranchReplaceableTree,
 RecursiveBranches,
 ExpressibleByArrayLiteral {
-//    public typealias Path = IndexPath
     /// Branches of this tree.
     ///
     /// This effectively overrides default `branches` property.
@@ -26,13 +24,6 @@ ExpressibleByArrayLiteral {
     public init(arrayLiteral es:Element...) {
         branches = PDList(es.lazy.map({ PDListBranch(value: $0, branches: []) }))
     }
-//    public subscript(_ i:Int, in p:IndexPath) -> Element {
-//        get { return branches[i, in: p].value }
-//        set(x) { branches[i, in: p].value = x }
-//    }
-//    public func makeIterator() -> AnyIterator<Element> {
-//        return dfs.makeIterator()
-//    }
 }
 public extension PDListTree {
     init<C>(_ es:C) where C:Collection, C.Element == Element {

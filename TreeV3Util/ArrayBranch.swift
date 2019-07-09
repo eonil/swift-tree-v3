@@ -8,7 +8,11 @@
 
 import Foundation
 
-public struct ArrayBranch<Element>: Branch, RandomAccessBranch, MutableBranch, RangeReplaceableBranch {
+public struct ArrayBranch<Element>:
+Branch,
+RandomAccessBranch,
+MutableBranch,
+RangeReplaceableBranch {
     public var value: Element
     public var branches: [ArrayBranch]
     public init(value v:Element, branches bs:[ArrayBranch] = []) {

@@ -44,7 +44,6 @@ Element.Branches == Self {
     }
 }
 
-extension Array: BranchCollection {}
 
 /// This is same with above but compiler fails.
 

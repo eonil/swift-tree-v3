@@ -404,6 +404,14 @@ class TreeV3UtilTest: XCTestCase {
         XCTAssertEqual(a.count(in: []), 1)
         XCTAssertEqual(a[[0]], 111)
     }
+    func testReplaceSubrange() {
+        var a = ArrayTree<Int>()
+        a.insert(contentsOf: [11,22,33], at: 0, in: [])
+        a[[1]] = 99
+        XCTAssertEqual(Array(a.branches.map({ $0.value })), [11,99,33])
+        a.replaceSubrange(1..<2, with: [88], in: [])
+        XCTAssertEqual(Array(a.branches.map({ $0.value })), [11,88,33])
+    }
 }
 
 

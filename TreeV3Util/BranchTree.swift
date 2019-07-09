@@ -33,5 +33,12 @@ Branches.Element: MutableBranch & RangeReplaceableBranch {
 /// This can make many things simple.
 /// - Note:
 ///     Please suggest any better name...
-public protocol RecursiveBranches: BranchTree where Branches.Element.Branches == Branches {
+public protocol RecursiveBranches: BranchTree where
+Branches.Element.Branches == Branches {
 }
+
+//public protocol RequiresBranchIndexCollectionPath where
+//Path: Collection,
+//Path.Element == Branches.Index {
+//
+//}

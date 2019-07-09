@@ -10,7 +10,6 @@ import Foundation
 
 /// A tree built with `Swift.Array`.
 public struct ArrayTree<Element>:
-Sequence,
 Tree,
 BranchTree,
 BranchReplaceableTree,
@@ -23,16 +22,6 @@ ExpressibleByArrayLiteral {
     public init() {}
     public init(arrayLiteral es:Element...) {
         branches = es.map({ ArrayBranch(value: $0, branches: []) })
-    }
-//    public subscript(_ i:Int, in p:IndexPath) -> Element {
-//        get { return branches[i, in: p].value }
-//        set(x) { branches[i, in: p].value = x }
-//    }
-//    public subscript(_ r:Range<Int>, in p:Path) -> BranchSlice<ArrayBranch<Element>> {
-//        return contents(in: p)[r]
-//    }
-    public func makeIterator() -> AnyIterator<Element> {
-        return dfs.makeIterator()
     }
 }
 public extension ArrayTree {
@@ -53,3 +42,4 @@ public extension ArrayTree {
     }
 }
 
+extension Array: BranchCollection {}
