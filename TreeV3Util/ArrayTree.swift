@@ -1,5 +1,5 @@
 //
-//  ArrayBranchTree.swift
+//  ArrayTree.swift
 //  Tree
 //
 //  Created by Henry on 2019/07/07.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct ArrayBranchTree<Element>:
+public struct ArrayTree<Element>:
 Sequence,
-BranchTree,
-RandomAccessBranchTree,
-MutableBranchTree,
-RangeReplaceableBranchTree,
+ICPathTree,
+RandomAccessICPathTree,
+MutableICPathTree,
+RangeReplaceableICPathTree,
 ExpressibleByArrayLiteral {
     public typealias Path = IndexPath
     /// Branches of this tree.
@@ -43,7 +43,7 @@ ExpressibleByArrayLiteral {
         get { return branches[i, in: p].value }
         set(x) { branches[i, in: p].value = x }
     }
-    public subscript(_ r:Range<Int>, in p:Path) -> BranchTreeSlice<ArrayBranch<Element>> {
+    public subscript(_ r:Range<Int>, in p:Path) -> ICPathTreeSlice<ArrayBranch<Element>> {
         return contents(in: p)[r]
     }
     public func makeIterator() -> AnyIterator<Element> {
@@ -52,7 +52,7 @@ ExpressibleByArrayLiteral {
 }
 
 /// These are possible because `Path.Element == SubSequence.Index`.
-public extension ArrayBranchTree {
+public extension ArrayTree {
     subscript(_ p:Path) -> Element {
         get {
             precondition(!path.isEmpty)

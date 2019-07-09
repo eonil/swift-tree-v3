@@ -60,7 +60,7 @@ Both probides read-only views in each other.
 - Branch collection is a tree (`Collection.treefied() where Element: Branch`)
 
 A type also can conform both protocols. In that case, it simply become
-`BranchTree`. Default concrete type `ArrayBranchTree` conforms both protocols
+`BranchTree`. Default concrete type `ArrayTree` conforms both protocols
 and provides mutations in both models.
 
 `Tree` also serves a container role for central storage design. 

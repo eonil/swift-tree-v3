@@ -9,18 +9,18 @@
 import Foundation
 
 public extension Tree {
-    func sorted(by isSorted:(SubSequence.Element,SubSequence.Element) -> Bool) -> ArrayBranchTree<SubSequence.Element> {
+    func sorted(by isSorted:(SubSequence.Element,SubSequence.Element) -> Bool) -> ArrayTree<SubSequence.Element> {
         let bs = branches
             .map({ $0.sorted(by: isSorted) })
             .sorted(by: { a,b in isSorted(a.value, b.value)})
-        return ArrayBranchTree(branches: bs)
-//        var a = ArrayBranchTree<SubSequence.Element>()
+        return ArrayTree(branches: bs)
+//        var a = ArrayTree<SubSequence.Element>()
 //        a.append(contentsOf: self, in: path, isSorted: isSorted)
 //        return a
     }
 }
 
-//private extension ArrayBranchTree {
+//private extension ArrayTree {
 //    mutating func append<X>(contentsOf x:X, in p:X.Path, isSorted: IsSorted<Element>) where
 //    X:Tree,
 //    X.SubSequence.Element == Element {

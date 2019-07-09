@@ -12,10 +12,10 @@ import TreeV3Util
 
 public struct PDListBranchTree<Element>:
 Sequence,
-BranchTree,
-RandomAccessBranchTree,
-MutableBranchTree,
-RangeReplaceableBranchTree,
+ICPathTree,
+RandomAccessICPathTree,
+MutableICPathTree,
+RangeReplaceableICPathTree,
 ExpressibleByArrayLiteral {
     public typealias Path = IndexPath
     /// Branches of this tree.

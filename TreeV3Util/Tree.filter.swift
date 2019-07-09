@@ -9,14 +9,14 @@
 import Foundation
 
 public extension Tree {
-    func filter(_ isIncluded: (SubSequence.Element) -> Bool) -> ArrayBranchTree<SubSequence.Element> {
+    func filter(_ isIncluded: (SubSequence.Element) -> Bool) -> ArrayTree<SubSequence.Element> {
         let bs = branches.compactMap({ $0.filter(isIncluded) })
-        return ArrayBranchTree(branches: bs)
-//        return ArrayBranchTree<SubSequence.Element>(self, isIncluded: isIncluded)
+        return ArrayTree(branches: bs)
+//        return ArrayTree<SubSequence.Element>(self, isIncluded: isIncluded)
     }
 }
 
-//private extension ArrayBranchTree {
+//private extension ArrayTree {
 //    init<X>(_ x:X, isIncluded: (X.SubSequence.Element) -> Bool) where
 //    X:Tree,
 //    X.SubSequence.Element == Element {

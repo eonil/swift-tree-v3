@@ -8,16 +8,16 @@
 
 import Foundation
 
-public extension BranchTree {
+public extension ICPathTree {
     var path: Path { return [] }
     func path(at i:SubSequence.Index, in p:Path) -> Path {
         return p.appending(i)
     }
-    func contents(in p:Path) -> BranchTreeSlice<Branches.Element> {
-        return BranchTreeSlice(base: branches.contents(in: p))
+    func contents(in p:Path) -> ICPathTreeSlice<Branches.Element> {
+        return ICPathTreeSlice(base: branches.contents(in: p))
     }
 }
-public extension BranchTree where Self: MutableBranchTree & RangeReplaceableBranchTree {
+public extension ICPathTree where Self: MutableICPathTree & RangeReplaceableICPathTree {
     mutating func replaceSubrange<C>(_ r:Range<SubSequence.Index>, with es: C, in p:Path) where
     C:Collection,
     C.Element == SubSequence.Element {
@@ -61,7 +61,7 @@ public extension BranchTree where Self: MutableBranchTree & RangeReplaceableBran
 
 
 // MARK: Iteration in BranchTree
-extension BranchTree where Self: Collection, Index == Path {
+extension ICPathTree where Self: Collection, Index == Path {
     public func makeIterator() -> AnySequence<Element>.Iterator {
         return dfs.makeIterator()
     }
@@ -71,12 +71,12 @@ extension BranchTree where Self: Collection, Index == Path {
 
 // MARK: Element at Path in Tree
 
-/// If a tree is built with pointer-based composition of `Branch`es (e.g. `ArrayBranchTree`),
+/// If a tree is built with pointer-based composition of `Branch`es (e.g. `ArrayTree`),
 /// it'a natural to have `Path`s consist of `SubSequence.Index`.
 /// If the tree conforms `Collection`, it's also natural to use the `Path` as its `Index`.
 /// In that case, more default implementations can be provided.
 public extension Collection where
-Self: BranchTree,
+Self: ICPathTree,
 Index == Path {
     subscript(_ p:Index) -> Element {
         precondition(!p.isEmpty)
@@ -84,8 +84,8 @@ Index == Path {
     }
 }
 public extension Collection where
-Self: MutableBranchTree,
-Self: RangeReplaceableBranchTree,
+Self: MutableICPathTree,
+Self: RangeReplaceableICPathTree,
 Index == Path {
     subscript(_ p:Index) -> Element {
         get {

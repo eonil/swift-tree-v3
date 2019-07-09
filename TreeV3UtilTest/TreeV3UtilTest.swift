@@ -11,7 +11,7 @@ import XCTest
 
 class TreeV3UtilTest: XCTestCase {
     func testBasics() {
-        var a = ArrayBranchTree<Int>()
+        var a = ArrayTree<Int>()
         a.append(111, in: [])
         a.insert(333, at: 1, in: [])
         a.insert(222, at: 1, in: [])
@@ -46,7 +46,7 @@ class TreeV3UtilTest: XCTestCase {
         XCTAssertEqual(Array(a.contents(in: [3,0,0])), [999_999_999_999])
     }
     func testDFS() {
-        var a = ArrayBranchTree<Int>()
+        var a = ArrayTree<Int>()
         a.append(111, in: [])
         a.insert(333, at: 1, in: [])
         a.insert(222, at: 1, in: [])
@@ -119,7 +119,7 @@ class TreeV3UtilTest: XCTestCase {
         XCTAssertEqual(Array(a.paths.dfs.dropFirst()).map(findElement(at:)), Array(a.dfs))
     }
     func testMap() {
-        var a = ArrayBranchTree<Int>()
+        var a = ArrayTree<Int>()
         a.append(111, in: [])
         a.insert(333, at: 1, in: [])
         a.insert(222, at: 1, in: [])
@@ -162,7 +162,7 @@ class TreeV3UtilTest: XCTestCase {
             ])
     }
     func testLazyMap() {
-        var a = ArrayBranchTree<Int>()
+        var a = ArrayTree<Int>()
         a.append(111, in: [])
         a.insert(333, at: 1, in: [])
         a.insert(222, at: 1, in: [])
@@ -205,7 +205,7 @@ class TreeV3UtilTest: XCTestCase {
             ])
     }
     func testFilter() {
-        var a = ArrayBranchTree<Int>()
+        var a = ArrayTree<Int>()
         a.append(111, in: [])
         a.insert(333, at: 1, in: [])
         a.insert(222, at: 1, in: [])
@@ -232,7 +232,7 @@ class TreeV3UtilTest: XCTestCase {
             ])
     }
     func testSort() {
-        var a = ArrayBranchTree<Int>()
+        var a = ArrayTree<Int>()
         a.append(111, in: [])
         a.insert(333, at: 1, in: [])
         a.insert(222, at: 1, in: [])
@@ -292,7 +292,7 @@ class TreeV3UtilTest: XCTestCase {
             ])
     }
     func testConverting() {
-        var a = ArrayBranchTree<Int>()
+        var a = ArrayTree<Int>()
         a.append(111, in: [])
         a.insert(333, at: 1, in: [])
         a.insert(222, at: 1, in: [])
@@ -302,7 +302,7 @@ class TreeV3UtilTest: XCTestCase {
         a.append(999_999, in: [3])
         a.append(999_999_999, in: [3,0])
         a.append(999_999_999_999, in: [3,0,0])
-        let b = ArrayBranchTree(converting: a)
+        let b = ArrayTree(converting: a)
         func findSequence(at p:IndexPath) -> [Int] {
             let s = b.contents(in: p)
             return Array(s)
@@ -341,7 +341,7 @@ class TreeV3UtilTest: XCTestCase {
             ])
     }
     func testAnyTree() {
-        var a = ArrayBranchTree<Int>()
+        var a = ArrayTree<Int>()
         a.append(111, in: [])
         a.insert(333, at: 1, in: [])
         a.insert(222, at: 1, in: [])

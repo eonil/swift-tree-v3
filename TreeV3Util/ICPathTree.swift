@@ -1,5 +1,5 @@
 //
-//  BranchTree.swift
+//  ICPathTree.swift
 //  Tree
 //
 //  Created by Henry on 2019/07/07.
@@ -8,21 +8,16 @@
 
 import Foundation
 
-/// A `Tree` with `Branch` access.
+/// A `Tree` uses collection of indices as its path.
 ///
-/// Point of `BranchTree` is homogeneous `Path` and `SubSequence.Index`.
-/// By providing the equality, now we can navigate tree only with paths.
+/// Point of `ICPathTree` is using `ICPath` as its path.
+/// This provides more freedom to navigate trees. This enables
+/// a lot of convenience to navigate branches.
 ///
-/// Despite `Tree` is already providing default read-only
-/// `branches` property, this protocol has been designed to provide
-/// common and mutable interfaces. When you see a
-/// concrete type named `-BranchTree`, it implies
-/// providing direct mutable access to its branches.
-///
-public protocol BranchTree: Tree where
+public protocol ICPathTree: Tree where
 //SubSequence.Element == Branches.Element.Value,
-SubSequence == BranchTreeSlice<Branches.Element>,
-Path: TreeV3Util.BranchPath,
+SubSequence == ICPathTreeSlice<Branches.Element>,
+Path: ICPath,
 Path.Element == SubSequence.Index {
     var branches: Branches { get }
     associatedtype Branches: Collection where
@@ -32,20 +27,20 @@ Path.Element == SubSequence.Index {
         Branches.Element.Branches.SubSequence == Branches.SubSequence
 }
 
-public protocol RandomAccessBranchTree:
-BranchTree,
+public protocol RandomAccessICPathTree:
+ICPathTree,
 RandomAccessTree where
 Branches: RandomAccessCollection,
 Branches.Element: RandomAccessBranch {
 }
-public protocol MutableBranchTree:
-BranchTree,
+public protocol MutableICPathTree:
+ICPathTree,
 MutableTree where
 Branches: MutableCollection,
 Branches.Element: MutableBranch {
 }
-public protocol RangeReplaceableBranchTree:
-BranchTree,
+public protocol RangeReplaceableICPathTree:
+ICPathTree,
 RangeReplaceableTree where
 Branches: RangeReplaceableCollection,
 Branches.Element: RangeReplaceableBranch {

@@ -9,8 +9,8 @@
 import Foundation
 
 public extension Collection where Element: Branch {
-    func treefied() -> ArrayBranchTree<Element.Value> {
-        var a = ArrayBranchTree<Element.Value>()
+    func treefied() -> ArrayTree<Element.Value> {
+        var a = ArrayTree<Element.Value>()
         a.branches = map(ArrayBranch.init(converting:))
         return a
     }
