@@ -340,4 +340,15 @@ class PDTreeV3Test: XCTestCase {
             999_999_999_999,
             ])
     }
+    func testRecusiveBranches() {
+        /// This is static check for `Tree.Branches == Tree.Branches.Element.Branches`.
+        /// It works if it's been compiled.
+        var a = PDListTree<Int>()
+        a.append(111, in: [])
+        a.append(222, in: [0])
+        let x = a.branches[in: []]
+        let y = a.branches[in: [0]]
+        XCTAssertEqual(x[0].value, 111)
+        XCTAssertEqual(y[0].value, 222)
+    }
 }

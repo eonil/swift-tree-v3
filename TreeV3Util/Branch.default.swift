@@ -17,17 +17,18 @@ public extension Branch {
     }
 }
 public extension Branch where Self: MutableBranch & RangeReplaceableBranch {
+    /// Gets branch at path.
     subscript<P>(_ p:P) -> Self where P:Collection, P.Element == Branches.Index {
         get {
             switch p.isEmpty {
             case true:  return self
-            case false: return branches[p]
+            case false: return branches[p.first!][p.dropFirst()]
             }
         }
         set(x) {
             switch p.isEmpty {
             case true:  self = x
-            case false: branches[p] = x
+            case false: branches[p.first!][p.dropFirst()] = x
             }
         }
     }
@@ -100,29 +101,46 @@ Element.Branches.SubSequence == SubSequence {
     }
 }
 
-public extension Collection where
-Element: Branch,
-Element.Branches.Index == Index {
-    subscript<P>(_ p:P) -> Element where P:Collection, P.Element == Index {
-        precondition(!p.isEmpty)
-        return self[p.first!].branches[p.dropFirst()]
-    }
-}
-public extension Collection where
-Self: MutableCollection & RangeReplaceableCollection,
-Element: MutableBranch & RangeReplaceableBranch,
-Element.Branches.Index == Index {
-    subscript<P>(_ p:P) -> Element where P:Collection, P.Element == Index {
-        get {
-            precondition(!p.isEmpty)
-            return self[p.first!].branches[p.dropFirst()]
-        }
-        set(x) {
-            precondition(!p.isEmpty)
-            self[p.first!].branches[p.dropFirst()] = x
-        }
-    }
-}
+//public extension Collection where
+////Element: Branch {
+//Element: Branch,
+//Element.Branches == Self {
+//    /// Gets branches (branch collection) at path.
+//    subscript<P>(_ p:P) -> Self where P:Collection, P.Element == Index {
+////        switch p.isEmpty {
+////        case true:  return self
+////        case false: return self[p.first!].branches[p.dropFirst()]
+////        }
+//        get {
+//            fatalError()
+//            self.first
+//        }
+//    }
+//}
+
+//public extension Collection where
+//Element: Branch,
+//Element.Branches.Index == Index {
+//    subscript<P>(_ p:P) -> Element where P:Collection, P.Element == Index {
+//        precondition(!p.isEmpty)
+//        return self[p.first!].branches[p.dropFirst()]
+//    }
+//}
+//public extension Collection where
+//Self: MutableCollection & RangeReplaceableCollection,
+//Element: MutableBranch & RangeReplaceableBranch,
+//Element.Branches.Index == Index {
+//    subscript<P>(_ p:P) -> Element where P:Collection, P.Element == Index {
+//        get {
+//            precondition(!p.isEmpty)
+//            return self[p.first!].branches[p.dropFirst()]
+//        }
+//        set(x) {
+//            precondition(!p.isEmpty)
+//            self[p.first!].branches[p.dropFirst()] = x
+//        }
+//    }
+//}
 
 public extension Collection where
 Self: MutableCollection & RangeReplaceableCollection,

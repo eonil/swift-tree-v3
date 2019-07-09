@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A tree built with `Swift.Array`.
 public struct ArrayTree<Element>:
 Sequence,
 Tree,

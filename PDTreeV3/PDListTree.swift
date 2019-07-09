@@ -10,6 +10,7 @@ import Foundation
 import TreeV3Core
 import TreeV3Util
 
+/// A tree built with `PDList` (`BTree.List`).
 public struct PDListTree<Element>:
 //Sequence,
 BranchTree,
