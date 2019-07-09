@@ -43,9 +43,9 @@ Self: BranchTree,
 Path.Element == SubSequence.Index {
     subscript(_ p:Path) -> SubSequence.Element {
         get {
-            precondition(!path.isEmpty)
-            let a = branches[path.first!]
-            let b = a[path.dropFirst()]
+            precondition(!p.isEmpty)
+            let a = branches[p.first!]
+            let b = a[p.dropFirst()]
             return b.value
         }
     }
@@ -55,14 +55,19 @@ public extension Tree where
 Path: Collection,
 Self: BranchTree & BranchReplaceableTree,
 Path.Element == SubSequence.Index {
+    /// Gets element at composited path. (parent path + element index)
+    ///
+    /// Path `[]` means top-pevel (root) position,
+    /// and there's no element at root because `Tree` is
+    /// tree of collections. You need to append element index at least.
     subscript(_ p:Path) -> SubSequence.Element {
         get {
-            precondition(!path.isEmpty)
-            return branches[path.first!][path.dropFirst()].value
+            precondition(!p.isEmpty)
+            return branches[p.first!][p.dropFirst()].value
         }
         set(x) {
-            precondition(!path.isEmpty)
-            branches[path.first!][path.dropFirst()].value = x
+            precondition(!p.isEmpty)
+            branches[p.first!][p.dropFirst()].value = x
         }
     }
     mutating func replaceSubrange<C>(_ r:Range<SubSequence.Index>, with es: C, in p:Path) where

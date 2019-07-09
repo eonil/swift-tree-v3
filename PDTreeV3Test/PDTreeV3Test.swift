@@ -361,4 +361,10 @@ class PDTreeV3Test: XCTestCase {
         }
         test(a)
     }
+    func testInsertAtIn() {
+        var a = PDListTree<Int>()
+        a.insert(111, at: 0, in: [])
+        XCTAssertEqual(a.count(in: []), 1)
+        XCTAssertEqual(a[[0]], 111)
+    }
 }

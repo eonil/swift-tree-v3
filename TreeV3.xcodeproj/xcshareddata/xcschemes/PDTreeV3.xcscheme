@@ -38,6 +38,26 @@
                ReferencedContainer = "container:TreeV3.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "45E9A61822D1D8DD00FE2AA5"
+               BuildableName = "TreeV3Test.xctest"
+               BlueprintName = "TreeV3Test"
+               ReferencedContainer = "container:TreeV3.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "45F725E322D323E80056187D"
+               BuildableName = "TreeV3UtilTest.xctest"
+               BlueprintName = "TreeV3UtilTest"
+               ReferencedContainer = "container:TreeV3.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

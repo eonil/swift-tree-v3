@@ -398,6 +398,12 @@ class TreeV3UtilTest: XCTestCase {
         XCTAssertEqual(x[0].value, 111)
         XCTAssertEqual(y[0].value, 222)
     }
+    func testInsertAtIn() {
+        var a = ArrayTree<Int>()
+        a.insert(111, at: 0, in: [])
+        XCTAssertEqual(a.count(in: []), 1)
+        XCTAssertEqual(a[[0]], 111)
+    }
 }
 
 
