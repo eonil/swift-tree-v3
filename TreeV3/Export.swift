@@ -19,8 +19,8 @@ public typealias RandomAccessBranch             =   TreeV3Core.RandomAccessBranc
 public typealias MutableBranch                  =   TreeV3Core.MutableBranch
 public typealias RangeReplaceableBranch         =   TreeV3Core.RangeReplaceableBranch
 
-public typealias BranchTree                     =   TreeV3Util.ICPathTree
-public typealias RandomAccessBranchTree         =   TreeV3Util.RandomAccessICPathTree
+public typealias ICPathTree                     =   TreeV3Util.ICPathTree
+public typealias RandomAccessICPathTree         =   TreeV3Util.RandomAccessICPathTree
 public typealias MutableICPathTree              =   TreeV3Util.MutableICPathTree
 public typealias RangeReplaceableICPathTree     =   TreeV3Util.RangeReplaceableICPathTree
 
