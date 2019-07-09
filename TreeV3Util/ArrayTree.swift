@@ -13,61 +13,41 @@ Sequence,
 Tree,
 BranchTree,
 BranchReplaceableTree,
-//ICPathTree,
-//RandomAccessICPathTree,
-//MutableICPathTree,
-//RangeReplaceableICPathTree,
 ExpressibleByArrayLiteral {
-//    public typealias Path = IndexPath
     /// Branches of this tree.
     ///
     /// This effectively overrides default `branches` property.
     public var branches = [ArrayBranch<Element>]()
     public init() {}
-    public init<C>(_ es:C) where C:Collection, C.Element == Element {
-        branches = es.map({ ArrayBranch(value: $0, branches: []) })
-    }
-    public init(_ es:[Element]) {
-        branches = es.map({ ArrayBranch(value: $0, branches: []) })
-    }
     public init(arrayLiteral es:Element...) {
         branches = es.map({ ArrayBranch(value: $0, branches: []) })
     }
-    public init(branches bs:[ArrayBranch<Element>]) {
-        branches = bs
-    }
-    public init<C>(branches bs:C) where C:Collection, C.Element == ArrayBranch<Element> {
-        branches = Array(bs)
-    }
-    public init<C>(converting bs:C) where C:Collection, C.Element: Branch, C.Element.Value == Element {
-        branches = bs.map(ArrayBranch.init(converting:))
-    }
-    public var path: IndexPath { return [] }
-    public func path(at i: Int, in p: IndexPath) -> IndexPath {
-        return p.appending(i)
-    }
-    public subscript(_ i:Int, in p:IndexPath) -> Element {
-        get { return branches[i, in: p].value }
-        set(x) { branches[i, in: p].value = x }
-    }
-    public subscript(_ r:Range<Int>, in p:Path) -> BranchSlice<ArrayBranch<Element>> {
-        return contents(in: p)[r]
-    }
+//    public subscript(_ i:Int, in p:IndexPath) -> Element {
+//        get { return branches[i, in: p].value }
+//        set(x) { branches[i, in: p].value = x }
+//    }
+//    public subscript(_ r:Range<Int>, in p:Path) -> BranchSlice<ArrayBranch<Element>> {
+//        return contents(in: p)[r]
+//    }
     public func makeIterator() -> AnyIterator<Element> {
         return dfs.makeIterator()
     }
 }
-
-/// These are possible because `Path.Element == SubSequence.Index`.
 public extension ArrayTree {
-    subscript(_ p:Path) -> Element {
-        get {
-            precondition(!path.isEmpty)
-            return branches[path.first!][path.dropFirst()].value
-        }
-        set(x) {
-            precondition(!path.isEmpty)
-            branches[path.first!][path.dropFirst()].value = x
-        }
+    init<C>(_ es:C) where C:Collection, C.Element == Element {
+        branches = es.map({ ArrayBranch(value: $0, branches: []) })
+    }
+    init(_ es:[Element]) {
+        branches = es.map({ ArrayBranch(value: $0, branches: []) })
+    }
+    init(branches bs:[ArrayBranch<Element>]) {
+        branches = bs
+    }
+    init<C>(branches bs:C) where C:Collection, C.Element == ArrayBranch<Element> {
+        branches = Array(bs)
+    }
+    init<C>(converting bs:C) where C:Collection, C.Element: Branch, C.Element.Value == Element {
+        branches = bs.map(ArrayBranch.init(converting:))
     }
 }
+

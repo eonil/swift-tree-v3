@@ -14,10 +14,6 @@ import Foundation
 ///     As `Tree` has an implicit `branches` implementation,
 ///     `branches` property will be implemented implicitly
 ///     or you can provide your own implementation.
-
-//public protocol BranchTree: Tree where
-//    //SubSequence.Element == Branches.Element.Value,
-//    SubSequence == BranchSlice<Branches.Element> {
 public protocol BranchTree: Tree {
     var branches: Branches { get }
     associatedtype Branches: Collection where
@@ -32,23 +28,3 @@ Branches: MutableCollection & RangeReplaceableCollection,
 Branches.Element: MutableBranch & RangeReplaceableBranch {
     var branches: Branches { get set }
 }
-
-//public protocol RandomAccessBranchTree:
-//ICPathTree,
-//RandomAccessTree where
-//Branches: RandomAccessCollection,
-//Branches.Element: RandomAccessBranch {
-//}
-//public protocol MutableICPathTree:
-//ICPathTree,
-//MutableTree where
-//Branches: MutableCollection,
-//Branches.Element: MutableBranch {
-//}
-//public protocol RangeReplaceableICPathTree:
-//ICPathTree,
-//RangeReplaceableTree where
-//Branches: RangeReplaceableCollection,
-//Branches.Element: RangeReplaceableBranch {
-//    var branches: Branches { get set }
-//}

@@ -22,6 +22,12 @@ Path.Element == SubSequence.Index {
         return q
     }
 }
+public extension BranchTree where
+Path == IndexPath,
+SubSequence.Index == Int {
+    var path: Path { Path() }
+    func path(at i: SubSequence.Index, in p: Path) -> Path { return p.appending(i) }
+}
 
 public extension BranchTree where
 Path: Collection,
@@ -32,9 +38,33 @@ Path.Element == SubSequence.Index {
 }
 
 public extension Tree where
-Self: BranchTree & BranchReplaceableTree,
 Path: Collection,
+Self: BranchTree,
 Path.Element == SubSequence.Index {
+    subscript(_ p:Path) -> SubSequence.Element {
+        get {
+            precondition(!path.isEmpty)
+            let a = branches[path.first!]
+            let b = a[path.dropFirst()]
+            return b.value
+        }
+    }
+}
+
+public extension Tree where
+Path: Collection,
+Self: BranchTree & BranchReplaceableTree,
+Path.Element == SubSequence.Index {
+    subscript(_ p:Path) -> SubSequence.Element {
+        get {
+            precondition(!path.isEmpty)
+            return branches[path.first!][path.dropFirst()].value
+        }
+        set(x) {
+            precondition(!path.isEmpty)
+            branches[path.first!][path.dropFirst()].value = x
+        }
+    }
     mutating func replaceSubrange<C>(_ r:Range<SubSequence.Index>, with es: C, in p:Path) where
         C:Collection,
         C.Element == SubSequence.Element {
