@@ -24,14 +24,16 @@ public struct TreePaths<Base> where Base: Tree {
 // MARK: DFS
 public extension TreePaths {
     var dfs: AnySequence<Base.Path> {
+        let x = base
         let a = AnySequence(CollectionOfOne(base.path))
-        let b = AnySequence(base.branches.dfs.map({ $0.path }))
+        let b = AnySequence(base.branches.dfs.map({ x.path(at: $0.index, in: $0.path) }))
         let c = AnySequence([a,b].joined())
         return c
     }
     func dfs(at i:Base.SubSequence.Index, in p:Base.Path) -> AnySequence<Base.Path> {
+        let x = base
         let a = AnySequence(CollectionOfOne(base.path))
-        let b = AnySequence(base.branch(at: i, in: p).branches.dfs.map({ $0.path }))
+        let b = AnySequence(base.branch(at: i, in: p).branches.dfs.map({ x.path(at: $0.index, in: $0.path) }))
         let c = AnySequence([a,b].joined())
         return c
     }
