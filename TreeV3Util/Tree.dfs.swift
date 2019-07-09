@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Tree where SubSequence: RandomAccessCollection {
+public extension Tree where SubSequence: Collection {
     /// Provide "element" access in DFS order.
     ///
     /// As `Tree` is tree of collections, this sequence is specially designed

@@ -11,7 +11,7 @@ import Foundation
 public extension Tree {
     /// Gets arbitrary branch in this tree.
     func branch(at i:SubSequence.Index, in p:Path) -> Subtree<Self> {
-        return Subtree(base: self, location: p, index: i)
+        return Subtree(base: self, path: p, index: i)
     }
     /// Gets top-level branches of ths tree.
     var branches: Subtree<Self>.Branches {
@@ -27,22 +27,22 @@ public extension Tree {
 ///     Consider renaming to `Node`.
 public struct Subtree<Base>: Branch where Base: Tree {
     let base: Base
-    let location: Base.Path
-    let index: Base.SubSequence.Index
-
+    public let path: Base.Path
+    public let index: Base.SubSequence.Index
+//    public var location: Base.Path {
+//        return base.path(at: index, in: location)
+//    }
     public var value: Base.SubSequence.Element {
-        return base[index, in: location]
-    }
-    public var path: Base.Path {
-        return base.path(at: index, in: location)
+        return base[index, in: path]
     }
     public var branches: Branches {
-        let p = base.path(at: index, in: location)
+        let p = base.path(at: index, in: path)
         let s = base.contents(in: p)
         return Branches(base: base, location: p, sequence: s)
     }
     public struct Branches: Collection {
         let base: Base
+        // Names as `location` as this is a pre-composited path.
         let location: Base.Path
         let sequence: Base.SubSequence
         public typealias Index = Base.SubSequence.Index
@@ -52,7 +52,7 @@ public struct Subtree<Base>: Branch where Base: Tree {
         public func index(after i: Index) -> Index { return base.index(after: i, in: location) }
         public subscript(_ i:Index) -> Subtree {
             let p = location
-            let n = Subtree(base: base, location: p, index: i)
+            let n = Subtree(base: base, path: p, index: i)
             return n
         }
     }

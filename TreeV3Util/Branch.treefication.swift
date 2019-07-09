@@ -8,10 +8,7 @@
 
 import Foundation
 
-public extension Collection where
-Element: Branch,
-Element.Branches.Index == Index,
-Element.Branches.SubSequence == SubSequence {
+public extension Collection where Element: Branch {
     func treefied() -> ArrayBranchTree<Element.Value> {
         var a = ArrayBranchTree<Element.Value>()
         a.branches = map(ArrayBranch.init(converting:))

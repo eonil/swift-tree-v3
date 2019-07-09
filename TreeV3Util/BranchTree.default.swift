@@ -60,6 +60,12 @@ public extension BranchTree where Self: MutableBranchTree & RangeReplaceableBran
 
 
 
+// MARK: Iteration in BranchTree
+extension BranchTree where Self: Collection, Index == Path {
+    public func makeIterator() -> AnySequence<Element>.Iterator {
+        return dfs.makeIterator()
+    }
+}
 
 
 
@@ -95,7 +101,7 @@ Index == Path {
 
 
 
-// MARK: Branch at Path in Branch.branches
+// MARK: Branch at Path in Tree.branches/Branch.branches
 public extension Collection where
 Element: Branch,
 Element.Branches.Index == Index {
