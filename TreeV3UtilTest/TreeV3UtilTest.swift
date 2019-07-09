@@ -387,5 +387,16 @@ class TreeV3UtilTest: XCTestCase {
 ////            999_999_999_999,
 ////            ])
 //    }
+    func testRecusiveBranches() {
+        /// This is static check for `Tree.Branches == Tree.Branches.Element.Branches`.
+        /// It works if it's been compiled.
+        var a = ArrayTree<Int>()
+        a.append(111, in: [])
+        a.append(222, in: [0])
+        let bs = [true,false].randomElement() ?? false ? a.branches : a.branches[[]].branches
+        XCTAssertEqual(a.count(in: []), 1)
+        XCTAssertEqual(bs.count, 1)
+    }
 }
+
 

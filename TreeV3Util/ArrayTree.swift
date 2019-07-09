@@ -13,6 +13,7 @@ Sequence,
 Tree,
 BranchTree,
 BranchReplaceableTree,
+RecursiveBranches,
 ExpressibleByArrayLiteral {
     /// Branches of this tree.
     ///

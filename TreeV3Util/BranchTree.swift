@@ -28,3 +28,10 @@ Branches: MutableCollection & RangeReplaceableCollection,
 Branches.Element: MutableBranch & RangeReplaceableBranch {
     var branches: Branches { get set }
 }
+
+/// A constraint to make `Tree.Branches == Tree.Branches.Element.Branches`.
+/// This can make many things simple.
+/// - Note:
+///     Please suggest any better name...
+public protocol RecursiveBranches: BranchTree where Branches.Element.Branches == Branches {
+}
