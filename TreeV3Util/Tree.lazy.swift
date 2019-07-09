@@ -38,6 +38,8 @@ public struct LazyMapTree<Base,X>: Tree where Base: Tree {
     public subscript(_ r:Range<Base.SubSequence.Index>, in p:Base.Path) -> LazyMapSequence<Base.SubSequence.SubSequence,X> {
         return base.contents(in: p)[r].lazy.map(transform)
     }
+    /// No need to override `branches` as default implementation iterates
+    /// on top of `Self` type, therefore it will be bound to surface of `LazyMapTree`.
 }
 extension LazyMapTree: RandomAccessTree where Base: RandomAccessTree {}
 
