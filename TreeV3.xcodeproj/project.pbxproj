@@ -48,7 +48,7 @@
 		45F7262D22D3295E0056187D /* libTreeV3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 450FABA722D1C02D0026CF7A /* libTreeV3.a */; };
 		45F7263822D329870056187D /* BTree in Frameworks */ = {isa = PBXBuildFile; productRef = 45F7263722D329870056187D /* BTree */; };
 		45F7263922D329870056187D /* libPDTreeV3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F7261522D329240056187D /* libPDTreeV3.a */; };
-		45F7263B22D329A10056187D /* PDListBranchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7263A22D329A10056187D /* PDListBranchTree.swift */; };
+		45F7263B22D329A10056187D /* PDListTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7263A22D329A10056187D /* PDListTree.swift */; };
 		45F7263D22D329CC0056187D /* PDListBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7263C22D329CC0056187D /* PDListBranch.swift */; };
 		45F7263F22D32AB00056187D /* PDList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7263E22D32AB00056187D /* PDList.swift */; };
 /* End PBXBuildFile section */
@@ -186,7 +186,7 @@
 		45F7262822D3295E0056187D /* PDTreeV3Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDTreeV3Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F7262A22D3295E0056187D /* PDTreeV3Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDTreeV3Test.swift; sourceTree = "<group>"; };
 		45F7262C22D3295E0056187D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45F7263A22D329A10056187D /* PDListBranchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDListBranchTree.swift; sourceTree = "<group>"; };
+		45F7263A22D329A10056187D /* PDListTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDListTree.swift; sourceTree = "<group>"; };
 		45F7263C22D329CC0056187D /* PDListBranch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDListBranch.swift; sourceTree = "<group>"; };
 		45F7263E22D32AB00056187D /* PDList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -363,7 +363,7 @@
 		45F7261622D329240056187D /* PDTreeV3 */ = {
 			isa = PBXGroup;
 			children = (
-				45F7263A22D329A10056187D /* PDListBranchTree.swift */,
+				45F7263A22D329A10056187D /* PDListTree.swift */,
 				45F7263C22D329CC0056187D /* PDListBranch.swift */,
 				45F7263E22D32AB00056187D /* PDList.swift */,
 			);
@@ -709,7 +709,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45F7263B22D329A10056187D /* PDListBranchTree.swift in Sources */,
+				45F7263B22D329A10056187D /* PDListTree.swift in Sources */,
 				45F7263F22D32AB00056187D /* PDList.swift in Sources */,
 				45F7263D22D329CC0056187D /* PDListBranch.swift in Sources */,
 			);

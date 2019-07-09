@@ -1,5 +1,5 @@
 //
-//  PDListBranchTree.swift
+//  PDListTree.swift
 //  PDTreeV3
 //
 //  Created by Henry on 2019/07/08.
@@ -10,7 +10,7 @@ import Foundation
 import TreeV3Core
 import TreeV3Util
 
-public struct PDListBranchTree<Element>:
+public struct PDListTree<Element>:
 Sequence,
 ICPathTree,
 RandomAccessICPathTree,
