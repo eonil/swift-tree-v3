@@ -293,7 +293,7 @@ class PDTreeV3Test: XCTestCase {
             ])
     }
     func testConverting() {
-        var a = PDListTree<Int>()
+        var a = ArrayTree<Int>()
         a.append(111, in: [])
         a.insert(333, at: 1, in: [])
         a.insert(222, at: 1, in: [])
@@ -340,6 +340,16 @@ class PDTreeV3Test: XCTestCase {
             999_999_999,
             999_999_999_999,
             ])
+    }
+    func testConverting2() {
+        var a = ArrayTree<Int>()
+        a.insert(111, at: 0, in: [])
+        a.insert(222, at: 0, in: [0])
+        a.insert(333, at: 0, in: [0,0])
+        let b = PDListTree<Int>(converting: a)
+        XCTAssertEqual(b[[0]], 111)
+        XCTAssertEqual(b[[0,0]], 222)
+        XCTAssertEqual(b[[0,0,0]], 333)
     }
     func testRecusiveBranches() {
         /// This is static check for `Tree.Branches == Tree.Branches.Element.Branches`.

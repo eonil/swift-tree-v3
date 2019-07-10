@@ -21,9 +21,8 @@ RangeReplaceableBranch {
     }
 }
 public extension ArrayBranch {
-    init<X>(converting x:X) where X:Branch, X.Value == Element {
-        value = x.value
-        branches = x.branches.map(ArrayBranch.init(converting:))
+    init(converting x:ArrayBranch) {
+        self = x
     }
 }
 public extension ArrayBranch {

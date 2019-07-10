@@ -40,6 +40,9 @@ public extension ArrayTree {
     init<C>(converting bs:C) where C:Collection, C.Element: Branch, C.Element.Value == Element {
         branches = bs.map(ArrayBranch.init(converting:))
     }
+    init(converting x:ArrayTree) {
+        self = x
+    }
 }
 
 extension Array: BranchCollection {}
