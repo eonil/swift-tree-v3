@@ -39,7 +39,8 @@ let package = Package(
             dependencies: [
                 "TreeV3Core",
                 "TreeV3Util",
-                .product(name: "BTree"),
+                "BTree",
+//                .product(name: "BTree"),
             ],
             path: "PDTreeV3"),
         .testTarget(
