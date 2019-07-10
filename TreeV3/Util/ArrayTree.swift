@@ -11,9 +11,10 @@ import Foundation
 /// A tree built with `Swift.Array`.
 public struct ArrayTree<Element>:
 Tree,
+RandomAccessTree,
 BranchTree,
 BranchReplaceableTree,
-RecursiveBranches,
+//RecursiveBranchTree,
 ExpressibleByArrayLiteral {
     /// Branches of this tree.
     ///
@@ -45,4 +46,4 @@ public extension ArrayTree {
     }
 }
 
-extension Array: BranchCollection {}
+extension Array: BranchCollection where Element: Branch {}

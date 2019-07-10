@@ -7,45 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4587925022D3583B00E4B7B7 /* AnyRandomAccessTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4587924F22D3583B00E4B7B7 /* AnyRandomAccessTree.swift */; };
-		458FA23B22D48ED700F6D5BE /* BranchCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FA23A22D48ED700F6D5BE /* BranchCollection.swift */; };
 		458FA23D22D4907600F6D5BE /* PDList.util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FA23C22D4907600F6D5BE /* PDList.util.swift */; };
-		45935C5C22D41E42003D7CF8 /* Branch.map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C5B22D41E42003D7CF8 /* Branch.map.swift */; };
-		45935C5E22D41E4A003D7CF8 /* Branch.lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C5D22D41E4A003D7CF8 /* Branch.lazy.swift */; };
-		45935C6022D42016003D7CF8 /* Branch.filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C5F22D42016003D7CF8 /* Branch.filter.swift */; };
-		45935C6222D4201B003D7CF8 /* Branch.sorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C6122D4201B003D7CF8 /* Branch.sorted.swift */; };
-		45935C6622D44393003D7CF8 /* BranchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C6522D44393003D7CF8 /* BranchTree.swift */; };
-		45935C6822D44461003D7CF8 /* BranchTree.default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C6722D44461003D7CF8 /* BranchTree.default.swift */; };
-		45AB2BF522D55FDC00B09A24 /* Branch.convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB2BF422D55FDC00B09A24 /* Branch.convert.swift */; };
-		45AB2BF722D560D200B09A24 /* BranchTree.convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB2BF622D560D200B09A24 /* BranchTree.convert.swift */; };
-		45DC852722D3F8510073D526 /* TreeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC852522D3F15A0073D526 /* TreeIndex.swift */; };
+		4599551D22D59A4100ED5511 /* Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7258522D2F6A40056187D /* Import.swift */; };
+		4599551E22D59A4100ED5511 /* Branch.default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB322D1C0580026CF7A /* Branch.default.swift */; };
+		4599551F22D59A4100ED5511 /* Branch.dfs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62622D1DDBE00FE2AA5 /* Branch.dfs.swift */; };
+		4599552022D59A4100ED5511 /* Branch.treefication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7254522D2C2B20056187D /* Branch.treefication.swift */; };
+		4599552122D59A4100ED5511 /* Branch.map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C5B22D41E42003D7CF8 /* Branch.map.swift */; };
+		4599552222D59A4100ED5511 /* Branch.filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C5F22D42016003D7CF8 /* Branch.filter.swift */; };
+		4599552322D59A4100ED5511 /* Branch.sorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C6122D4201B003D7CF8 /* Branch.sorted.swift */; };
+		4599552422D59A4100ED5511 /* Branch.lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C5D22D41E4A003D7CF8 /* Branch.lazy.swift */; };
+		4599552522D59A4100ED5511 /* Branch.convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB2BF422D55FDC00B09A24 /* Branch.convert.swift */; };
+		4599552622D59A4100ED5511 /* BranchCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458FA23A22D48ED700F6D5BE /* BranchCollection.swift */; };
+		4599552722D59A4100ED5511 /* Tree.default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB922D1C0580026CF7A /* Tree.default.swift */; };
+		4599552822D59A4100ED5511 /* Tree.dfs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7253322D242360056187D /* Tree.dfs.swift */; };
+		4599552922D59A4100ED5511 /* Tree.paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62422D1DCA200FE2AA5 /* Tree.paths.swift */; };
+		4599552A22D59A4100ED5511 /* Tree.branches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7253922D2BE140056187D /* Tree.branches.swift */; };
+		4599552B22D59A4100ED5511 /* Tree.map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62D22D1FFB600FE2AA5 /* Tree.map.swift */; };
+		4599552C22D59A4100ED5511 /* Tree.filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A63122D20F2600FE2AA5 /* Tree.filter.swift */; };
+		4599552D22D59A4100ED5511 /* Tree.sorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A63322D21CEF00FE2AA5 /* Tree.sorted.swift */; };
+		4599552E22D59A4100ED5511 /* Tree.lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62F22D2068300FE2AA5 /* Tree.lazy.swift */; };
+		4599552F22D59A4100ED5511 /* Tree.convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7252D22D22C9A0056187D /* Tree.convert.swift */; };
+		4599553022D59A4100ED5511 /* BranchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C6522D44393003D7CF8 /* BranchTree.swift */; };
+		4599553122D59A4100ED5511 /* BranchTree.default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45935C6722D44461003D7CF8 /* BranchTree.default.swift */; };
+		4599553222D59A4100ED5511 /* BranchTree.convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB2BF622D560D200B09A24 /* BranchTree.convert.swift */; };
+		4599553322D59A4100ED5511 /* BranchSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A61322D1CB8E00FE2AA5 /* BranchSlice.swift */; };
+		4599553422D59A4100ED5511 /* ArrayTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB622D1C0580026CF7A /* ArrayTree.swift */; };
+		4599553522D59A4100ED5511 /* ArrayBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7253122D2407F0056187D /* ArrayBranch.swift */; };
+		4599553622D59A4100ED5511 /* AnyTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7252F22D22FBF0056187D /* AnyTree.swift */; };
+		4599553722D59A4100ED5511 /* AnyRandomAccessTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4587924F22D3583B00E4B7B7 /* AnyRandomAccessTree.swift */; };
+		4599553822D59A4600ED5511 /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB522D1C0580026CF7A /* Branch.swift */; };
+		4599553922D59A4600ED5511 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB422D1C0580026CF7A /* Tree.swift */; };
 		45E9A61C22D1D8DD00FE2AA5 /* TreeV3Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A61B22D1D8DD00FE2AA5 /* TreeV3Test.swift */; };
 		45E9A61E22D1D8DD00FE2AA5 /* libTreeV3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 450FABA722D1C02D0026CF7A /* libTreeV3.a */; };
-		45F7256522D2F5B40056187D /* libTreeV3Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F7254E22D2F5A10056187D /* libTreeV3Core.a */; };
-		45F7256C22D2F5C50056187D /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB422D1C0580026CF7A /* Tree.swift */; };
-		45F7256E22D2F5C50056187D /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB522D1C0580026CF7A /* Branch.swift */; };
-		45F7258A22D2F8CA0056187D /* Export.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7258922D2F8CA0056187D /* Export.swift */; };
-		45F725AE22D2FA0A0056187D /* libTreeV3Util.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F7258F22D2F98C0056187D /* libTreeV3Util.a */; };
-		45F725AF22D2FA330056187D /* Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7258522D2F6A40056187D /* Import.swift */; };
-		45F725B022D2FA330056187D /* Branch.default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB322D1C0580026CF7A /* Branch.default.swift */; };
-		45F725B122D2FA330056187D /* Branch.dfs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62622D1DDBE00FE2AA5 /* Branch.dfs.swift */; };
-		45F725B222D2FA330056187D /* Branch.treefication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7254522D2C2B20056187D /* Branch.treefication.swift */; };
-		45F725B322D2FA330056187D /* Tree.default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB922D1C0580026CF7A /* Tree.default.swift */; };
-		45F725B422D2FA330056187D /* Tree.dfs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7253322D242360056187D /* Tree.dfs.swift */; };
-		45F725B522D2FA330056187D /* Tree.paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62422D1DCA200FE2AA5 /* Tree.paths.swift */; };
-		45F725B622D2FA330056187D /* Tree.branches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7253922D2BE140056187D /* Tree.branches.swift */; };
-		45F725B722D2FA330056187D /* Tree.map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62D22D1FFB600FE2AA5 /* Tree.map.swift */; };
-		45F725B822D2FA330056187D /* Tree.filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A63122D20F2600FE2AA5 /* Tree.filter.swift */; };
-		45F725B922D2FA330056187D /* Tree.sorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A63322D21CEF00FE2AA5 /* Tree.sorted.swift */; };
-		45F725BA22D2FA330056187D /* Tree.lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A62F22D2068300FE2AA5 /* Tree.lazy.swift */; };
-		45F725BB22D2FA330056187D /* Tree.convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7252D22D22C9A0056187D /* Tree.convert.swift */; };
-		45F725BF22D2FA330056187D /* BranchSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E9A61322D1CB8E00FE2AA5 /* BranchSlice.swift */; };
-		45F725C022D2FA330056187D /* ArrayTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FABB622D1C0580026CF7A /* ArrayTree.swift */; };
-		45F725C122D2FA330056187D /* ArrayBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7253122D2407F0056187D /* ArrayBranch.swift */; };
-		45F725C222D2FA330056187D /* AnyTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7252F22D22FBF0056187D /* AnyTree.swift */; };
-		45F725E722D323E80056187D /* TreeV3UtilTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F725E622D323E80056187D /* TreeV3UtilTest.swift */; };
-		45F725F322D323FC0056187D /* libTreeV3Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F7254E22D2F5A10056187D /* libTreeV3Core.a */; };
-		45F725F422D323FC0056187D /* libTreeV3Util.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F7258F22D2F98C0056187D /* libTreeV3Util.a */; };
 		45F725FD22D328680056187D /* BTree in Frameworks */ = {isa = PBXBuildFile; productRef = 45F725FC22D328680056187D /* BTree */; };
 		45F7262B22D3295E0056187D /* PDTreeV3Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7262A22D3295E0056187D /* PDTreeV3Test.swift */; };
 		45F7262D22D3295E0056187D /* libTreeV3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 450FABA722D1C02D0026CF7A /* libTreeV3.a */; };
@@ -63,69 +56,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 450FABA622D1C02D0026CF7A;
 			remoteInfo = TreeV3;
-		};
-		45F7256722D2F5B90056187D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F7254D22D2F5A10056187D;
-			remoteInfo = TreeV3Core;
-		};
-		45F725AC22D2FA070056187D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F7258E22D2F98C0056187D;
-			remoteInfo = TreeV3Util;
-		};
-		45F725C322D2FA530056187D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F7254D22D2F5A10056187D;
-			remoteInfo = TreeV3Core;
-		};
-		45F725DC22D31EB00056187D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F7254D22D2F5A10056187D;
-			remoteInfo = TreeV3Core;
-		};
-		45F725DE22D31EB00056187D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F7258E22D2F98C0056187D;
-			remoteInfo = TreeV3Util;
-		};
-		45F725EF22D323F00056187D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F7254D22D2F5A10056187D;
-			remoteInfo = TreeV3Core;
-		};
-		45F725F122D323F00056187D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F7258E22D2F98C0056187D;
-			remoteInfo = TreeV3Util;
-		};
-		45F7261E22D3292B0056187D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F7254D22D2F5A10056187D;
-			remoteInfo = TreeV3Core;
-		};
-		45F7262022D3292B0056187D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 450FAB9F22D1C02D0026CF7A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F7258E22D2F98C0056187D;
-			remoteInfo = TreeV3Util;
 		};
 		45F7262E22D3295E0056187D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -161,7 +91,6 @@
 		45935C6722D44461003D7CF8 /* BranchTree.default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchTree.default.swift; sourceTree = "<group>"; };
 		45AB2BF422D55FDC00B09A24 /* Branch.convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.convert.swift; sourceTree = "<group>"; };
 		45AB2BF622D560D200B09A24 /* BranchTree.convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchTree.convert.swift; sourceTree = "<group>"; };
-		45DC852522D3F15A0073D526 /* TreeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeIndex.swift; sourceTree = "<group>"; };
 		45E9A61322D1CB8E00FE2AA5 /* BranchSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchSlice.swift; sourceTree = "<group>"; };
 		45E9A61922D1D8DD00FE2AA5 /* TreeV3Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreeV3Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E9A61B22D1D8DD00FE2AA5 /* TreeV3Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeV3Test.swift; sourceTree = "<group>"; };
@@ -179,14 +108,8 @@
 		45F7253322D242360056187D /* Tree.dfs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.dfs.swift; sourceTree = "<group>"; };
 		45F7253922D2BE140056187D /* Tree.branches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.branches.swift; sourceTree = "<group>"; };
 		45F7254522D2C2B20056187D /* Branch.treefication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.treefication.swift; sourceTree = "<group>"; };
-		45F7254E22D2F5A10056187D /* libTreeV3Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTreeV3Core.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F7258522D2F6A40056187D /* Import.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Import.swift; sourceTree = "<group>"; };
-		45F7258922D2F8CA0056187D /* Export.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Export.swift; sourceTree = "<group>"; };
-		45F7258F22D2F98C0056187D /* libTreeV3Util.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTreeV3Util.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F725C522D2FBAA0056187D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		45F725E422D323E80056187D /* TreeV3UtilTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreeV3UtilTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		45F725E622D323E80056187D /* TreeV3UtilTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeV3UtilTest.swift; sourceTree = "<group>"; };
-		45F725E822D323E80056187D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45F725F522D325DA0056187D /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		45F7261522D329240056187D /* libPDTreeV3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPDTreeV3.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F7262822D3295E0056187D /* PDTreeV3Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDTreeV3Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,8 +126,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45F725FD22D328680056187D /* BTree in Frameworks */,
-				45F725AE22D2FA0A0056187D /* libTreeV3Util.a in Frameworks */,
-				45F7256522D2F5B40056187D /* libTreeV3Core.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,29 +134,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45E9A61E22D1D8DD00FE2AA5 /* libTreeV3.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45F7254C22D2F5A10056187D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45F7258D22D2F98C0056187D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45F725E122D323E80056187D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45F725F322D323FC0056187D /* libTreeV3Core.a in Frameworks */,
-				45F725F422D323FC0056187D /* libTreeV3Util.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +165,6 @@
 				45F725F522D325DA0056187D /* LICENSE.md */,
 				45F7258022D2F5F90056187D /* TreeV3 */,
 				45E9A61A22D1D8DD00FE2AA5 /* TreeV3Test */,
-				45F7254F22D2F5A10056187D /* TreeV3Core */,
-				45F7259022D2F98C0056187D /* TreeV3Util */,
-				45F725E522D323E80056187D /* TreeV3UtilTest */,
 				45F7261622D329240056187D /* PDTreeV3 */,
 				45F7262922D3295E0056187D /* PDTreeV3Test */,
 				450FABA822D1C02D0026CF7A /* Products */,
@@ -282,50 +177,22 @@
 			children = (
 				450FABA722D1C02D0026CF7A /* libTreeV3.a */,
 				45E9A61922D1D8DD00FE2AA5 /* TreeV3Test.xctest */,
-				45F7254E22D2F5A10056187D /* libTreeV3Core.a */,
-				45F7258F22D2F98C0056187D /* libTreeV3Util.a */,
-				45F725E422D323E80056187D /* TreeV3UtilTest.xctest */,
 				45F7261522D329240056187D /* libPDTreeV3.a */,
 				45F7262822D3295E0056187D /* PDTreeV3Test.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		45E9A61A22D1D8DD00FE2AA5 /* TreeV3Test */ = {
-			isa = PBXGroup;
-			children = (
-				45E9A61B22D1D8DD00FE2AA5 /* TreeV3Test.swift */,
-				45E9A61D22D1D8DD00FE2AA5 /* Info.plist */,
-			);
-			path = TreeV3Test;
-			sourceTree = "<group>";
-		};
-		45F7254F22D2F5A10056187D /* TreeV3Core */ = {
+		4599551B22D5996300ED5511 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				450FABB522D1C0580026CF7A /* Branch.swift */,
 				450FABB422D1C0580026CF7A /* Tree.swift */,
-				45DC852522D3F15A0073D526 /* TreeIndex.swift */,
 			);
-			path = TreeV3Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
-		45F7256422D2F5B40056187D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		45F7258022D2F5F90056187D /* TreeV3 */ = {
-			isa = PBXGroup;
-			children = (
-				45F7258922D2F8CA0056187D /* Export.swift */,
-			);
-			path = TreeV3;
-			sourceTree = "<group>";
-		};
-		45F7259022D2F98C0056187D /* TreeV3Util */ = {
+		4599551C22D5996D00ED5511 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				45F7258522D2F6A40056187D /* Import.swift */,
@@ -356,16 +223,32 @@
 				45F7252F22D22FBF0056187D /* AnyTree.swift */,
 				4587924F22D3583B00E4B7B7 /* AnyRandomAccessTree.swift */,
 			);
-			path = TreeV3Util;
+			path = Util;
 			sourceTree = "<group>";
 		};
-		45F725E522D323E80056187D /* TreeV3UtilTest */ = {
+		45E9A61A22D1D8DD00FE2AA5 /* TreeV3Test */ = {
 			isa = PBXGroup;
 			children = (
-				45F725E622D323E80056187D /* TreeV3UtilTest.swift */,
-				45F725E822D323E80056187D /* Info.plist */,
+				45E9A61B22D1D8DD00FE2AA5 /* TreeV3Test.swift */,
+				45E9A61D22D1D8DD00FE2AA5 /* Info.plist */,
 			);
-			path = TreeV3UtilTest;
+			path = TreeV3Test;
+			sourceTree = "<group>";
+		};
+		45F7256422D2F5B40056187D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45F7258022D2F5F90056187D /* TreeV3 */ = {
+			isa = PBXGroup;
+			children = (
+				4599551B22D5996300ED5511 /* Core */,
+				4599551C22D5996D00ED5511 /* Util */,
+			);
+			path = TreeV3;
 			sourceTree = "<group>";
 		};
 		45F7261622D329240056187D /* PDTreeV3 */ = {
@@ -398,20 +281,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45F7254A22D2F5A10056187D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45F7258B22D2F98C0056187D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		45F7261122D329240056187D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -433,8 +302,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				45F725AD22D2FA070056187D /* PBXTargetDependency */,
-				45F7256822D2F5B90056187D /* PBXTargetDependency */,
 			);
 			name = TreeV3;
 			packageProductDependencies = (
@@ -455,67 +322,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				45F725DD22D31EB00056187D /* PBXTargetDependency */,
-				45F725DF22D31EB00056187D /* PBXTargetDependency */,
 				45E9A62022D1D8DD00FE2AA5 /* PBXTargetDependency */,
 			);
 			name = TreeV3Test;
 			productName = TreeV3Test;
 			productReference = 45E9A61922D1D8DD00FE2AA5 /* TreeV3Test.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		45F7254D22D2F5A10056187D /* TreeV3Core */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 45F7255422D2F5A10056187D /* Build configuration list for PBXNativeTarget "TreeV3Core" */;
-			buildPhases = (
-				45F7254A22D2F5A10056187D /* Headers */,
-				45F7254B22D2F5A10056187D /* Sources */,
-				45F7254C22D2F5A10056187D /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TreeV3Core;
-			productName = TreeV3Core;
-			productReference = 45F7254E22D2F5A10056187D /* libTreeV3Core.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		45F7258E22D2F98C0056187D /* TreeV3Util */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 45F7259522D2F98C0056187D /* Build configuration list for PBXNativeTarget "TreeV3Util" */;
-			buildPhases = (
-				45F7258B22D2F98C0056187D /* Headers */,
-				45F7258C22D2F98C0056187D /* Sources */,
-				45F7258D22D2F98C0056187D /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				45F725C422D2FA530056187D /* PBXTargetDependency */,
-			);
-			name = TreeV3Util;
-			productName = TreeV3Util;
-			productReference = 45F7258F22D2F98C0056187D /* libTreeV3Util.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		45F725E322D323E80056187D /* TreeV3UtilTest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 45F725EE22D323E80056187D /* Build configuration list for PBXNativeTarget "TreeV3UtilTest" */;
-			buildPhases = (
-				45F725E022D323E80056187D /* Sources */,
-				45F725E122D323E80056187D /* Frameworks */,
-				45F725E222D323E80056187D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				45F725F022D323F00056187D /* PBXTargetDependency */,
-				45F725F222D323F00056187D /* PBXTargetDependency */,
-			);
-			name = TreeV3UtilTest;
-			productName = TreeV3UtilTest;
-			productReference = 45F725E422D323E80056187D /* TreeV3UtilTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		45F7261422D329240056187D /* PDTreeV3 */ = {
@@ -529,8 +340,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				45F7261F22D3292B0056187D /* PBXTargetDependency */,
-				45F7262122D3292B0056187D /* PBXTargetDependency */,
 				45F7262322D3292B0056187D /* PBXTargetDependency */,
 			);
 			name = PDTreeV3;
@@ -578,15 +387,6 @@
 					45E9A61822D1D8DD00FE2AA5 = {
 						CreatedOnToolsVersion = 11.0;
 					};
-					45F7254D22D2F5A10056187D = {
-						CreatedOnToolsVersion = 11.0;
-					};
-					45F7258E22D2F98C0056187D = {
-						CreatedOnToolsVersion = 11.0;
-					};
-					45F725E322D323E80056187D = {
-						CreatedOnToolsVersion = 11.0;
-					};
 					45F7261422D329240056187D = {
 						CreatedOnToolsVersion = 11.0;
 						LastSwiftMigration = 1100;
@@ -614,9 +414,6 @@
 			targets = (
 				450FABA622D1C02D0026CF7A /* TreeV3 */,
 				45E9A61822D1D8DD00FE2AA5 /* TreeV3Test */,
-				45F7254D22D2F5A10056187D /* TreeV3Core */,
-				45F7258E22D2F98C0056187D /* TreeV3Util */,
-				45F725E322D323E80056187D /* TreeV3UtilTest */,
 				45F7261422D329240056187D /* PDTreeV3 */,
 				45F7262722D3295E0056187D /* PDTreeV3Test */,
 			);
@@ -625,13 +422,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		45E9A61722D1D8DD00FE2AA5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45F725E222D323E80056187D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -652,7 +442,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45F7258A22D2F8CA0056187D /* Export.swift in Sources */,
+				4599553722D59A4100ED5511 /* AnyRandomAccessTree.swift in Sources */,
+				4599552F22D59A4100ED5511 /* Tree.convert.swift in Sources */,
+				4599552E22D59A4100ED5511 /* Tree.lazy.swift in Sources */,
+				4599552C22D59A4100ED5511 /* Tree.filter.swift in Sources */,
+				4599553122D59A4100ED5511 /* BranchTree.default.swift in Sources */,
+				4599553922D59A4600ED5511 /* Tree.swift in Sources */,
+				4599552722D59A4100ED5511 /* Tree.default.swift in Sources */,
+				4599552B22D59A4100ED5511 /* Tree.map.swift in Sources */,
+				4599553522D59A4100ED5511 /* ArrayBranch.swift in Sources */,
+				4599552422D59A4100ED5511 /* Branch.lazy.swift in Sources */,
+				4599552122D59A4100ED5511 /* Branch.map.swift in Sources */,
+				4599551E22D59A4100ED5511 /* Branch.default.swift in Sources */,
+				4599553622D59A4100ED5511 /* AnyTree.swift in Sources */,
+				4599552822D59A4100ED5511 /* Tree.dfs.swift in Sources */,
+				4599553822D59A4600ED5511 /* Branch.swift in Sources */,
+				4599553022D59A4100ED5511 /* BranchTree.swift in Sources */,
+				4599552622D59A4100ED5511 /* BranchCollection.swift in Sources */,
+				4599552222D59A4100ED5511 /* Branch.filter.swift in Sources */,
+				4599552522D59A4100ED5511 /* Branch.convert.swift in Sources */,
+				4599552A22D59A4100ED5511 /* Tree.branches.swift in Sources */,
+				4599552922D59A4100ED5511 /* Tree.paths.swift in Sources */,
+				4599552022D59A4100ED5511 /* Branch.treefication.swift in Sources */,
+				4599553422D59A4100ED5511 /* ArrayTree.swift in Sources */,
+				4599553322D59A4100ED5511 /* BranchSlice.swift in Sources */,
+				4599552D22D59A4100ED5511 /* Tree.sorted.swift in Sources */,
+				4599551F22D59A4100ED5511 /* Branch.dfs.swift in Sources */,
+				4599551D22D59A4100ED5511 /* Import.swift in Sources */,
+				4599553222D59A4100ED5511 /* BranchTree.convert.swift in Sources */,
+				4599552322D59A4100ED5511 /* Branch.sorted.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,58 +479,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45E9A61C22D1D8DD00FE2AA5 /* TreeV3Test.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45F7254B22D2F5A10056187D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45F7256C22D2F5C50056187D /* Tree.swift in Sources */,
-				45DC852722D3F8510073D526 /* TreeIndex.swift in Sources */,
-				45F7256E22D2F5C50056187D /* Branch.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45F7258C22D2F98C0056187D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45F725BA22D2FA330056187D /* Tree.lazy.swift in Sources */,
-				45F725B022D2FA330056187D /* Branch.default.swift in Sources */,
-				45F725B722D2FA330056187D /* Tree.map.swift in Sources */,
-				45F725B922D2FA330056187D /* Tree.sorted.swift in Sources */,
-				45935C6022D42016003D7CF8 /* Branch.filter.swift in Sources */,
-				45935C6622D44393003D7CF8 /* BranchTree.swift in Sources */,
-				45AB2BF522D55FDC00B09A24 /* Branch.convert.swift in Sources */,
-				45F725B222D2FA330056187D /* Branch.treefication.swift in Sources */,
-				45F725C022D2FA330056187D /* ArrayTree.swift in Sources */,
-				458FA23B22D48ED700F6D5BE /* BranchCollection.swift in Sources */,
-				45F725C222D2FA330056187D /* AnyTree.swift in Sources */,
-				4587925022D3583B00E4B7B7 /* AnyRandomAccessTree.swift in Sources */,
-				45935C6222D4201B003D7CF8 /* Branch.sorted.swift in Sources */,
-				45935C5E22D41E4A003D7CF8 /* Branch.lazy.swift in Sources */,
-				45AB2BF722D560D200B09A24 /* BranchTree.convert.swift in Sources */,
-				45F725B622D2FA330056187D /* Tree.branches.swift in Sources */,
-				45935C5C22D41E42003D7CF8 /* Branch.map.swift in Sources */,
-				45F725B122D2FA330056187D /* Branch.dfs.swift in Sources */,
-				45F725BB22D2FA330056187D /* Tree.convert.swift in Sources */,
-				45935C6822D44461003D7CF8 /* BranchTree.default.swift in Sources */,
-				45F725B522D2FA330056187D /* Tree.paths.swift in Sources */,
-				45F725B822D2FA330056187D /* Tree.filter.swift in Sources */,
-				45F725AF22D2FA330056187D /* Import.swift in Sources */,
-				45F725B422D2FA330056187D /* Tree.dfs.swift in Sources */,
-				45F725B322D2FA330056187D /* Tree.default.swift in Sources */,
-				45F725BF22D2FA330056187D /* BranchSlice.swift in Sources */,
-				45F725C122D2FA330056187D /* ArrayBranch.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45F725E022D323E80056187D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45F725E722D323E80056187D /* TreeV3UtilTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,51 +508,6 @@
 			isa = PBXTargetDependency;
 			target = 450FABA622D1C02D0026CF7A /* TreeV3 */;
 			targetProxy = 45E9A61F22D1D8DD00FE2AA5 /* PBXContainerItemProxy */;
-		};
-		45F7256822D2F5B90056187D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45F7254D22D2F5A10056187D /* TreeV3Core */;
-			targetProxy = 45F7256722D2F5B90056187D /* PBXContainerItemProxy */;
-		};
-		45F725AD22D2FA070056187D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45F7258E22D2F98C0056187D /* TreeV3Util */;
-			targetProxy = 45F725AC22D2FA070056187D /* PBXContainerItemProxy */;
-		};
-		45F725C422D2FA530056187D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45F7254D22D2F5A10056187D /* TreeV3Core */;
-			targetProxy = 45F725C322D2FA530056187D /* PBXContainerItemProxy */;
-		};
-		45F725DD22D31EB00056187D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45F7254D22D2F5A10056187D /* TreeV3Core */;
-			targetProxy = 45F725DC22D31EB00056187D /* PBXContainerItemProxy */;
-		};
-		45F725DF22D31EB00056187D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45F7258E22D2F98C0056187D /* TreeV3Util */;
-			targetProxy = 45F725DE22D31EB00056187D /* PBXContainerItemProxy */;
-		};
-		45F725F022D323F00056187D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45F7254D22D2F5A10056187D /* TreeV3Core */;
-			targetProxy = 45F725EF22D323F00056187D /* PBXContainerItemProxy */;
-		};
-		45F725F222D323F00056187D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45F7258E22D2F98C0056187D /* TreeV3Util */;
-			targetProxy = 45F725F122D323F00056187D /* PBXContainerItemProxy */;
-		};
-		45F7261F22D3292B0056187D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45F7254D22D2F5A10056187D /* TreeV3Core */;
-			targetProxy = 45F7261E22D3292B0056187D /* PBXContainerItemProxy */;
-		};
-		45F7262122D3292B0056187D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45F7258E22D2F98C0056187D /* TreeV3Util */;
-			targetProxy = 45F7262022D3292B0056187D /* PBXContainerItemProxy */;
 		};
 		45F7262322D3292B0056187D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -991,84 +712,6 @@
 			};
 			name = Release;
 		};
-		45F7255522D2F5A10056187D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		45F7255622D2F5A10056187D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		45F7259622D2F98C0056187D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		45F7259722D2F98C0056187D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		45F725EC22D323E80056187D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = TreeV3UtilTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Eonil.TreeV3UtilTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		45F725ED22D323E80056187D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = TreeV3UtilTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Eonil.TreeV3UtilTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		45F7261C22D329240056187D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1083,7 +726,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1100,7 +742,6 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1120,7 +761,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1140,7 +780,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1170,33 +809,6 @@
 			buildConfigurations = (
 				45E9A62222D1D8DD00FE2AA5 /* Debug */,
 				45E9A62322D1D8DD00FE2AA5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		45F7255422D2F5A10056187D /* Build configuration list for PBXNativeTarget "TreeV3Core" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				45F7255522D2F5A10056187D /* Debug */,
-				45F7255622D2F5A10056187D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		45F7259522D2F98C0056187D /* Build configuration list for PBXNativeTarget "TreeV3Util" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				45F7259622D2F98C0056187D /* Debug */,
-				45F7259722D2F98C0056187D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		45F725EE22D323E80056187D /* Build configuration list for PBXNativeTarget "TreeV3UtilTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				45F725EC22D323E80056187D /* Debug */,
-				45F725ED22D323E80056187D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

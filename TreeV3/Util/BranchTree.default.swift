@@ -50,12 +50,10 @@ Path.Element == SubSequence.Index {
     }
 }
 
-public extension BranchReplaceableTree where
-Self: RecursiveBranches,
-Branches: BranchCollection {
+public extension BranchReplaceableTree {
     /// Gets element at composited path. (parent path + element index)
     ///
-    /// Path `[]` means top-pevel (root) position,
+    /// Path `[]` means top-level (root) position,
     /// and there's no element at root because `Tree` is
     /// tree of collections. You need to append element index at least.
     subscript<P>(_ p:P) -> SubSequence.Element where
@@ -89,48 +87,46 @@ Branches: BranchCollection {
     C.Element == SubSequence.Element,
     P:Collection,
     P.Element == Branches.Index {
-        let bs = branches[in: p]
-        let bs1 = bs[r]
-        if bs1.count == es.count {
+        let bs = branches[in: p][r]
+        if bs.count == es.count {
             /// Replace branch values in-place.
             /// DO NOT replace branches that potentially have
             /// some children.
-            var bs2 = bs
-            for (d,e) in es.enumerated() {
-                let i = bs2.index(r.lowerBound, offsetBy: d)
-                var b = bs2[i]
-                b.value = e
-                bs2[i].value = e
+            switch p.isEmpty {
+            case true:  replaceBranchValues(r, with: es, in: &branches)
+            case false: branches[p.first!].replaceSubbranchValues(r, es, in: p.dropFirst())
             }
-            branches[in: p] = bs2
         }
         else {
             /// Ensure no children in the range.
-            precondition(bs1.lazy.map({$0.branches.isEmpty}).reduce(true, { $0 && $1 }))
+            precondition(bs.lazy.map({$0.branches.isEmpty}).reduce(true, { $0 && $1 }))
             /// Replace branches.
             let x = Branches.Element.Branches()
             branches.replaceSubrange(r, with: es.map({ Branches.Element(value: $0, branches: x) }), in: p)
         }
     }
-//    mutating func replaceBranches<C,P>(_ r: Range<Branches.Index>, with bs:C, in p:P) where
-//    C:Collection,
-//    C.Element == Branches.Element,
-//    P:Collection,
-//    P.Element == Branches.Index {
-//        switch p.isEmpty {
-//        case true:  branches.replaceSubrange(r, with: bs)
-//        case false: branches[p.first!, in: p.dropFirst()].branches.replaceSubrange(r, with: bs)
-//        }
-//    }
-//    mutating func insert<C,P>(contentsOf bs:C, at i:Branches.Index, in p:P) where
-//    C:Collection,
-//    C.Element == Branches.Element,
-//    P:Collection,
-//    P.Element == Branches.Index {
-//        replaceSubrange(i..<i, with: bs, in: p)
-//    }
-//    mutating func removeSubrange(_ r:Range<Branches.Index>, in p:Path) {
-//        replaceSubrange(r, with: EmptyCollection(), in: p)
-//    }
 }
 
+private extension Branch where Self: MutableBranch & RangeReplaceableBranch {
+    mutating func replaceSubbranchValues<C,P>(_ r:Range<Branches.Index>, _ es:C, in p:P) where
+    C:Collection,
+    C.Element == Branches.Element.Value,
+    P:Collection,
+    P.Element == Branches.Index {
+        switch p.isEmpty {
+        case true:  replaceBranchValues(r, with: es, in: &branches)
+        case false: branches[p.first!].replaceSubbranchValues(r, es, in: p.dropFirst())
+        }
+    }
+}
+
+private func replaceBranchValues<EC,BC>(_ r:Range<BC.Index>, with es:EC, in bs: inout BC) where
+EC:Collection,
+EC.Element == BC.Element.Value,
+BC:MutableCollection,
+BC.Element: MutableBranch {
+    for (d,e) in es.enumerated() {
+        let i = bs.index(r.lowerBound, offsetBy: d)
+        bs[i].value = e
+    }
+}

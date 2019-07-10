@@ -26,7 +26,8 @@ public protocol Branch {
     
     var branches: Branches { get }
     associatedtype Branches: Collection where
-        Branches.Element == Self
+        Branches.Element == Self,
+        Branches.Element.Branches == Branches
 }
 public protocol RandomAccessBranch: Branch where
 Branches: RandomAccessCollection {

@@ -19,29 +19,15 @@ let package = Package(
         /// A target is required to build a **module**.
         .target(
             name: "TreeV3",
-            dependencies: ["TreeV3Core", "TreeV3Util"],
+            dependencies: ["TreeV3"],
             path: "TreeV3"),
-        .target(
-            name: "TreeV3Core",
-            dependencies: [],
-            path: "TreeV3Core"),
-        .target(
-            name: "TreeV3Util",
-            dependencies: ["TreeV3Core"],
-            path: "TreeV3Util"),
         .testTarget(
-            name: "TreeV3UtilTest",
-            dependencies: ["TreeV3Util"],
-            path: "TreeV3UtilTest"),
-
+            name: "TreeV3Test",
+            dependencies: ["TreeV3"],
+            path: "TreeV3Test"),
         .target(
             name: "PDTreeV3",
-            dependencies: [
-                "TreeV3Core",
-                "TreeV3Util",
-                "BTree",
-//                .product(name: "BTree"),
-            ],
+            dependencies: ["TreeV3", "BTree"],
             path: "PDTreeV3"),
         .testTarget(
             name: "PDTreeV3Test",

@@ -11,10 +11,15 @@ import Foundation
 /// Provides a "super-useful" branches-by-path feature to a collection.
 /// This couldn't be implemented without an explicit protocol
 /// as Swift compiler fails on resolving recursive generic constraints.
-public protocol BranchCollection: Collection {}
-public extension BranchCollection where
-Element: Branch,
-Element.Branches == Self {
+///
+/// - Note:
+///     This is a marker protocol that is required to ovetcome Swift compiler's
+///     limitation that cannot constrain generic parameter with `Self` in some cases.
+///     See the end of this file for example.
+public protocol BranchCollection: Collection where Element: Branch {
+}
+
+public extension BranchCollection where Element.Branches == Self {
     /// Gets branches "branch collection" at path.
     subscript<P>(in p:P) -> Self where P:Collection, P.Element == Index {
         switch p.isEmpty {
@@ -45,15 +50,22 @@ Element.Branches == Self {
 }
 
 
-/// This is same with above but compiler fails.
 
-//extension Collection where
-//Element: Branch,
-//Element.Branches == Self {
-//    subscript<P>(_ p:P) -> Self where P:Collection, P.Element == Index {
+
+
+
+
+
+
+
+/// Comiler failure example.
+
+//public extension Collection where Element: Branch, Element.Branches == Self {
+//    /// Gets branches "branch collection" at path.
+//    subscript<P>(in p:P) -> Self where P:Collection, P.Element == Index {
 //        switch p.isEmpty {
 //        case true:  return self
-//        case false: return self[p.first!].branches[p.dropFirst()]
+//        case false: return self[p.first!].branches[in: p.dropFirst()]
 //        }
 //    }
 //}
